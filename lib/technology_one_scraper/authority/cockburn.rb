@@ -30,6 +30,25 @@ module TechnologyOneScraper
         link['href'].scan(/'([^']*)'/).flatten
       end
 
+      # Find the link to the given page number (if it's there)
+      def self.find_link_for_page_number(page, i)
+        links = page.search("tr.pagerRow").search("td a, td span")
+        # Let's find the link with the required page
+        texts = links.map { |l| l.inner_text }
+        number_texts = texts.select { |t| t != "..." }
+        max_page = number_texts.max { |l| l.to_i }.to_i
+        min_page = number_texts.min { |l| l.to_i }.to_i
+        if i == min_page - 1 && texts[0] == "..."
+          links[0]
+        elsif i >= min_page && i <= max_page
+          links.find {|l| l.inner_text == i.to_s }
+        elsif i == max_page + 1 && texts[-1] == "..."
+          links[-1]
+        else
+          raise "Couldn't find link"
+        end
+      end
+
       def self.scrape_and_save
         period = "TM"
 
@@ -57,22 +76,7 @@ module TechnologyOneScraper
           if i == 1
             page = agent.get(url)
           else
-            links = page.search("tr.pagerRow").search("td a, td span")
-            # Let's find the link with the required page
-            texts = links.map { |l| l.inner_text }
-            number_texts = texts.select { |t| t != "..." }
-            max_page = number_texts.max { |l| l.to_i }.to_i
-            min_page = number_texts.min { |l| l.to_i }.to_i
-            if i == min_page - 1 && texts[0] == "..."
-              link = links[0]
-            elsif i >= min_page && i <= max_page
-              link = links.find {|l| l.inner_text == i.to_s }
-            elsif i == max_page + 1 && texts[-1] == "..."
-              link = links[-1]
-            else
-              raise "Couldn't find link"
-            end
-
+            link = find_link_for_page_number(page, i)
             target, argument = extract_postback(link)
             page = postback(page.form, target, argument)
           end
