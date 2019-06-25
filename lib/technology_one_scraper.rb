@@ -67,6 +67,7 @@ module TechnologyOneScraper
     puts "Saving record " + record["council_reference"] + ", " + record["address"]
   end
 
+  # TODO: Instead of relying on hardcoded periods add support for general date ranges
   def self.url_period(base_url, period, webguest = "P1.WEBGUEST")
     params = {
       "Field" => "S",
