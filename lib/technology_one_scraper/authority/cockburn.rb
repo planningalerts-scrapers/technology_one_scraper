@@ -34,8 +34,6 @@ module TechnologyOneScraper
           links.find {|l| l.inner_text == i.to_s }
         elsif i == max_page + 1 && texts[-1] == "..."
           links[-1]
-        else
-          raise "Couldn't find link"
         end
       end
 
@@ -47,12 +45,10 @@ module TechnologyOneScraper
         page.form.submit
       end
 
-      def self.extract_total_pages(page)
-        while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
-          links = page.search("tr.pagerRow").search("td a")
-          page = click(links[-1], page)
-        end
-        page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
+      # i is the current page number
+      def self.next_page(page, i)
+        link = find_link_for_page_number(page, i + 1)
+        click(link, page) if link
       end
 
       def self.scrape_and_save
@@ -69,18 +65,12 @@ module TechnologyOneScraper
           exit 0
         end
 
-        totalPages = extract_total_pages(page)
-        (1..totalPages).each do |i|
-          puts "Scraping page " + i.to_s + " of " + totalPages.to_s
-
-          if i == 1
-            page = agent.get(url)
-          else
-            link = find_link_for_page_number(page, i)
-            page = click(link, page)
-          end
-
+        i = 1
+        while page
+          puts "Scraping page #{i}..."
           scrape_and_save_index_page(page, info_url)
+          page = next_page(page, i)
+          i += 1
         end
       end
     end
