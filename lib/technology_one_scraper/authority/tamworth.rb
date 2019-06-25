@@ -4,7 +4,7 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Tamworth
-      def self.scrape_page(page, info_url_base, comment_url)
+      def self.scrape_page(page, info_url_base)
         page.at("table.grid").search("tr.normalRow, tr.alternateRow").each do |tr|
           tds = tr.search("td")
           day, month, year = tds[3].inner_text.split("/").map{|s| s.to_i}
@@ -24,7 +24,6 @@ module TechnologyOneScraper
           end
 
           record["info_url"] = info_url_base + CGI.escape(record["council_reference"])
-          record["comment_url"] = comment_url
 
           puts "Saving record " + record['council_reference'] + ", " + record['address']
       #       puts record
@@ -51,7 +50,6 @@ module TechnologyOneScraper
       def self.scrape_and_save
         period = 'TW'
 
-        comment_url = "mailto:trc@tamworth.nsw.gov.au"
         base_url = "https://eproperty.tamworth.nsw.gov.au/ePropertyProd/P1/eTrack"
         url = "#{base_url}/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.SL14"
         info_url_base = "#{base_url}/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId="
@@ -64,7 +62,7 @@ module TechnologyOneScraper
         next_page_link = true
 
         while next_page_link
-          scrape_page(page, info_url_base, comment_url)
+          scrape_page(page, info_url_base)
           paging = page.at("table.grid tr.pagerRow")
           if paging.nil?
            next_page_link = false

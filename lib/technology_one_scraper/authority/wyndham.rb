@@ -31,7 +31,6 @@ module TechnologyOneScraper
 
           record = {
             "info_url" => link_to_decision,
-            "comment_url" => link_to_decision,
             "council_reference" => council_reference,
             "date_received" => date_received_formatted,
             "description" => tr.search("td")[2].inner_text,

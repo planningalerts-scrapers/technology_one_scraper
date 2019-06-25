@@ -4,7 +4,7 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Kuringgai
-      def self.scrape_page(page, info_url, comment_url)
+      def self.scrape_page(page, info_url)
         page.at("table.grid").search("tr.normalRow,tr.alternateRow").each do |tr|
           day, month, year = tr.search('td')[1].inner_text.split("/").map{|s| s.to_i}
           record = {
@@ -13,8 +13,7 @@ module TechnologyOneScraper
             "date_received" => Date.new(year, month, day).to_s,
             "description" => tr.search('td')[2].inner_text.squeeze(" ").strip,
             "address" => tr.search('a')[1].inner_text,
-            "date_scraped" => Date.today.to_s,
-            "comment_url" => comment_url
+            "date_scraped" => Date.today.to_s
           }
       #     p record
           puts "Saving record " + record['council_reference'] + ", " + record['address']
@@ -43,7 +42,6 @@ module TechnologyOneScraper
 
         url = "https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&r=KC_WEBGUEST&f=P1.ETR.SEARCH.STW"
         info_url = "https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?r=KC_WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId="
-        comment_url = "mailto:kmc@kmc.nsw.gov.au"
 
         agent = Mechanize.new
 
@@ -53,7 +51,7 @@ module TechnologyOneScraper
 
         while next_page_link
           puts "Scraping page #{current_page_no}..."
-          scrape_page(page, info_url, comment_url)
+          scrape_page(page, info_url)
 
           page_links = page.at(".pagerRow")
           if page_links

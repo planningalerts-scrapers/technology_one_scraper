@@ -20,7 +20,6 @@ module TechnologyOneScraper
 
         url         = 'https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=P1.WEBGUEST&f=$P1.ETR.SEARCH.S' + period
         info_url    = 'https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId='
-        comment_url = 'mailto:mail@noosa.qld.gov.au'
 
         agent = Mechanize.new
         agent_detail_page = Mechanize.new
@@ -56,7 +55,6 @@ module TechnologyOneScraper
               'address'           => address,
               'description'       => result.search("td")[2].inner_text.to_s.squeeze(' '),
               'info_url'          => info_url + URI::encode_www_form_component(result.search("td")[0].inner_text),
-              'comment_url'       => comment_url,
               'date_scraped'      => Date.today.to_s,
               'date_received'     => Date.parse(result.search("td")[1]).to_s
             }

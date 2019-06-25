@@ -25,7 +25,6 @@ module TechnologyOneScraper
         'address' => cells[3].text,
         'description' => cells[2].text,
         'info_url' => "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=PAE.P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=#{URI::escape(council_reference)}",
-        'comment_url' => 'mailto:info@portenf.sa.gov.au',
         'date_received' => Date.parse(cells[1].text).strftime("%Y-%m-%d"),
         'date_scraped' => Date.today.to_s,
         }

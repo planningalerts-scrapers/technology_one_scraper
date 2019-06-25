@@ -4,7 +4,7 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Lithgow
-      def self.scrape_page(page, info_url_base, comment_url)
+      def self.scrape_page(page, info_url_base)
         page.search("table.grid tr.normalRow, table.grid tr.alternateRow").each do |tr|
 
           record = {
@@ -12,7 +12,6 @@ module TechnologyOneScraper
             'address' => tr.search("td")[5].inner_text.gsub('  ', ', '),
             'description' => tr.search("td")[2].inner_text,
             'info_url' => info_url_base + tr.search("td")[0].inner_text,
-            'comment_url' => comment_url,
             'date_scraped' => Date.today.to_s,
             'date_received' => Date.parse(tr.search("td")[1].inner_text).to_s,
           }
@@ -46,8 +45,6 @@ module TechnologyOneScraper
         url = "#{base_url}/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S" + period
         info_url_base = "#{base_url}/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId="
 
-        comment_url = "mailto:council@lithgow.nsw.gov.au"
-
         agent = Mechanize.new
 
         # Read in a page
@@ -56,7 +53,7 @@ module TechnologyOneScraper
         next_page_link = true
 
         while next_page_link
-          scrape_page(page, info_url_base, comment_url)
+          scrape_page(page, info_url_base)
           paging = page.at("table.grid tr.pagerRow")
           if paging.nil?
            next_page_link = false

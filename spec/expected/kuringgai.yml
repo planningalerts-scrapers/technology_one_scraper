@@ -6,7 +6,6 @@
     dwelling, pool, landscaping and associated works
   address: 50 Billyard Avenue WAHROONGA NSW 2076
   date_scraped: '2019-05-15'
-  comment_url: mailto:kmc@kmc.nsw.gov.au
 - info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?r=KC_WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId=DA0240/19
   council_reference: DA0240/19
   date_received: '2019-06-24'
@@ -14,7 +13,6 @@
     Retaining wall is proposed to be the same height as existing.
   address: 37 Crana Avenue EAST LINDFIELD NSW 2070
   date_scraped: '2019-05-15'
-  comment_url: mailto:kmc@kmc.nsw.gov.au
 - info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?r=KC_WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId=DA0241/19
   council_reference: DA0241/19
   date_received: '2019-06-24'
@@ -22,7 +20,6 @@
     facade.
   address: 18 Northcote Avenue KILLARA NSW 2071
   date_scraped: '2019-05-15'
-  comment_url: mailto:kmc@kmc.nsw.gov.au
 - info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?r=KC_WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId=MOD0116/19
   council_reference: MOD0116/19
   date_received: '2019-06-24'
@@ -30,18 +27,15 @@
     basement parking and landscaping works
   address: 6 Maclaurin Parade ROSEVILLE NSW 2069
   date_scraped: '2019-05-15'
-  comment_url: mailto:kmc@kmc.nsw.gov.au
 - info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?r=KC_WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId=MOD0117/19
   council_reference: MOD0117/19
   date_received: '2019-06-24'
   description: Alterations and additions
   address: 1 Moore Street ROSEVILLE NSW 2069
   date_scraped: '2019-05-15'
-  comment_url: mailto:kmc@kmc.nsw.gov.au
 - info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?r=KC_WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId=PCDC0234/19
   council_reference: PCDC0234/19
   date_received: '2019-06-24'
   description: Alterations and additions
   address: 16 Grassmere Road KILLARA NSW 2071
   date_scraped: '2019-05-15'
-  comment_url: mailto:kmc@kmc.nsw.gov.au

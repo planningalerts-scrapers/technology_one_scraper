@@ -15,7 +15,6 @@ module TechnologyOneScraper
 
         url         = 'https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S' + period
         info_url    = 'https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId='
-        comment_url = 'mailto:manningham@manningham.vic.gov.au'
 
         agent = Mechanize.new
         page = agent.get(url)
@@ -44,7 +43,6 @@ module TechnologyOneScraper
               'address'           => result.search("td")[3].inner_text.to_s,
               'description'       => result.search("td")[2].inner_text.to_s,
               'info_url'          => info_url + result.search("td")[0].inner_text.sub!("/", "%2f"),
-              'comment_url'       => comment_url,
               'date_scraped'      => Date.today.to_s,
               'date_received'     => Date.parse(result.search("td")[1]).to_s
             }

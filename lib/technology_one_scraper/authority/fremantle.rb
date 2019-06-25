@@ -24,7 +24,6 @@ module TechnologyOneScraper
         'address' => cells[5].search("a").text,
         'description' => cells[2].text,
         'info_url' => 'https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearch.aspx?r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.ENQ',
-        'comment_url' => 'mailto:info@fremantle.wa.gov.au',
         'date_received' => Date.parse(cells[1].text).strftime("%Y-%m-%d"),
         'date_scraped' => Date.today.to_s,
         }

@@ -15,7 +15,6 @@ module TechnologyOneScraper
 
         url         = 'https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=COR.P1.WEBGUEST&f=$P1.ETR.SEARCH.S' + period
         info_url    = 'https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=COR.P1.WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId='
-        comment_url = 'mailto:cityofryde@ryde.nsw.gov.au'
 
         agent = Mechanize.new
         page = agent.get(url)
@@ -43,7 +42,6 @@ module TechnologyOneScraper
               'address'           => result.search("td")[1].inner_text.to_s,
               'description'       => result.search("td")[3].inner_text.to_s,
               'info_url'          => info_url + result.search("td")[0].inner_text.sub!("/", "%2f"),
-              'comment_url'       => comment_url,
               'date_scraped'      => Date.today.to_s,
               'date_received'     => Date.parse(result.search("td")[2]).to_s
             }
