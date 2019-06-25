@@ -1,0 +1,3 @@
+module TechnologyOneScraper
+  VERSION = "0.1.0"
+end
