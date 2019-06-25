@@ -5,7 +5,7 @@ module TechnologyOneScraper
   module Authority
     module Kuringgai
       def self.scrape_and_save
-        period = 'L28'
+        period = 'TM'
         webguest = "KC_WEBGUEST"
 
         base_url = "https://eservices.kmc.nsw.gov.au/T1ePropertyProd"

@@ -1,23 +1,4 @@
 ---
-- council_reference: CCPCA0211/19
-  address: 2 Cambridge Street SOUTH TURRAMURRA NSW 2074
-  description: Alterations and additions
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CCPCA0211%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-30'
-- council_reference: CCPCA0212/19
-  address: 27 Hampden Avenue WAHROONGA NSW 2076
-  description: Demolish existing dwelling, retain swimming pool, construct new dwelling,
-    associated works and front fence
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CCPCA0212%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-30'
-- council_reference: CCPCA0213/19
-  address: 4 Highlands Avenue GORDON NSW 2072
-  description: CC MOD0033/19 - Alterations and additions including carport and deck
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CCPCA0213%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-31'
 - council_reference: CCPCA0214/19
   address: 58-60 Carrington Road WAHROONGA NSW 2076
   description: Amended CC - Private Certifier - Alterations and additions to existing
@@ -199,18 +180,6 @@
   info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CDC0007%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-21'
-- council_reference: DA0210/19
-  address: 29 Rushall Street PYMBLE NSW 2073
-  description: Alterations and additions
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA0210%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-31'
-- council_reference: DA0211/19
-  address: 9 Grassmere Road KILLARA NSW 2071
-  description: New driveway and hardstand area (parking)
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA0211%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-31'
 - council_reference: DA0212/19
   address: 1 Mocatta Avenue PYMBLE NSW 2073
   description: Proposed carport and driveway - draft heritage conservation area
@@ -435,26 +404,6 @@
   info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA0245%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-25'
-- council_reference: MOD0094/19
-  address: 18A Miowera Road NORTH TURRAMURRA NSW 2074
-  description: Modification of DA0238/18 proposing extension of roof over entrance
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MOD0094%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-30'
-- council_reference: MOD0095/19
-  address: 2 Carina Road TURRAMURRA NSW 2074
-  description: Modification of DA0387/08 proposing enclosure of a rear verandah and
-    changes to openings
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MOD0095%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-31'
-- council_reference: MOD0096/19
-  address: 23 Gilroy Road TURRAMURRA NSW 2074
-  description: Modification of DA0228/18 proposing reduction of apartments from 30
-    to 26 , deletion of basement level and changes to car park layout
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MOD0096%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-31'
 - council_reference: MOD0097/19
   address: 12 Barana Parade ROSEVILLE CHASE NSW 2069
   description: Modification of DA0615/15 proposing minor alterations to previously
@@ -600,36 +549,6 @@
   info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MOD0117%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-24'
-- council_reference: PCDC0153/19
-  address: 5 Briar Street ST IVES NSW 2075
-  description: CDC - Private Certifier - Demolition of existing dwelling
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PCDC0153%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-30'
-- council_reference: PCDC0196/19
-  address: 36 Highlands Avenue GORDON NSW 2072
-  description: 'Demolition. Certificate Number: 190207'
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PCDC0196%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-30'
-- council_reference: PCDC0197/19
-  address: 19 Delaware Avenue ST IVES NSW 2075
-  description: Demolition. CDC - 190203
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PCDC0197%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-30'
-- council_reference: PCDC0198/19
-  address: 87 Kintore Street WAHROONGA NSW 2076
-  description: Pergola
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PCDC0198%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-30'
-- council_reference: PCDC0199/19
-  address: 3 Myrtle Place ST IVES NSW 2075
-  description: Construction of a two storey dwelling with attached granny flat
-  info_url: https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PCDC0199%2F19&f=%24P1.ETR.APPDET.VIW&r=KC_WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-05-30'
 - council_reference: PCDC0200/19
   address: 52 Hunter Avenue ST IVES NSW 2075
   description: CDC190220 - Private Certifier - Installation of in-ground swimming
