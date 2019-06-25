@@ -8,11 +8,11 @@ module TechnologyOneScraper
         table = page.at("table.grid")
         Table.extract_table(table).each do |row|
           council_reference = row["Application Link"]
-          info_url = "eTrackApplicationDetails.aspx" \
-                     "?r=P1.WEBGUEST" \
-                     "&f=%24P1.ETR.APPDET.VIW" +
+          info_url = "eTrackApplicationDetails.aspx" +
                      # TODO: Do proper escaping rather than this hack
-                     "&ApplicationId=" + council_reference.gsub("/", "%2f")
+                     "?ApplicationId=" + council_reference.gsub("/", "%2f") +
+                     "&f=%24P1.ETR.APPDET.VIW" \
+                     "&r=P1.WEBGUEST" \
 
           yield(
             "council_reference" => council_reference,
