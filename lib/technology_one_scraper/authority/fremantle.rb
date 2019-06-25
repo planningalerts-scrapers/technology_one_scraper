@@ -7,18 +7,20 @@ module TechnologyOneScraper
       def self.scrape_and_save
         url = TechnologyOneScraper.url_period(
           "https://eservices.fremantle.wa.gov.au/ePropertyPROD",
-          "L7"
+          "L28"
         )
 
         agent = Mechanize.new
         page = agent.get(url)
 
-        # TODO: Add pagination support
-        Page::Index.scrape(page) do |record|
-          # TODO: Make the search ignore these rather than filtering them out here
-          if record["council_reference"].start_with?("DA", "LL", "VA", "WAPC", "ET", "PW") #selects planning applications only
-            TechnologyOneScraper.save(record)
+        while page
+          Page::Index.scrape(page) do |record|
+            # TODO: Make the search ignore these rather than filtering them out here
+            if record["council_reference"].start_with?("DA", "LL", "VA", "WAPC", "ET", "PW") #selects planning applications only
+              TechnologyOneScraper.save(record)
+            end
           end
+          page = Page::Index.next(page)
         end
       end
     end
