@@ -1,5 +1,3 @@
-require "technology_one_scraper/postback"
-
 require 'scraperwiki'
 require 'mechanize'
 
@@ -26,33 +24,6 @@ module TechnologyOneScraper
         end
       end
 
-      # Find the link to the given page number (if it's there)
-      def self.find_link_for_page_number(page, i)
-        links = page.search("tr.pagerRow").search("td a, td span")
-        # Let's find the link with the required page
-        texts = links.map { |l| l.inner_text }
-        number_texts = texts.select { |t| t != "..." }
-        max_page = number_texts.max { |l| l.to_i }.to_i
-        min_page = number_texts.min { |l| l.to_i }.to_i
-        if i == min_page - 1 && texts[0] == "..."
-          links[0]
-        elsif i >= min_page && i <= max_page
-          links.find {|l| l.inner_text == i.to_s }
-        elsif i == max_page + 1 && texts[-1] == "..."
-          links[-1]
-        end
-      end
-
-      def self.extract_current_page_no(page)
-        page.search("tr.pagerRow").search("td span").inner_text.to_i
-      end
-
-      def self.next_page(page)
-        i = extract_current_page_no(page)
-        link = find_link_for_page_number(page, i + 1)
-        Postback.click(link, page) if link
-      end
-
       def self.scrape_and_save
         period = "TM"
         url = 'https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S' + period
@@ -64,7 +35,7 @@ module TechnologyOneScraper
           scrape_index_page(page) do |record|
             TechnologyOneScraper.save(record)
           end
-          page = next_page(page)
+          page = Page::Index.next(page)
         end
       end
     end
