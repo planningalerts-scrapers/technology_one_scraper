@@ -5,14 +5,12 @@ module TechnologyOneScraper
   module Authority
     module Fremantle
       def self.scrape_and_save
+        url = TechnologyOneScraper.url_period(
+          "https://eservices.fremantle.wa.gov.au/ePropertyPROD",
+          "L7"
+        )
+
         agent = Mechanize.new
-        period = "L7"
-        base_url = "https://eservices.fremantle.wa.gov.au/ePropertyPROD"
-        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx" \
-              "?Field=S" \
-              "&Period=#{period}" \
-              "&r=P1.WEBGUEST" \
-              "&f=%24P1.ETR.SEARCH.S#{period}"
         page = agent.get(url)
 
         # TODO: Add pagination support

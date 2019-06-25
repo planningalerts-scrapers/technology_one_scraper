@@ -5,13 +5,10 @@ module TechnologyOneScraper
   module Authority
     module Cockburn
       def self.scrape_and_save
-        period = "TM"
-        base_url = "https://ecouncil.cockburn.wa.gov.au/eProperty"
-        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx" \
-              "?Field=S" \
-              "&Period=#{period}" \
-              "&r=P1.WEBGUEST" \
-              "&f=%24P1.ETR.SEARCH.S#{period}"
+        url = TechnologyOneScraper.url_period(
+          "https://ecouncil.cockburn.wa.gov.au/eProperty",
+          "TM"
+        )
 
         agent = Mechanize.new
         page = agent.get(url)
