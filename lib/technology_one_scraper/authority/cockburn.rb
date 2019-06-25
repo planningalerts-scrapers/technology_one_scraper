@@ -57,13 +57,23 @@ module TechnologyOneScraper
           if i == 1
             page = agent.get(url)
           else
-            links = page.search("tr.pagerRow").search("td a")
+            links = page.search("tr.pagerRow").search("td a, td span")
+            # Let's find the link with the required page
+            texts = links.map { |l| l.inner_text }
+            number_texts = texts.select { |t| t != "..." }
+            max_page = number_texts.max { |l| l.to_i }.to_i
+            min_page = number_texts.min { |l| l.to_i }.to_i
+            if i == min_page - 1 && texts[0] == "..."
+              link = links[0]
+            elsif i >= min_page && i <= max_page
+              link = links.find {|l| l.inner_text == i.to_s }
+            elsif i == max_page + 1 && texts[-1] == "..."
+              link = links[-1]
+            else
+              raise "Couldn't find link"
+            end
 
-            # We're doing this ugly trick of handcoding the postback
-            # "argument" to get any page in a single request. Otherwise
-            # because of the strange paging setup it might require a few clicks
-            target, argument = extract_postback(links[-1])
-            argument = 'Page$' + i.to_s
+            target, argument = extract_postback(link)
             page = postback(page.form, target, argument)
           end
 
