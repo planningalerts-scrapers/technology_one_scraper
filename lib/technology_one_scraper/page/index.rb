@@ -17,11 +17,10 @@ module TechnologyOneScraper
           yield(
             "council_reference" => council_reference,
             "address" => row["Formatted Address"],
-            "description" => row["Description"],
+            "description" => row["Description"].squeeze(" "),
             "info_url" => (page.uri + info_url).to_s,
             "date_scraped" => Date.today.to_s,
-            # TODO: Be more careful with date parsing
-            "date_received" => Date.parse(row["Lodgement Date"]).to_s
+            "date_received" => Date.strptime(row["Lodgement Date"], "%d/%m/%Y").to_s
           )
         end
       end

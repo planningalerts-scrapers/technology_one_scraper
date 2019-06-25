@@ -550,7 +550,7 @@
   date_received: '2019-06-19'
 - council_reference: BP19/1063
   address: 54 Greensand Promenade TREEBY WA 6164
-  description: Building Permit Application - Certified -  Amendment to (BP19/0409)
+  description: Building Permit Application - Certified - Amendment to (BP19/0409)
   info_url: https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=BP19%2f1063
   date_scraped: '2019-05-15'
   date_received: '2019-06-20'
@@ -574,7 +574,7 @@
   date_received: '2019-06-20'
 - council_reference: BP19/1067
   address: 14 Duchart Way COOGEE WA 6166
-  description: Building Permit Application  (Cert) Brick wall/fence
+  description: Building Permit Application (Cert) Brick wall/fence
   info_url: https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=BP19%2f1067
   date_scraped: '2019-05-15'
   date_received: '2019-06-20'
@@ -861,7 +861,7 @@
   date_received: '2019-06-09'
 - council_reference: DA19/0402
   address: 128 Holmes Road MUNSTER WA 6166
-  description: Single House - Retaining  Walls (Paddock Retaining Walls)
+  description: Single House - Retaining Walls (Paddock Retaining Walls)
   info_url: https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=DA19%2f0402
   date_scraped: '2019-05-15'
   date_received: '2019-06-10'
@@ -873,7 +873,7 @@
   date_received: '2019-06-10'
 - council_reference: DA19/0404
   address: 527A Rockingham Road MUNSTER WA 6166
-  description: Grouped Dwelling -  Patio
+  description: Grouped Dwelling - Patio
   info_url: https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=DA19%2f0404
   date_scraped: '2019-05-15'
   date_received: '2019-06-10'
@@ -952,8 +952,8 @@
   date_received: '2019-06-12'
 - council_reference: DA19/0417
   address: 40 Mosedale Retreat ATWELL WA 6164
-  description: Duplication to DA19/0416 -   Home Occupation - 4. Home Occupation -
-    IT repairs
+  description: Duplication to DA19/0416 - Home Occupation - 4. Home Occupation - IT
+    repairs
   info_url: https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=DA19%2f0417
   date_scraped: '2019-05-15'
   date_received: '2019-06-13'
@@ -965,7 +965,7 @@
   date_received: '2019-06-13'
 - council_reference: DA19/0419
   address: 24 Fawcett Road MUNSTER WA 6166
-  description: Single (R-Code) House  - Patio
+  description: Single (R-Code) House - Patio
   info_url: https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=DA19%2f0419
   date_scraped: '2019-05-15'
   date_received: '2019-06-14'
