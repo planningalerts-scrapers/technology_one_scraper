@@ -67,11 +67,11 @@ module TechnologyOneScraper
     puts "Saving record " + record["council_reference"] + ", " + record["address"]
   end
 
-  def self.url_period(base_url, period)
+  def self.url_period(base_url, period, webguest = "P1.WEBGUEST")
     params = {
       "Field" => "S",
       "Period" => period,
-      "r" => "P1.WEBGUEST",
+      "r" => webguest,
       "f" => "$P1.ETR.SEARCH.S#{period}"
     }
     "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
