@@ -60,11 +60,6 @@ module TechnologyOneScraper
         agent = Mechanize.new
         page = agent.get(url)
 
-        if page.search("tr.pagerRow").empty?
-          puts 'Nothing to scape'
-          exit 0
-        end
-
         i = 1
         while page
           puts "Scraping page #{i}..."
