@@ -68,10 +68,12 @@ module TechnologyOneScraper
   end
 
   def self.url_period(base_url, period)
-    "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx" \
-      "?Field=S" \
-      "&Period=#{period}" \
-      "&r=P1.WEBGUEST" \
-      "&f=%24P1.ETR.SEARCH.S#{period}"
+    params = {
+      "Field" => "S",
+      "Period" => period,
+      "r" => "P1.WEBGUEST",
+      "f" => "$P1.ETR.SEARCH.S#{period}"
+    }
+    "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
   end
 end
