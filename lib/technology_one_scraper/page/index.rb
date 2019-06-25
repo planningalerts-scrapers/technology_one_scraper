@@ -10,7 +10,7 @@ module TechnologyOneScraper
           council_reference = row["Application Link"]
           info_url = "eTrackApplicationDetails.aspx" +
                      # TODO: Do proper escaping rather than this hack
-                     "?ApplicationId=" + council_reference.gsub("/", "%2f") +
+                     "?ApplicationId=" + council_reference.gsub("/", "%2F") +
                      "&f=%24P1.ETR.APPDET.VIW" \
                      "&r=P1.WEBGUEST" \
 
