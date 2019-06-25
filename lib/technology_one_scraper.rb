@@ -16,6 +16,7 @@ require "technology_one_scraper/authority/tamworth"
 require "technology_one_scraper/authority/wagga"
 require "technology_one_scraper/authority/wyndham"
 require "technology_one_scraper/postback"
+require "technology_one_scraper/table"
 require "technology_one_scraper/page/index"
 
 require "scraperwiki"

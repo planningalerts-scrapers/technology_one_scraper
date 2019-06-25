@@ -5,21 +5,21 @@ module TechnologyOneScraper
   module Authority
     module Cockburn
       def self.scrape_index_page(page)
-        results = page.search("tr.normalRow, tr.alternateRow")
-
-        results.each do |result|
-          council_reference = result.search("td")[0].inner_text
+        table = page.at("table.grid")
+        Table.extract_table(table).each do |row|
+          council_reference = row["Application Link"]
           info_url = 'eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=' +
                      # TODO: Do proper escaping rather than this hack
                      council_reference.gsub("/", "%2f")
 
           yield(
             'council_reference' => council_reference,
-            'address'           => result.search("td")[3].inner_text.to_s,
-            'description'       => result.search("td")[2].inner_text.to_s,
+            'address'           => row["Formatted Address"],
+            'description'       => row["Description"],
             'info_url'          => (page.uri + info_url).to_s,
             'date_scraped'      => Date.today.to_s,
-            'date_received'     => Date.parse(result.search("td")[1]).to_s
+            # TODO: Be more careful with date parsing
+            'date_received'     => Date.parse(row["Lodgement Date"]).to_s
           )
         end
       end
