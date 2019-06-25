@@ -2,24 +2,19 @@ require 'scraperwiki'
 require 'mechanize'
 require 'uri'
 
-# TODO: Get rid of this urgently
-class Mechanize::Form
-  def postback target, argument
-    self['__EVENTTARGET'], self['__EVENTARGUMENT'] = target, argument
-    submit
-  end
-end
-
-# TODO: Get rid of this urgently
-class Hash
-  def has_blank?
-    self.values.any?{|v| v.nil? || v.length == 0}
-  end
-end
-
 module TechnologyOneScraper
   module Authority
     module Noosa
+      def self.has_blank?(hash)
+        hash.values.any?{|v| v.nil? || v.length == 0}
+      end
+
+      def self.postback(form, target, argument)
+        form['__EVENTTARGET'] = target
+        form['__EVENTARGUMENT'] = argument
+        form.submit
+      end
+
       def self.scrape_and_save
         case ENV['MORPH_PERIOD']
           when 'lastmonth'
@@ -46,7 +41,7 @@ module TechnologyOneScraper
           target, argument = page.search("tr.pagerRow").search("td")[-1].at('a')['href'].scan(/'([^']*)'/).flatten
           while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
             target, argument = page.search("tr.pagerRow").search("td")[-1].at('a')['href'].scan(/'([^']*)'/).flatten
-            page = page.form.postback target, argument
+            page = postback(page.form, target, argument)
           end
           totalPages = page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
         end
@@ -57,7 +52,7 @@ module TechnologyOneScraper
           if i == 1
             page = agent.get(url)
           else
-            page = page.form.postback target, 'Page$' + i.to_s
+            page = postback(page.form, target, 'Page$' + i.to_s)
           end
 
           results = page.search("tr.normalRow, tr.alternateRow")
@@ -75,7 +70,7 @@ module TechnologyOneScraper
               'date_received'     => Date.parse(result.search("td")[1]).to_s
             }
 
-            if record.has_blank?
+            if has_blank?(record)
               puts 'Something is blank, skipping record ' + record['council_reference']
               puts record
             else

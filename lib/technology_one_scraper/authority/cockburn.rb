@@ -1,17 +1,15 @@
 require 'scraperwiki'
 require 'mechanize'
 
-# TODO: Remove this urgently
-class Mechanize::Form
-  def postback target, argument
-    self['__EVENTTARGET'], self['__EVENTARGUMENT'] = target, argument
-    submit
-  end
-end
-
 module TechnologyOneScraper
   module Authority
     module Cockburn
+      def self.postback(form, target, argument)
+        form['__EVENTTARGET'] = target
+        form['__EVENTARGUMENT'] = argument
+        form.submit
+      end
+
       def self.scrape_and_save
         case ENV['MORPH_PERIOD']
           when 'lastmonth'
@@ -40,7 +38,7 @@ module TechnologyOneScraper
 
         while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
           target, argument = page.search("tr.pagerRow").search("td")[-1].at('a')['href'].scan(/'([^']*)'/).flatten
-          page = page.form.postback target, argument
+          page = postback(page.form, target, argument)
         end
         totalPages = page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
 
@@ -50,7 +48,7 @@ module TechnologyOneScraper
           if i == 1
             page = agent.get(url)
           else
-            page = page.form.postback target, 'Page$' + i.to_s
+            page = postback(page.form, target, 'Page$' + i.to_s)
           end
 
           results = page.search("tr.normalRow, tr.alternateRow")
