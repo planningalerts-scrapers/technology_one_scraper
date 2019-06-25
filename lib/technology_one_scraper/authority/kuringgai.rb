@@ -5,14 +5,15 @@ module TechnologyOneScraper
   module Authority
     module Kuringgai
       def self.scrape_page(page, info_url)
-        page.at("table.grid").search("tr.normalRow,tr.alternateRow").each do |tr|
-          day, month, year = tr.search('td')[1].inner_text.split("/").map{|s| s.to_i}
+        table = page.at("table.grid")
+        Table.extract_table(table).each do |row|
+          council_reference = row["Application Link"]
           record = {
-            "info_url" => info_url + tr.search('a')[0].inner_text,
-            "council_reference" => tr.search('a')[0].inner_text,
-            "date_received" => Date.new(year, month, day).to_s,
-            "description" => tr.search('td')[2].inner_text.squeeze(" ").strip,
-            "address" => tr.search('a')[1].inner_text,
+            "info_url" => info_url + council_reference,
+            "council_reference" => council_reference,
+            "date_received" => Date.strptime(row["Lodgement Date"], "%d/%m/%Y").to_s,
+            "description" => row["Description"].squeeze(" "),
+            "address" => row["Formatted Address"],
             "date_scraped" => Date.today.to_s
           }
           TechnologyOneScraper.save(record)
