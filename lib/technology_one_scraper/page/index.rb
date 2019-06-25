@@ -6,14 +6,14 @@ module TechnologyOneScraper
   module Page
     # A list of results of a search
     module Index
-      def self.scrape(page)
+      def self.scrape(page, webguest = "P1.WEBGUEST")
         table = page.at("table.grid")
         Table.extract_table(table).each do |row|
           council_reference = row["Application Link"]
           params = {
             # The first two parameters appear to be required to get the
             # correct authentication to view the page without a login or session
-            "r" => "P1.WEBGUEST",
+            "r" => webguest,
             "f" => "$P1.ETR.APPDET.VIW",
             "ApplicationId" => council_reference
           }

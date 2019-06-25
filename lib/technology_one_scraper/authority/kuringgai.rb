@@ -4,28 +4,6 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Kuringgai
-      def self.scrape_page(page)
-        table = page.at("table.grid")
-        Table.extract_table(table).each do |row|
-          council_reference = row["Application Link"]
-          params = {
-            "ApplicationId" => council_reference,
-            "f" => "$P1.ETR.APPDET.VIW",
-            "r" => "KC_WEBGUEST"
-          }
-          info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
-          record = {
-            "info_url" => (page.uri + info_url).to_s,
-            "council_reference" => council_reference,
-            "date_received" => Date.strptime(row["Lodgement Date"], "%d/%m/%Y").to_s,
-            "description" => row["Description"].squeeze(" "),
-            "address" => row["Formatted Address"],
-            "date_scraped" => Date.today.to_s
-          }
-          TechnologyOneScraper.save(record)
-        end
-      end
-
       def self.scrape_and_save
         period = 'L28'
 
@@ -35,7 +13,9 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          scrape_page(page)
+          Page::Index.scrape(page, "KC_WEBGUEST") do |record|
+            TechnologyOneScraper.save(record)
+          end
           page = Page::Index.next(page)
         end
       end
