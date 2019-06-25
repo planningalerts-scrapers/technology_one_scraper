@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "active_support/core_ext/hash"
+
 module TechnologyOneScraper
   module Page
     # A list of results of a search
@@ -8,11 +10,14 @@ module TechnologyOneScraper
         table = page.at("table.grid")
         Table.extract_table(table).each do |row|
           council_reference = row["Application Link"]
-          info_url = "eTrackApplicationDetails.aspx" +
-                     # TODO: Do proper escaping rather than this hack
-                     "?ApplicationId=" + council_reference.gsub("/", "%2F") +
-                     "&f=%24P1.ETR.APPDET.VIW" \
-                     "&r=P1.WEBGUEST" \
+          params = {
+            # The first two parameters appear to be required to get the
+            # correct authentication to view the page without a login or session
+            "r" => "P1.WEBGUEST",
+            "f" => "$P1.ETR.APPDET.VIW",
+            "ApplicationId" => council_reference
+          }
+          info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
 
           yield(
             "council_reference" => council_reference,
