@@ -5,16 +5,16 @@ module TechnologyOneScraper
   module Authority
     module Fremantle
       def self.scrape_index_page(page)
-        page.search("tr[@class='normalRow'], tr[@class='alternateRow']").each do |row|
-          cells = row.search('td')
-
-          council_reference = cells[0].search("a").text
+        table = page.at("table.grid")
+        Table.extract_table(table).each do |row|
           yield(
-            'council_reference' => council_reference,
-            'address' => cells[5].search("a").text,
-            'description' => cells[2].text,
+            'council_reference' => row["Application Link"],
+            'address' => row["Formatted Address"],
+            'description' => row["Description"],
+            # TODO: Add a direct link to the application?
             'info_url' => 'https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearch.aspx?r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.ENQ',
-            'date_received' => Date.parse(cells[1].text).strftime("%Y-%m-%d"),
+            # TODO: Do better date parsing
+            'date_received' => Date.parse(row["Lodgement Date"]).to_s,
             'date_scraped' => Date.today.to_s
           )
         end
