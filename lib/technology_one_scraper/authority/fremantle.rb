@@ -8,12 +8,15 @@ module TechnologyOneScraper
         table = page.at("table.grid")
         Table.extract_table(table).each do |row|
           council_reference = row["Application Link"]
+          info_url = "eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=" +
+                     # TODO: Do proper encoding rather than the hack
+                     council_reference.gsub("/", "%2f")
+
           yield(
             'council_reference' => council_reference,
             'address' => row["Formatted Address"],
             'description' => row["Description"],
-            # TODO: Do proper encoding rather than the hack
-            'info_url' => "https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=" + council_reference.gsub("/", "%2f"),
+            'info_url' => (page.uri + info_url).to_s,
             # TODO: Do better date parsing
             'date_received' => Date.parse(row["Lodgement Date"]).to_s,
             'date_scraped' => Date.today.to_s
