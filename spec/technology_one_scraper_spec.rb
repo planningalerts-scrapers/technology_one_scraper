@@ -38,7 +38,9 @@ RSpec.describe TechnologyOneScraper do
     end
 
     AUTHORITIES = %i[
-      wyndham
+      blacktown cockburn fremantle kuringgai lithgow manningham
+      marrickville noosa port_adelaide ryde sutherland tamworth
+      wagga wyndham
     ].freeze
 
     AUTHORITIES.each do |authority|
