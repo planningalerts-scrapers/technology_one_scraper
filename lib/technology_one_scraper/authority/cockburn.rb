@@ -21,7 +21,7 @@ module TechnologyOneScraper
             'description'       => result.search("td")[2].inner_text.to_s,
             'info_url'          => (page.uri + info_url).to_s,
             'date_scraped'      => Date.today.to_s,
-            'date_received'     => Date.parse(result.search("td")[1]).to_s            
+            'date_received'     => Date.parse(result.search("td")[1]).to_s
           )
         end
       end
@@ -43,28 +43,28 @@ module TechnologyOneScraper
         end
       end
 
-      # i is the current page number
-      def self.next_page(page, i)
+      def self.extract_current_page_no(page)
+        page.search("tr.pagerRow").search("td span").inner_text.to_i
+      end
+
+      def self.next_page(page)
+        i = extract_current_page_no(page)
         link = find_link_for_page_number(page, i + 1)
         Postback.click(link, page) if link
       end
 
       def self.scrape_and_save
         period = "TM"
-
-        url         = 'https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S' + period
+        url = 'https://ecouncil.cockburn.wa.gov.au/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S' + period
 
         agent = Mechanize.new
         page = agent.get(url)
 
-        i = 1
         while page
-          puts "Scraping page #{i}..."
           scrape_index_page(page) do |record|
             TechnologyOneScraper.save(record)
           end
-          page = next_page(page, i)
-          i += 1
+          page = next_page(page)
         end
       end
     end
