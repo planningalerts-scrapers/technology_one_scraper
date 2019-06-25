@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
 require "technology_one_scraper/authority/cockburn"
@@ -14,6 +16,7 @@ require "technology_one_scraper/authority/tamworth"
 require "technology_one_scraper/authority/wagga"
 require "technology_one_scraper/authority/wyndham"
 
+# Scrape the technology one system
 module TechnologyOneScraper
   def self.scrape_and_save(authority)
     case authority
