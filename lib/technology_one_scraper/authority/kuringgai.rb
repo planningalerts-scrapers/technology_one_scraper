@@ -13,7 +13,7 @@ module TechnologyOneScraper
           "Field" => "S",
           "Period" => period,
           "r" => webguest,
-          "f" => "P1.ETR.SEARCH.S#{period}"
+          "f" => "$P1.ETR.SEARCH.S#{period}"
         }
         url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
 
