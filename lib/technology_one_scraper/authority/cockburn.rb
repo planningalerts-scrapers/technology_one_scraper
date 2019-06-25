@@ -45,8 +45,8 @@ module TechnologyOneScraper
         end
 
         while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
-          link = page.search("tr.pagerRow").search("td")[-1].at('a')
-          target, argument = extract_postback(link)
+          links = page.search("tr.pagerRow").search("td a")
+          target, argument = extract_postback(links[-1])
           page = postback(page.form, target, argument)
         end
         totalPages = page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
@@ -57,11 +57,12 @@ module TechnologyOneScraper
           if i == 1
             page = agent.get(url)
           else
+            links = page.search("tr.pagerRow").search("td a")
+
             # We're doing this ugly trick of handcoding the postback
             # "argument" to get any page in a single request. Otherwise
             # because of the strange paging setup it might require a few clicks
-            link = page.search("tr.pagerRow").search("td")[-1].at('a')
-            target, argument = extract_postback(link)
+            target, argument = extract_postback(links[-1])
             argument = 'Page$' + i.to_s
             page = postback(page.form, target, argument)
           end
