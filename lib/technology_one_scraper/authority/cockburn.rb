@@ -1,3 +1,5 @@
+require "technology_one_scraper/postback"
+
 require 'scraperwiki'
 require 'mechanize'
 
@@ -37,18 +39,10 @@ module TechnologyOneScraper
         end
       end
 
-      # Use postback to click on a link
-      def self.click(link, page)
-        target, argument = link['href'].scan(/'([^']*)'/).flatten
-        page.form['__EVENTTARGET'] = target
-        page.form['__EVENTARGUMENT'] = argument
-        page.form.submit
-      end
-
       # i is the current page number
       def self.next_page(page, i)
         link = find_link_for_page_number(page, i + 1)
-        click(link, page) if link
+        Postback.click(link, page) if link
       end
 
       def self.scrape_and_save
