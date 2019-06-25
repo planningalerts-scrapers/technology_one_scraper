@@ -13,7 +13,10 @@ module TechnologyOneScraper
           "Field" => "S",
           "Period" => period,
           "r" => webguest,
-          "f" => "P1.ETR.SEARCH.STW"
+          # Even though the last bit "TW" represents the period, it doesn't
+          # seem to affect the search result just whether it's authenticated
+          # TODO: Investigate this some more
+          "f" => "P1.ETR.SEARCH.S" + "TW"
         }.to_query
         url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?" + query
 
