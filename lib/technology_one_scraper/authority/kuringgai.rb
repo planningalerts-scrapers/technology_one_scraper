@@ -7,15 +7,15 @@ module TechnologyOneScraper
       def self.scrape_and_save
         period = 'TM'
         webguest = "KC_WEBGUEST"
-
         base_url = "https://eservices.kmc.nsw.gov.au/T1ePropertyProd"
-        query = {
+
+        params = {
           "Field" => "S",
           "Period" => period,
           "r" => webguest,
           "f" => "P1.ETR.SEARCH.S#{period}"
-        }.to_query
-        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?" + query
+        }
+        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
 
         agent = Mechanize.new
         page = agent.get(url)
