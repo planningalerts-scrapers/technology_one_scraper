@@ -40,15 +40,7 @@ module TechnologyOneScraper
       end
 
       def self.scrape_and_save
-        case ENV['MORPH_PERIOD']
-        when 'lastmonth'
-          period = 'LM'
-        when 'thisweek'
-          period = 'TW'
-        else
-          period = 'TM'
-        end
-        puts "Getting '" + period + "' data, changable via MORPH_PERIOD environment"
+        period = 'TM'
 
         base_url = "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack"
         url = "#{base_url}/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&Group=DA&SearchFunction=SSC.P1.ETR.SEARCH.DA&r=SSC.P1.WEBGUEST&f=SSC.ETR.SRCH.STW.DA&ResultsFunction=SSC.P1.ETR.RESULT.DA"

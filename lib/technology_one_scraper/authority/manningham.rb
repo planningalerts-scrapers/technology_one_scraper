@@ -11,18 +11,7 @@ module TechnologyOneScraper
       end
 
       def self.scrape_and_save
-        case ENV['MORPH_PERIOD']
-          when 'lastmonth'
-          	period = "LM"
-          when 'thismonth'
-          	period = "TM"
-          when 'thisweek'
-            period = "TW"
-          else
-            period = "TM"
-          	ENV['MORPH_PERIOD'] = 'thismonth'
-        end
-        puts "Getting data in `" + ENV['MORPH_PERIOD'] + "`, changable via MORPH_PERIOD environment"
+        period = "TM"
 
         url         = 'https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S' + period
         info_url    = 'https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId='

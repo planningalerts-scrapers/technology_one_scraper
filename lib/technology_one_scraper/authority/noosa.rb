@@ -16,16 +16,7 @@ module TechnologyOneScraper
       end
 
       def self.scrape_and_save
-        case ENV['MORPH_PERIOD']
-          when 'lastmonth'
-          	period = "LM"
-          when 'thismonth'
-          	period = "TM"
-          else
-            period = "TW"
-          	ENV['MORPH_PERIOD'] = 'thisweek'
-        end
-        puts "Getting data in `" + ENV['MORPH_PERIOD'] + "`, changable via MORPH_PERIOD environment"
+        period = "TW"
 
         url         = 'https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=P1.WEBGUEST&f=$P1.ETR.SEARCH.S' + period
         info_url    = 'https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId='

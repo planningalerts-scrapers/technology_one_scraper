@@ -49,15 +49,7 @@ module TechnologyOneScraper
       end
 
       def self.scrape_and_save
-        case ENV['MORPH_PERIOD']
-        when 'thismonth'
-          period = 'TM'
-        when 'lastmonth'
-          period = 'LM'
-        else
-          period = 'TW'
-        end
-        puts "Getting '" + period + "' data, changable via MORPH_PERIOD environment"
+        period = 'TW'
 
         comment_url = "mailto:trc@tamworth.nsw.gov.au"
         base_url = "https://eproperty.tamworth.nsw.gov.au/ePropertyProd/P1/eTrack"
