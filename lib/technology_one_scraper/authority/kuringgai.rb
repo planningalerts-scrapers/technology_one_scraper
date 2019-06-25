@@ -8,10 +8,12 @@ module TechnologyOneScraper
         table = page.at("table.grid")
         Table.extract_table(table).each do |row|
           council_reference = row["Application Link"]
-          info_url = "eTrackApplicationDetails.aspx" +
-                     "?ApplicationId=" + council_reference +
-                     "&f=$P1.ETR.APPDET.VIW" +
-                     "&r=KC_WEBGUEST"
+          params = {
+            "ApplicationId" => council_reference,
+            "f" => "$P1.ETR.APPDET.VIW",
+            "r" => "KC_WEBGUEST"
+          }
+          info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
           record = {
             "info_url" => (page.uri + info_url).to_s,
             "council_reference" => council_reference,
