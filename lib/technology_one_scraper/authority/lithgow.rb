@@ -23,9 +23,9 @@ module TechnologyOneScraper
       def self.scrape_and_save
         period = 'L14'
 
-        base_url = "https://eservices.lithgow.nsw.gov.au/ePropertyProd/P1/eTrack"
-        url = "#{base_url}/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S" + period
-        info_url_base = "#{base_url}/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId="
+        base_url = "https://eservices.lithgow.nsw.gov.au/ePropertyProd"
+        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S" + period
+        info_url_base = "#{base_url}/P1/eTrack/eTrackApplicationDetails.aspx?r=P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId="
 
         agent = Mechanize.new
 
