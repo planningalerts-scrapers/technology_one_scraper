@@ -26,6 +26,10 @@ module TechnologyOneScraper
         end
       end
 
+      def self.extract_postback(link)
+        link['href'].scan(/'([^']*)'/).flatten
+      end
+
       def self.scrape_and_save
         period = "TM"
 
@@ -41,7 +45,8 @@ module TechnologyOneScraper
         end
 
         while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
-          target, argument = page.search("tr.pagerRow").search("td")[-1].at('a')['href'].scan(/'([^']*)'/).flatten
+          link = page.search("tr.pagerRow").search("td")[-1].at('a')
+          target, argument = extract_postback(link)
           page = postback(page.form, target, argument)
         end
         totalPages = page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
@@ -52,7 +57,13 @@ module TechnologyOneScraper
           if i == 1
             page = agent.get(url)
           else
-            page = postback(page.form, target, 'Page$' + i.to_s)
+            # We're doing this ugly trick of handcoding the postback
+            # "argument" to get any page in a single request. Otherwise
+            # because of the strange paging setup it might require a few clicks
+            link = page.search("tr.pagerRow").search("td")[-1].at('a')
+            target, argument = extract_postback(link)
+            argument = 'Page$' + i.to_s
+            page = postback(page.form, target, argument)
           end
 
           scrape_and_save_index_page(page, info_url)
