@@ -4,6 +4,28 @@ module TechnologyOneScraper
   module Page
     # A list of results of a search
     module Index
+      def self.scrape(page)
+        table = page.at("table.grid")
+        Table.extract_table(table).each do |row|
+          council_reference = row["Application Link"]
+          info_url = "eTrackApplicationDetails.aspx" \
+                     "?r=P1.WEBGUEST" \
+                     "&f=%24P1.ETR.APPDET.VIW" +
+                     # TODO: Do proper escaping rather than this hack
+                     "&ApplicationId=" + council_reference.gsub("/", "%2f")
+
+          yield(
+            "council_reference" => council_reference,
+            "address" => row["Formatted Address"],
+            "description" => row["Description"],
+            "info_url" => (page.uri + info_url).to_s,
+            "date_scraped" => Date.today.to_s,
+            # TODO: Be more careful with date parsing
+            "date_received" => Date.parse(row["Lodgement Date"]).to_s
+          )
+        end
+      end
+
       def self.next(page)
         i = extract_current_page_no(page)
         link = find_link_for_page_number(page, i + 1)
