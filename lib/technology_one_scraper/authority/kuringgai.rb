@@ -19,6 +19,12 @@ module TechnologyOneScraper
         end
       end
 
+      def self.next_page(page, current_page_no)
+        page_links = page.at(".pagerRow")
+        next_page_link = page_links&.search("a")&.find{|a| a.inner_text == (current_page_no + 1).to_s}
+        Postback.click(next_page_link, page) if next_page_link
+      end
+
       def self.scrape_and_save
         period = 'L28'
 
@@ -29,22 +35,13 @@ module TechnologyOneScraper
 
         page = agent.get(url)
         current_page_no = 1
-        next_page_link = true
 
-        while next_page_link
+        while page
           puts "Scraping page #{current_page_no}..."
           scrape_page(page, info_url)
 
-          page_links = page.at(".pagerRow")
-          if page_links
-            next_page_link = page_links.search("a").find{|a| a.inner_text == (current_page_no + 1).to_s}
-          else
-            next_page_link = nil
-          end
-          if next_page_link
-            current_page_no += 1
-            page = Postback.click(next_page_link, page)
-          end
+          page = next_page(page, current_page_no)
+          current_page_no += 1
         end
       end
     end
