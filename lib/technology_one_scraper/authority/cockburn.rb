@@ -49,6 +49,12 @@ module TechnologyOneScraper
         end
       end
 
+      # Use postback to click on a link
+      def self.click(link, page)
+        target, argument = extract_postback(link)
+        postback(page.form, target, argument)
+      end
+
       def self.scrape_and_save
         period = "TM"
 
@@ -65,8 +71,8 @@ module TechnologyOneScraper
 
         while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
           links = page.search("tr.pagerRow").search("td a")
-          target, argument = extract_postback(links[-1])
-          page = postback(page.form, target, argument)
+          link = links[-1]
+          page = click(link, page)
         end
         totalPages = page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
 
@@ -77,8 +83,7 @@ module TechnologyOneScraper
             page = agent.get(url)
           else
             link = find_link_for_page_number(page, i)
-            target, argument = extract_postback(link)
-            page = postback(page.form, target, argument)
+            page = click(link, page)
           end
 
           scrape_and_save_index_page(page, info_url)
