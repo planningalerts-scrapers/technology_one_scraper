@@ -6,14 +6,22 @@ module TechnologyOneScraper
     module Kuringgai
       def self.scrape_and_save
         period = 'L28'
+        webguest = "KC_WEBGUEST"
 
-        url = "https://eservices.kmc.nsw.gov.au/T1ePropertyProd/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&r=KC_WEBGUEST&f=P1.ETR.SEARCH.STW"
+        base_url = "https://eservices.kmc.nsw.gov.au/T1ePropertyProd"
+        query = {
+          "Field" => "S",
+          "Period" => period,
+          "r" => webguest,
+          "f" => "P1.ETR.SEARCH.STW"
+        }.to_query
+        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?" + query
 
         agent = Mechanize.new
         page = agent.get(url)
 
         while page
-          Page::Index.scrape(page, "KC_WEBGUEST") do |record|
+          Page::Index.scrape(page, webguest) do |record|
             TechnologyOneScraper.save(record)
           end
           page = Page::Index.next(page)
