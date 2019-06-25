@@ -47,6 +47,14 @@ module TechnologyOneScraper
         page.form.submit
       end
 
+      def self.extract_total_pages(page)
+        while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
+          links = page.search("tr.pagerRow").search("td a")
+          page = click(links[-1], page)
+        end
+        page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
+      end
+
       def self.scrape_and_save
         period = "TM"
 
@@ -61,13 +69,7 @@ module TechnologyOneScraper
           exit 0
         end
 
-        while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
-          links = page.search("tr.pagerRow").search("td a")
-          link = links[-1]
-          page = click(link, page)
-        end
-        totalPages = page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
-
+        totalPages = extract_total_pages(page)
         (1..totalPages).each do |i|
           puts "Scraping page " + i.to_s + " of " + totalPages.to_s
 
