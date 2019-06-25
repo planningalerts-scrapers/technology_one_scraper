@@ -12,7 +12,7 @@ RSpec.describe TechnologyOneScraper do
       File.delete("./data.sqlite") if File.exist?("./data.sqlite")
 
       VCR.use_cassette(authority) do
-        Timecop.freeze(Date.new(2019, 5, 14)) do
+        Timecop.freeze(Date.new(2019, 5, 15)) do
           TechnologyOneScraper.scrape_and_save(authority)
         end
       end
@@ -38,6 +38,7 @@ RSpec.describe TechnologyOneScraper do
     end
 
     AUTHORITIES = %i[
+      wyndham
     ].freeze
 
     AUTHORITIES.each do |authority|
