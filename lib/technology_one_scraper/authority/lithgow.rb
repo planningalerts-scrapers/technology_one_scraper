@@ -16,9 +16,7 @@ module TechnologyOneScraper
             'date_received' => Date.parse(tr.search("td")[1].inner_text).to_s,
           }
 
-          puts "Saving record " + record['council_reference'] + ", " + record['address']
-      #       puts record
-          ScraperWiki.save_sqlite(['council_reference'], record)
+          TechnologyOneScraper.save(record)
         end
       end
 

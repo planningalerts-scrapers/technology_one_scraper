@@ -16,8 +16,7 @@ module TechnologyOneScraper
             "date_scraped" => Date.today.to_s
           }
           record["info_url"] = info_url_base + CGI.escape(record["council_reference"])
-          #p record
-          ScraperWiki.save_sqlite(['council_reference'], record)
+          TechnologyOneScraper.save(record)
         end
       end
 

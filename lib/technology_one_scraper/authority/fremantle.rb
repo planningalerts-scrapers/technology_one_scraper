@@ -27,7 +27,7 @@ module TechnologyOneScraper
         'date_received' => Date.parse(cells[1].text).strftime("%Y-%m-%d"),
         'date_scraped' => Date.today.to_s,
         }
-        ScraperWiki.save_sqlite(['council_reference'], record)
+        TechnologyOneScraper.save(record)
       end
 
       def self.scrape_and_save

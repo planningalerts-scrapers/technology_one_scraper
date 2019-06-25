@@ -16,6 +16,8 @@ require "technology_one_scraper/authority/tamworth"
 require "technology_one_scraper/authority/wagga"
 require "technology_one_scraper/authority/wyndham"
 
+require "scraperwiki"
+
 # Scrape the technology one system
 module TechnologyOneScraper
   def self.scrape_and_save(authority)
@@ -51,5 +53,14 @@ module TechnologyOneScraper
     else
       raise "Unexpected authority: #{authority}"
     end
+  end
+
+  def self.save(record)
+    log(record)
+    ScraperWiki.save_sqlite(["council_reference"], record)
+  end
+
+  def self.log(record)
+    puts "Saving record " + record["council_reference"] + ", " + record["address"]
   end
 end

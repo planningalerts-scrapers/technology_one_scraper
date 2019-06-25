@@ -24,8 +24,7 @@ module TechnologyOneScraper
               "date_received" => DateTime.parse(app.xpath('LodgementDate').inner_text).to_date.to_s
             }
 
-            puts "Saved record " + record['council_reference']
-            ScraperWiki.save_sqlite(['council_reference'], record)
+            TechnologyOneScraper.save(record)
         end
       end
     end

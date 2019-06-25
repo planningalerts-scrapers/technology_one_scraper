@@ -40,9 +40,7 @@ module TechnologyOneScraper
             "date_scraped" => Date.today.to_s
           }
 
-          ScraperWiki.save_sqlite(['council_reference'], record)
-          puts "saving " + record['council_reference']
-
+          TechnologyOneScraper.save(record)
         end
       end
 

@@ -25,9 +25,7 @@ module TechnologyOneScraper
 
           record["info_url"] = info_url_base + CGI.escape(record["council_reference"])
 
-          puts "Saving record " + record['council_reference'] + ", " + record['address']
-      #       puts record
-          ScraperWiki.save_sqlite(['council_reference'], record)
+          TechnologyOneScraper.save(record)
         end
       end
 

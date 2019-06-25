@@ -63,9 +63,7 @@ module TechnologyOneScraper
               puts 'Something is blank, skipping record ' + record['council_reference']
               puts record
             else
-              puts "Saving record " + record['council_reference'] + " - " + record['address']
-        #       puts record
-              ScraperWiki.save_sqlite(['council_reference'], record)
+              TechnologyOneScraper.save(record)
             end
           end
         end
