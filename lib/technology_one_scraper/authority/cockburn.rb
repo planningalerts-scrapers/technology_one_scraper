@@ -4,12 +4,6 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Cockburn
-      def self.postback(form, target, argument)
-        form['__EVENTTARGET'] = target
-        form['__EVENTARGUMENT'] = argument
-        form.submit
-      end
-
       def self.scrape_and_save_index_page(page, info_url)
         results = page.search("tr.normalRow, tr.alternateRow")
         results.each do |result|
@@ -24,10 +18,6 @@ module TechnologyOneScraper
 
           TechnologyOneScraper.save(record)
         end
-      end
-
-      def self.extract_postback(link)
-        link['href'].scan(/'([^']*)'/).flatten
       end
 
       # Find the link to the given page number (if it's there)
@@ -51,8 +41,10 @@ module TechnologyOneScraper
 
       # Use postback to click on a link
       def self.click(link, page)
-        target, argument = extract_postback(link)
-        postback(page.form, target, argument)
+        target, argument = link['href'].scan(/'([^']*)'/).flatten
+        page.form['__EVENTTARGET'] = target
+        page.form['__EVENTARGUMENT'] = argument
+        page.form.submit
       end
 
       def self.scrape_and_save
