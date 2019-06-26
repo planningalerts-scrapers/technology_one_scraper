@@ -15,11 +15,21 @@ module TechnologyOneScraper
         form.submit
       end
 
+      # TODO: Scrape more of what there is on the detail page
+      def self.scrape_detail_page(page)
+        {
+          address: page.search('td.headerColumn[contains("Address")] ~ td').inner_text
+        }
+      end
+
       def self.scrape_and_save_index_page(page, agent_detail_page, info_url)
         results = page.search("tr.normalRow, tr.alternateRow")
         results.each do |result|
           detail_page = agent_detail_page.get( info_url + URI::encode_www_form_component(result.search("td")[0].inner_text) )
-          address = detail_page.search('td.headerColumn[contains("Address")] ~ td').inner_text
+          detail_info = scrape_detail_page(detail_page)
+          address = detail_info[:address]
+          # TODO: Cross check what we get from the index page and the detail
+          # page to make sure they match
 
           record = {
             'council_reference' => result.search("td")[0].inner_text.to_s,
