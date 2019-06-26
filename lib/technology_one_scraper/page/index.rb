@@ -11,6 +11,13 @@ module TechnologyOneScraper
         Table.extract_table(table).each do |row|
           normalised = row.map { |k, v| [normalise_name(k, v), v] }.to_h
 
+          if normalised[:council_reference].nil? ||
+             normalised[:address].nil? ||
+             normalised[:description].nil? ||
+             normalised[:date_received].nil?
+            raise "We don't have all the values we need: #{normalised}"
+          end
+
           params = {
             # The first two parameters appear to be required to get the
             # correct authentication to view the page without a login or session
