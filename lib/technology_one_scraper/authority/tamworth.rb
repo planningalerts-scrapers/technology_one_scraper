@@ -19,12 +19,6 @@ module TechnologyOneScraper
             "info_url" => info_url_base + CGI.escape(council_reference)
           }
 
-          # The description of community facilities development can be unhelpful,
-          # like just "other", so provide a little helpful context.
-          if tds[5].text == "Community Facilities Development"
-            record["description"].prepend("Community Facilities Development: ")
-          end
-
           yield record
         end
       end
