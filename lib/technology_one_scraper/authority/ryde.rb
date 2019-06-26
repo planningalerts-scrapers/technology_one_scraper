@@ -4,19 +4,16 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Ryde
-      def self.scrape_and_save_index_page(page, info_url)
+      def self.scrape_index_page(page, info_url)
         results = page.search("tr.normalRow, tr.alternateRow")
         results.each do |result|
-          record = {
-            'council_reference' => result.search("td")[0].inner_text.to_s,
-            'address'           => result.search("td")[1].inner_text.to_s,
-            'description'       => result.search("td")[3].inner_text.to_s,
-            'info_url'          => info_url + result.search("td")[0].inner_text.sub!("/", "%2f"),
-            'date_scraped'      => Date.today.to_s,
-            'date_received'     => Date.parse(result.search("td")[2]).to_s
-          }
-
-          TechnologyOneScraper.save(record)
+          yield(
+            council_reference: result.search("td")[0].inner_text.to_s,
+            address: result.search("td")[1].inner_text.to_s,
+            description: result.search("td")[3].inner_text.to_s,
+            info_url: info_url + result.search("td")[0].inner_text.sub!("/", "%2f"),
+            date_received: Date.parse(result.search("td")[2]).to_s
+          )
         end
       end
 
@@ -30,9 +27,18 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          scrape_and_save_index_page(page, info_url)
+          scrape_index_page(page, info_url) do |record|
+            TechnologyOneScraper.save(
+              'council_reference' => record[:council_reference],
+              'address'           => record[:address],
+              'description'       => record[:description],
+              'info_url'          => record[:info_url],
+              'date_scraped'      => Date.today.to_s,
+              'date_received'     => record[:date_received]
+            )
+          end
           page = Page::Index.next(page)
-        end        
+        end
       end
     end
   end
