@@ -2,7 +2,6 @@
 
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
-require "technology_one_scraper/authority/marrickville"
 require "technology_one_scraper/authority/noosa"
 require "technology_one_scraper/authority/port_adelaide"
 require "technology_one_scraper/authority/ryde"
@@ -55,7 +54,11 @@ module TechnologyOneScraper
         "TM"
       )
     when :marrickville
-      Authority::Marrickville.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://eproperty.marrickville.nsw.gov.au/eServices",
+        "L14",
+        "MC.P1.WEBGUEST"
+      )
     when :noosa
       Authority::Noosa.scrape_and_save
     when :port_adelaide
