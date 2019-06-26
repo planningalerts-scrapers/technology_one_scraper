@@ -2,7 +2,6 @@
 
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
-require "technology_one_scraper/authority/noosa"
 require "technology_one_scraper/authority/port_adelaide"
 require "technology_one_scraper/authority/ryde"
 require "technology_one_scraper/authority/sutherland"
@@ -61,7 +60,10 @@ module TechnologyOneScraper
         "MC.P1.WEBGUEST"
       )
     when :noosa
-      Authority::Noosa.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty",
+        "TM"
+      )
     when :port_adelaide
       Authority::PortAdelaide.scrape_and_save
     when :ryde
@@ -103,6 +105,9 @@ module TechnologyOneScraper
     url = TechnologyOneScraper.url_period(base_url, period, webguest)
 
     agent = Mechanize.new
+    # TODO: Get rid of this extra agent
+    agent_detail_page = Mechanize.new
+
     page = agent.get(url)
 
     while page
