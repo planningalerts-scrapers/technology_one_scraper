@@ -11,13 +11,6 @@ module TechnologyOneScraper
         Table.extract_table(table).each do |row|
           normalised = row.map { |k, v| [normalise_name(k, v), v] }.to_h
 
-          if normalised[:council_reference].nil? ||
-             normalised[:address].nil? ||
-             normalised[:description].nil? ||
-             normalised[:date_received].nil?
-            raise "We don't have all the values we need: #{normalised}"
-          end
-
           params = {
             # The first two parameters appear to be required to get the
             # correct authentication to view the page without a login or session
@@ -29,7 +22,7 @@ module TechnologyOneScraper
           yield(
             "council_reference" => normalised[:council_reference],
             "address" => normalised[:address],
-            "description" => normalised[:description].squeeze(" "),
+            "description" => normalised[:description]&.squeeze(" "),
             "info_url" => (page.uri + info_url).to_s,
             "date_scraped" => Date.today.to_s,
             "date_received" => Date.strptime(normalised[:date_received], "%d/%m/%Y").to_s
@@ -41,9 +34,9 @@ module TechnologyOneScraper
       # transform them to a standard name that we use here
       def self.normalise_name(name, value)
         case name
-        when "Application Link", "ID"
+        when "Application Link", "ID", "Application Number"
           :council_reference
-        when "Lodgement Date", "Lodged"
+        when "Lodgement Date", "Lodged", "Submitted Date"
           :date_received
         when "Description"
           :description
@@ -55,10 +48,14 @@ module TechnologyOneScraper
           :category_description
         when "Applicant Names"
           :applicant_names
-        when "Status"
+        when "Status", "Stage/Decision"
           :status
         when "Project Type"
           :project_type
+        when "Details"
+          # This can contain address and description but not in a consistent
+          # order which makes thing tricky
+          :details
         else
           raise "Unknown name #{name} with value #{value}"
         end
