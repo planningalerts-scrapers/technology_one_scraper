@@ -12,24 +12,20 @@ module TechnologyOneScraper
           council_reference = cells[0].search("a").text
           if council_reference && council_reference.start_with?("040") #selects planning applications only
             puts "Found #{council_reference}"
-            save_record(council_reference, cells)
+            record = {
+              'council_reference' => council_reference,
+              'address' => cells[3].text,
+              'description' => cells[2].text,
+              'info_url' => "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=PAE.P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=#{URI::escape(council_reference)}",
+              'date_received' => Date.parse(cells[1].text).strftime("%Y-%m-%d"),
+              'date_scraped' => Date.today.to_s,
+            }
+
+            TechnologyOneScraper.save(record)
           else
             puts "skipping non planning application #{council_reference}"
           end
         end
-      end
-
-      def self.save_record(council_reference, cells)
-        record = {
-        'council_reference' => council_reference,
-        'address' => cells[3].text,
-        'description' => cells[2].text,
-        'info_url' => "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=PAE.P1.WEBGUEST&f=%24P1.ETR.APPDET.VIW&ApplicationId=#{URI::escape(council_reference)}",
-        'date_received' => Date.parse(cells[1].text).strftime("%Y-%m-%d"),
-        'date_scraped' => Date.today.to_s,
-        }
-
-        TechnologyOneScraper.save(record)
       end
 
       def self.scrape_and_save
