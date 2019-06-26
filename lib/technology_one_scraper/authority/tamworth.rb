@@ -6,9 +6,9 @@ module TechnologyOneScraper
     module Tamworth
       def self.scrape_and_save
         period = 'TM'
+        base_url = "https://eproperty.tamworth.nsw.gov.au/ePropertyProd"
 
-        base_url = "https://eproperty.tamworth.nsw.gov.au/ePropertyProd/P1/eTrack"
-        url = "#{base_url}/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.SL14"
+        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=#{period}&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.S#{period}"
 
         agent = Mechanize.new
 
