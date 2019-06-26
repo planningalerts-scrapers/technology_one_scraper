@@ -28,28 +28,6 @@ module TechnologyOneScraper
         end
       end
 
-      # TODO: Inline this
-      def self.scrape_and_save_index_page(page, agent_detail_page, info_url)
-        scrape_index_page(page, info_url) do |record_index|
-          detail_page = agent_detail_page.get(record_index[:info_url])
-          record_detail = scrape_detail_page(detail_page)
-          record = {
-            'council_reference' => record_index[:council_reference],
-            'address' => record_detail[:address],
-            'description' => record_index[:description],
-            'info_url' => record_index[:info_url],
-            'date_scraped' => Date.today.to_s,
-            'date_received' => record_index[:date_received]
-          }
-          if has_blank?(record)
-            puts 'Something is blank, skipping record ' + record['council_reference']
-            puts record
-          else
-            TechnologyOneScraper.save(record)
-          end
-        end
-      end
-
       def self.scrape_and_save
         period = "TM"
 
@@ -61,7 +39,24 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          scrape_and_save_index_page(page, agent_detail_page, info_url)
+          scrape_index_page(page, info_url) do |record_index|
+            detail_page = agent_detail_page.get(record_index[:info_url])
+            record_detail = scrape_detail_page(detail_page)
+            record = {
+              'council_reference' => record_index[:council_reference],
+              'address' => record_detail[:address],
+              'description' => record_index[:description],
+              'info_url' => record_index[:info_url],
+              'date_scraped' => Date.today.to_s,
+              'date_received' => record_index[:date_received]
+            }
+            if has_blank?(record)
+              puts 'Something is blank, skipping record ' + record['council_reference']
+              puts record
+            else
+              TechnologyOneScraper.save(record)
+            end
+          end
           page = Page::Index.next(page)
         end
       end
