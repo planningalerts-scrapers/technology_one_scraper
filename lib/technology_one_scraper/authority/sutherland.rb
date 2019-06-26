@@ -9,16 +9,7 @@ module TechnologyOneScraper
         base_url = "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty"
         webguest = "SSC.P1.WEBGUEST"
 
-        params = {
-          "Field" => "S",
-          "Period" => period,
-          "Group" => "DA",
-          "SearchFunction" => "SSC.P1.ETR.SEARCH.DA",
-          "r" => webguest,
-          "f" => "SSC.ETR.SRCH.STW.DA",
-          "ResultsFunction" => "SSC.P1.ETR.RESULT.DA"
-        }
-        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
+        url = "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=TM&r=SSC.P1.WEBGUEST&f=%24P1.ETR.SEARCH.STM"
 
         agent = Mechanize.new
 
