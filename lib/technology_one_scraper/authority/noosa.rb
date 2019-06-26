@@ -15,6 +15,30 @@ module TechnologyOneScraper
         form.submit
       end
 
+      def self.scrape_and_save_index_page(page, agent_detail_page, info_url)
+        results = page.search("tr.normalRow, tr.alternateRow")
+        results.each do |result|
+          detail_page = agent_detail_page.get( info_url + URI::encode_www_form_component(result.search("td")[0].inner_text) )
+          address = detail_page.search('td.headerColumn[contains("Address")] ~ td').inner_text
+
+          record = {
+            'council_reference' => result.search("td")[0].inner_text.to_s,
+            'address'           => address,
+            'description'       => result.search("td")[2].inner_text.to_s.squeeze(' '),
+            'info_url'          => info_url + URI::encode_www_form_component(result.search("td")[0].inner_text),
+            'date_scraped'      => Date.today.to_s,
+            'date_received'     => Date.parse(result.search("td")[1]).to_s
+          }
+
+          if has_blank?(record)
+            puts 'Something is blank, skipping record ' + record['council_reference']
+            puts record
+          else
+            TechnologyOneScraper.save(record)
+          end
+        end
+      end
+
       def self.scrape_and_save
         period = "TM"
 
@@ -45,27 +69,7 @@ module TechnologyOneScraper
             page = postback(page.form, target, 'Page$' + i.to_s)
           end
 
-          results = page.search("tr.normalRow, tr.alternateRow")
-          results.each do |result|
-            detail_page = agent_detail_page.get( info_url + URI::encode_www_form_component(result.search("td")[0].inner_text) )
-            address = detail_page.search('td.headerColumn[contains("Address")] ~ td').inner_text
-
-            record = {
-              'council_reference' => result.search("td")[0].inner_text.to_s,
-              'address'           => address,
-              'description'       => result.search("td")[2].inner_text.to_s.squeeze(' '),
-              'info_url'          => info_url + URI::encode_www_form_component(result.search("td")[0].inner_text),
-              'date_scraped'      => Date.today.to_s,
-              'date_received'     => Date.parse(result.search("td")[1]).to_s
-            }
-
-            if has_blank?(record)
-              puts 'Something is blank, skipping record ' + record['council_reference']
-              puts record
-            else
-              TechnologyOneScraper.save(record)
-            end
-          end
+          scrape_and_save_index_page(page, agent_detail_page, info_url)
         end
       end
     end
