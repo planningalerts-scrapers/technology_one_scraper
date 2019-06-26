@@ -6,9 +6,19 @@ module TechnologyOneScraper
     module Sutherland
       def self.scrape_and_save
         period = 'TM'
+        base_url = "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty"
+        webguest = "SSC.P1.WEBGUEST"
 
-        base_url = "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack"
-        url = "#{base_url}/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&Group=DA&SearchFunction=SSC.P1.ETR.SEARCH.DA&r=SSC.P1.WEBGUEST&f=SSC.ETR.SRCH.STW.DA&ResultsFunction=SSC.P1.ETR.RESULT.DA"
+        params = {
+          "Field" => "S",
+          "Period" => period,
+          "Group" => "DA",
+          "SearchFunction" => "SSC.P1.ETR.SEARCH.DA",
+          "r" => webguest,
+          "f" => "SSC.ETR.SRCH.STW.DA",
+          "ResultsFunction" => "SSC.P1.ETR.RESULT.DA"
+        }
+        url = "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
 
         agent = Mechanize.new
 
@@ -16,7 +26,7 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          Page::Index.scrape(page, "SSC.P1.WEBGUEST") do |record|
+          Page::Index.scrape(page, webguest) do |record|
             TechnologyOneScraper.save(
               'council_reference' => record[:council_reference],
               'address' => record[:address],
