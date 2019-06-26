@@ -5,11 +5,13 @@ module TechnologyOneScraper
   module Authority
     module Sutherland
       def self.scrape_and_save
-        period = 'TM'
-        base_url = "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty"
         webguest = "SSC.P1.WEBGUEST"
 
-        url = "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=TM&r=SSC.P1.WEBGUEST&f=%24P1.ETR.SEARCH.STM"
+        url = TechnologyOneScraper.url_period(
+          "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty",
+          "TM",
+          webguest
+        )
 
         agent = Mechanize.new
 
