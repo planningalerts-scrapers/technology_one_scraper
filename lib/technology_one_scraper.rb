@@ -107,6 +107,17 @@ module TechnologyOneScraper
 
     while page
       Page::Index.scrape(page, webguest) do |record|
+        if record[:council_reference].nil? ||
+           record[:address].nil? ||
+           record[:description].nil? ||
+           record[:date_received].nil?
+          # We need more information. We can get this from the detail page
+          detail_page = agent_detail_page.get(record[:info_url])
+          record_detail = Page::Detail.scrape(detail_page)
+          record = record.merge(record_detail)
+          # TODO: Check that we have enough now
+        end
+
         yield(
           "council_reference" => record[:council_reference],
           "address" => record[:address],
