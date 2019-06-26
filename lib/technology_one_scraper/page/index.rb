@@ -8,6 +8,8 @@ module TechnologyOneScraper
     module Index
       def self.scrape(page, webguest = "P1.WEBGUEST")
         table = page.at("table.grid")
+        raise "Couldn't find table" if table.nil?
+
         Table.extract_table(table).each do |row|
           normalised = row.map { |k, v| [normalise_name(k, v), v] }.to_h
 
