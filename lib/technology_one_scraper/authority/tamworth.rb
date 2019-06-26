@@ -11,12 +11,11 @@ module TechnologyOneScraper
 
           council_reference = tds[0].inner_text
           record = {
-            "council_reference" => council_reference,
-            "date_received" => Date.new(year, month, day).to_s,
-            "address" => tds[1].inner_text,
-            "description" => tds[6].inner_text,
-            "date_scraped" => Date.today.to_s,
-            "info_url" => info_url_base + CGI.escape(council_reference)
+            council_reference: council_reference,
+            date_received: Date.new(year, month, day).to_s,
+            address: tds[1].inner_text,
+            description: tds[6].inner_text,
+            info_url: info_url_base + CGI.escape(council_reference)
           }
 
           yield record
@@ -37,7 +36,14 @@ module TechnologyOneScraper
 
         while page
           scrape_page(page, info_url_base) do |record|
-            TechnologyOneScraper.save(record)
+            TechnologyOneScraper.save(
+              "council_reference" => record[:council_reference],
+              "date_received" => record[:date_received],
+              "address" => record[:address],
+              "description" => record[:description],
+              "date_scraped" => Date.today.to_s,
+              "info_url" => record[:info_url]
+            )
           end
           page = Page::Index.next(page)
         end
