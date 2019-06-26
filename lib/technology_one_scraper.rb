@@ -2,7 +2,6 @@
 
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
-require "technology_one_scraper/authority/port_adelaide"
 require "technology_one_scraper/authority/ryde"
 require "technology_one_scraper/authority/sutherland"
 require "technology_one_scraper/authority/tamworth"
@@ -65,7 +64,14 @@ module TechnologyOneScraper
         "TM"
       )
     when :port_adelaide
-      Authority::PortAdelaide.scrape_and_save
+      TechnologyOneScraper.scrape_period(
+        "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty",
+        "L7",
+        "PAE.P1.WEBGUEST"
+      ) do |record|
+        # selects planning applications only
+        TechnologyOneScraper.save(record) if record["council_reference"].start_with?("040")
+      end
     when :ryde
       Authority::Ryde.scrape_and_save
     when :sutherland
