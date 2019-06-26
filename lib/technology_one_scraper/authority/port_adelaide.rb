@@ -16,19 +16,22 @@ module TechnologyOneScraper
 
         agent = Mechanize.new
         page = agent.get(url)
-        # TODO: Handle pagination
-        Page::Index.scrape(page, webguest) do |record|
-          # selects planning applications only
-          if record[:council_reference] && record[:council_reference].start_with?("040")
-            TechnologyOneScraper.save(
-              'council_reference' => record[:council_reference],
-              'address' => record[:address],
-              'description' => record[:description],
-              'info_url' => record[:info_url],
-              'date_received' => record[:date_received],
-              'date_scraped' => Date.today.to_s
-            )
+
+        while page
+          Page::Index.scrape(page, webguest) do |record|
+            # selects planning applications only
+            if record[:council_reference] && record[:council_reference].start_with?("040")
+              TechnologyOneScraper.save(
+                'council_reference' => record[:council_reference],
+                'address' => record[:address],
+                'description' => record[:description],
+                'info_url' => record[:info_url],
+                'date_received' => record[:date_received],
+                'date_scraped' => Date.today.to_s
+              )
+            end
           end
+          page = Page::Index.next(page)
         end
       end
     end
