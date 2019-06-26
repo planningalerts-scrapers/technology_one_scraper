@@ -6,17 +6,13 @@ module TechnologyOneScraper
     module Sutherland
       def self.scrape_page(page, info_url_base)
         page.search("table.grid tr.normalRow, table.grid tr.alternateRow").each do |tr|
-
-          record = {
-            'council_reference' => tr.search("td")[0].inner_text,
-            'address' => tr.search("td")[5].inner_text.gsub('  ', ', '),
-            'description' => tr.search("td")[2].inner_text,
-            'info_url' => info_url_base + tr.search("td")[0].inner_text,
-            'date_scraped' => Date.today.to_s,
-            'date_received' => Date.parse(tr.search("td")[1].inner_text).to_s,
-          }
-
-          TechnologyOneScraper.save(record)
+          yield(
+            council_reference: tr.search("td")[0].inner_text,
+            address: tr.search("td")[5].inner_text.gsub('  ', ', '),
+            description: tr.search("td")[2].inner_text,
+            info_url: info_url_base + tr.search("td")[0].inner_text,
+            date_received: Date.parse(tr.search("td")[1].inner_text).to_s
+          )
         end
       end
 
@@ -33,7 +29,16 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          scrape_page(page, info_url_base)
+          scrape_page(page, info_url_base) do |record|
+            TechnologyOneScraper.save(
+              'council_reference' => record[:council_reference],
+              'address' => record[:address],
+              'description' => record[:description],
+              'info_url' => record[:info_url],
+              'date_scraped' => Date.today.to_s,
+              'date_received' => record[:date_received],
+            )
+          end
           page = Page::Index.next(page)
         end
       end
