@@ -55,6 +55,8 @@ module TechnologyOneScraper
           # This can contain address and description but not in a consistent
           # order which makes thing tricky
           :details
+        when "Work Commenced"
+          :word_commenced
         else
           raise "Unknown name #{name} with value #{value}"
         end
