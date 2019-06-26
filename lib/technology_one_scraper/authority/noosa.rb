@@ -13,12 +13,6 @@ module TechnologyOneScraper
         }
       end
 
-      def self.scrape_index_page(page, info_url)
-        Page::Index.scrape2(page) do |record|
-          yield record
-        end
-      end
-
       def self.scrape_and_save
         period = "TM"
 
@@ -30,7 +24,7 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          scrape_index_page(page, info_url) do |record_index|
+          Page::Index.scrape2(page) do |record_index|
             detail_page = agent_detail_page.get(record_index[:info_url])
             record_detail = scrape_detail_page(detail_page)
             record = {
