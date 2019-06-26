@@ -8,7 +8,8 @@ module TechnologyOneScraper
       # TODO: Scrape more of what there is on the detail page
       def self.scrape_detail_page(page)
         {
-          address: page.search('td.headerColumn[contains("Address")] ~ td').inner_text
+          address: page.at('td.headerColumn[contains("Address")] ~ td').inner_text,
+          description: page.at('td.headerColumn[contains("Description")] ~ td').inner_text
         }
       end
 
@@ -41,7 +42,7 @@ module TechnologyOneScraper
             record = {
               'council_reference' => record_index[:council_reference],
               'address' => record_detail[:address],
-              'description' => record_index[:description],
+              'description' => record_detail[:description],
               'info_url' => record_index[:info_url],
               'date_scraped' => Date.today.to_s,
               'date_received' => record_index[:date_received]
