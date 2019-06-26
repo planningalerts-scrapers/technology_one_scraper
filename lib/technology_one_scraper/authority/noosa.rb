@@ -14,14 +14,8 @@ module TechnologyOneScraper
       end
 
       def self.scrape_index_page(page, info_url)
-        Page::Index.scrape(page) do |record|
-          yield(
-            council_reference: record["council_reference"],
-            address: record["address"],
-            description: record["description"],
-            info_url: record["info_url"],
-            date_received: record["date_received"]
-          )
+        Page::Index.scrape2(page) do |record|
+          yield record
         end
       end
 

@@ -30,6 +30,19 @@ module TechnologyOneScraper
         end
       end
 
+      # Like .scrape but returns symbols and not date_scraped
+      def self.scrape2(page, webguest = "P1.WEBGUEST")
+        scrape(page, webguest) do |record|
+          yield(
+            council_reference: record["council_reference"],
+            address: record["address"],
+            description: record["description"],
+            info_url: record["info_url"],
+            date_received: record["date_received"]
+          )
+        end
+      end
+
       # Handles all the variants of the column names and handles them all to
       # transform them to a standard name that we use here
       def self.normalise_name(name, value)
