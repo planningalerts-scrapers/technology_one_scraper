@@ -57,6 +57,8 @@ module TechnologyOneScraper
           :details
         when "Work Commenced"
           :word_commenced
+        when "Determined Date"
+          :determined_date
         else
           raise "Unknown name #{name} with value #{value}"
         end

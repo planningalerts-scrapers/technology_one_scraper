@@ -2,7 +2,6 @@
 
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
-require "technology_one_scraper/authority/ryde"
 require "technology_one_scraper/authority/sutherland"
 require "technology_one_scraper/authority/tamworth"
 require "technology_one_scraper/authority/wagga"
@@ -73,7 +72,11 @@ module TechnologyOneScraper
         TechnologyOneScraper.save(record) if record["council_reference"].start_with?("040")
       end
     when :ryde
-      Authority::Ryde.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty",
+        "TM",
+        "COR.P1.WEBGUEST"
+      )
     when :sutherland
       Authority::Sutherland.scrape_and_save
     when :tamworth
