@@ -77,4 +77,18 @@ module TechnologyOneScraper
     }
     "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
   end
+
+  def self.scrape_and_save_period(base_url, period, webguest = "P1.WEBGUEST")
+    url = TechnologyOneScraper.url_period(base_url, period, webguest)
+
+    agent = Mechanize.new
+    page = agent.get(url)
+
+    while page
+      Page::Index.scrape(page, webguest) do |record|
+        TechnologyOneScraper.save(record)
+      end
+      page = Page::Index.next(page)
+    end
+  end
 end
