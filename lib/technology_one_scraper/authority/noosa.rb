@@ -9,12 +9,6 @@ module TechnologyOneScraper
         hash.values.any?{|v| v.nil? || v.length == 0}
       end
 
-      def self.postback(form, target, argument)
-        form['__EVENTTARGET'] = target
-        form['__EVENTARGUMENT'] = argument
-        form.submit
-      end
-
       # TODO: Scrape more of what there is on the detail page
       def self.scrape_detail_page(page)
         {
@@ -66,27 +60,9 @@ module TechnologyOneScraper
         agent_detail_page = Mechanize.new
         page = agent.get(url)
 
-        if page.search("tr.pagerRow").empty?
-          totalPages = 1
-        else
-          target, argument = page.search("tr.pagerRow").search("td")[-1].at('a')['href'].scan(/'([^']*)'/).flatten
-          while page.search("tr.pagerRow").search("td")[-1].inner_text == '...' do
-            target, argument = page.search("tr.pagerRow").search("td")[-1].at('a')['href'].scan(/'([^']*)'/).flatten
-            page = postback(page.form, target, argument)
-          end
-          totalPages = page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
-        end
-
-        (1..totalPages).each do |i|
-          puts "Scraping page " + i.to_s + " of " + totalPages.to_s
-
-          if i == 1
-            page = agent.get(url)
-          else
-            page = postback(page.form, target, 'Page$' + i.to_s)
-          end
-
+        while page
           scrape_and_save_index_page(page, agent_detail_page, info_url)
+          page = Page::Index.next(page)
         end
       end
     end
