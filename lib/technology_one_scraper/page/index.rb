@@ -21,7 +21,7 @@ module TechnologyOneScraper
 
           yield(
             "council_reference" => council_reference,
-            "address" => row["Formatted Address"],
+            "address" => (row["Formatted Address"] || row["Property Address"]),
             "description" => row["Description"].squeeze(" "),
             "info_url" => (page.uri + info_url).to_s,
             "date_scraped" => Date.today.to_s,
