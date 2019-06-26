@@ -9,29 +9,51 @@ module TechnologyOneScraper
       def self.scrape(page, webguest = "P1.WEBGUEST")
         table = page.at("table.grid")
         Table.extract_table(table).each do |row|
-          council_reference = row["Application Link"] ||
-                              row["ID"]
+          normalised = row.map { |k, v| [normalise_name(k, v), v] }.to_h
+
           params = {
             # The first two parameters appear to be required to get the
             # correct authentication to view the page without a login or session
             "r" => webguest,
             "f" => "$P1.ETR.APPDET.VIW",
-            "ApplicationId" => council_reference
+            "ApplicationId" => normalised[:council_reference]
           }
           info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
-          date_received = row["Lodgement Date"] ||
-                          row["Lodged"]
-          address = row["Formatted Address"] ||
-                    row["Property Address"] ||
-                    row["Address"]
           yield(
-            "council_reference" => council_reference,
-            "address" => address,
-            "description" => row["Description"].squeeze(" "),
+            "council_reference" => normalised[:council_reference],
+            "address" => normalised[:address],
+            "description" => normalised[:description].squeeze(" "),
             "info_url" => (page.uri + info_url).to_s,
             "date_scraped" => Date.today.to_s,
-            "date_received" => Date.strptime(date_received, "%d/%m/%Y").to_s
+            "date_received" => Date.strptime(normalised[:date_received], "%d/%m/%Y").to_s
           )
+        end
+      end
+
+      # Handles all the variants of the column names and handles them all to
+      # transform them to a standard name that we use here
+      def self.normalise_name(name, value)
+        case name
+        when "Application Link", "ID"
+          :council_reference
+        when "Lodgement Date", "Lodged"
+          :date_received
+        when "Description"
+          :description
+        when "Formatted Address", "Property Address", "Address"
+          :address
+        when "Group Description"
+          :group_description
+        when "Category Description"
+          :category_description
+        when "Applicant Names"
+          :applicant_names
+        when "Status"
+          :status
+        when "Project Type"
+          :project_type
+        else
+          raise "Unknown name #{name} with value #{value}"
         end
       end
 
