@@ -43,12 +43,14 @@ module TechnologyOneScraper
           :address
         when "Group Description"
           :group_description
-        when "Category Description"
+        when "Category Description", "Category"
           :category_description
-        when "Applicant Names"
+        when "Applicant Names", "Applicant"
           :applicant_names
-        when "Status", "Stage/Decision", "Decision"
+        when "Status", "Stage/Decision", "Decision", "Current Stage or Decision"
           :status
+        when "Application Type"
+          :application_type
         when "Project Type"
           :project_type
         when "Details"
