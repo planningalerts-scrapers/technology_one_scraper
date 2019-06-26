@@ -22,24 +22,31 @@ module TechnologyOneScraper
         }
       end
 
-      def self.scrape_and_save_index_page(page, agent_detail_page, info_url)
+      def self.scrape_index_page(page, info_url)
         results = page.search("tr.normalRow, tr.alternateRow")
         results.each do |result|
-          detail_page = agent_detail_page.get( info_url + URI::encode_www_form_component(result.search("td")[0].inner_text) )
-          detail_info = scrape_detail_page(detail_page)
-          address = detail_info[:address]
-          # TODO: Cross check what we get from the index page and the detail
-          # page to make sure they match
+          yield(
+            council_reference: result.search("td")[0].inner_text.to_s,
+            description: result.search("td")[2].inner_text.to_s.squeeze(' '),
+            info_url: info_url + URI::encode_www_form_component(result.search("td")[0].inner_text),
+            date_received: Date.parse(result.search("td")[1]).to_s
+          )
+        end
+      end
 
+      # TODO: Inline this
+      def self.scrape_and_save_index_page(page, agent_detail_page, info_url)
+        scrape_index_page(page, info_url) do |record_index|
+          detail_page = agent_detail_page.get(record_index[:info_url])
+          record_detail = scrape_detail_page(detail_page)
           record = {
-            'council_reference' => result.search("td")[0].inner_text.to_s,
-            'address'           => address,
-            'description'       => result.search("td")[2].inner_text.to_s.squeeze(' '),
-            'info_url'          => info_url + URI::encode_www_form_component(result.search("td")[0].inner_text),
-            'date_scraped'      => Date.today.to_s,
-            'date_received'     => Date.parse(result.search("td")[1]).to_s
+            'council_reference' => record_index[:council_reference],
+            'address' => record_detail[:address],
+            'description' => record_index[:description],
+            'info_url' => record_index[:info_url],
+            'date_scraped' => Date.today.to_s,
+            'date_received' => record_index[:date_received]
           }
-
           if has_blank?(record)
             puts 'Something is blank, skipping record ' + record['council_reference']
             puts record
