@@ -5,17 +5,20 @@ module TechnologyOneScraper
   module Authority
     module Lithgow
       def self.scrape_page(page, info_url_base)
-        page.search("table.grid tr.normalRow, table.grid tr.alternateRow").each do |tr|
-
+        table = page.at("table.grid")
+        Table.extract_table(table).each do |row|
+          council_reference = row["Application Link"]
+          info_url = info_url_base + council_reference
           record = {
-            'council_reference' => tr.search("td")[0].inner_text,
-            'address' => tr.search("td")[5].inner_text.gsub('  ', ', '),
-            'description' => tr.search("td")[2].inner_text,
-            'info_url' => info_url_base + tr.search("td")[0].inner_text,
+            'council_reference' => council_reference,
+            # TODO: No need to rewrite address
+            'address' => row["Property Address"].gsub('  ', ', '),
+            'description' => row["Description"],
+            'info_url' => info_url,
             'date_scraped' => Date.today.to_s,
-            'date_received' => Date.parse(tr.search("td")[1].inner_text).to_s,
+            # TODO: Do better date parsing
+            'date_received' => Date.parse(row["Lodgement Date"]).to_s,
           }
-
           TechnologyOneScraper.save(record)
         end
       end
