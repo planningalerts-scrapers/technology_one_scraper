@@ -1,25 +1,55 @@
 ---
-- council_reference: 040/1414/19
-  address: 776 Military Rd OSBORNE SA 5017
+- council_reference: 040/1427/19
+  address: 7A Boord St SEMAPHORE SOUTH SA 5019
+  description: Shed
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1427%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
+  date_scraped: '2019-05-15'
+- council_reference: 040/1428/19
+  address: 39 Branson Ave CLEARVIEW SA 5085
+  description: Single storey dwelling
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1428%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
+  date_scraped: '2019-05-15'
+- council_reference: 040/1429/19
+  address: 2 Brenda Tce LARGS NORTH SA 5016
+  description: Swimming pool and safety fence
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1429%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
+  date_scraped: '2019-05-15'
+- council_reference: 040/1430/19
+  address: 32 Rosewater Tce OTTOWAY SA 5013
   description: Verandah
-  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1414%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
-  date_received: '2019-06-19'
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1430%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
   date_scraped: '2019-05-15'
-- council_reference: 040/1416/19
-  address: Lancaster Dr NORTH HAVEN SA 5018
-  description: Torrens Title Land Division 040/D113/19 creating sixty four allotments
-  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1416%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
-  date_received: '2019-06-19'
+- council_reference: 040/1431/19
+  address: Oliver Rogers Rd OUTER HARBOR SA 5018
+  description: Internal office fit-out
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1431%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
   date_scraped: '2019-05-15'
-- council_reference: 040/1420/19
-  address: 315 Victoria Rd LARGS NORTH SA 5016
-  description: Torrens Land Division 040/D117/19 creating two allotments
-  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1420%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
-  date_received: '2019-06-19'
+- council_reference: 040/1432/19
+  address: 4B Jaffrey St BLAIR ATHOL SA 5084
+  description: Two storey detached dwelling
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1432%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
   date_scraped: '2019-05-15'
-- council_reference: 040/1423/19
-  address: 49-57 Veitch Rd OSBORNE SA 5017
-  description: Land Division - boundary realignment - 040/G112/19
-  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1423%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
-  date_received: '2019-06-19'
+- council_reference: 040/1433/19
+  address: 97 Victoria Rd BIRKENHEAD SA 5015
+  description: Garage forward of the existing dwelling
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1433%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
+  date_scraped: '2019-05-15'
+- council_reference: 040/1434/19
+  address: 3 Boomerang Rd CROYDON PARK SA 5008
+  description: Verandah
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1434%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
+  date_scraped: '2019-05-15'
+- council_reference: 040/1435/19
+  address: 54 Ways Rd MANNINGHAM SA 5086
+  description: Demolition of dwelling and all associated structures
+  info_url: https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=040%2F1435%2F19&f=%24P1.ETR.APPDET.VIW&r=PAE.P1.WEBGUEST
+  date_received: '2019-06-20'
   date_scraped: '2019-05-15'
