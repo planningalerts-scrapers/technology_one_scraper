@@ -5,7 +5,7 @@ require 'uri'
 module TechnologyOneScraper
   module Authority
     module PortAdelaide
-      def self.scrape_page(page)
+      def self.scrape_and_save_page(page)
         page.search("tr[@class='normalRow'], tr[@class='alternateRow']").each do |row|
           cells = row.search('td')
 
@@ -29,40 +29,11 @@ module TechnologyOneScraper
       end
 
       def self.scrape_and_save
-        #scrape first results page
-        agent = Mechanize.new { |a|
-          #a.user_agent_alias = 'Mac Firefox'
-        }
+        agent = Mechanize.new
         url = "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=L7&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.SL7"
         page = agent.get(url)
-        scrape_page(page)
-
-        # The above code searches the first 20 applications submitted in the last 7 days.
-        # There is sometimes more than 20 applications.
-        # The next 20 applicaitons are obtained by making a doPostform enquiry.
-        # I have drafted some code (below) which I have not been able to get to work.
-        # In the meantime, A small number of applicaitons may pass through the cracks. Most will be scraped.
-
-        #draft code:
-        #cp = 1
-        #np = $page.search("tr[@class='pagerRow'] td[@colspan]").to_s.split('"')[1].to_i
-        #if np == "" #if there is no second page
-          #np = 1
-        #end
-        #while cp > np
-          #cp+=1
-          #sleep 1.0 + rand
-          #form = $page.forms.first
-          #form["__EVENTTARGET"],form["__EVENTARGUMENT"] = "ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView", "page$#{cp}"
-          #$page = agent.submit(form)
-          #puts "scraping page number " + cp.to_s
-          #scrape_page
-        #end
-
-        #look at these pages for tips:
-          #https://blog.scraperwiki.com/2011/11/how-to-get-along-with-an-asp-webpage/
-          #http://scraperblog.blogspot.com.au/2012/10/asp-forms-with-dopostback-using-ruby.html
-          #http://mechanize.rubyforge.org/Mechanize/Form.html
+        # TODO: Handle pagination
+        scrape_and_save_page(page)
       end
     end
   end
