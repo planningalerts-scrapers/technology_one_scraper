@@ -27,7 +27,7 @@ module TechnologyOneScraper
       end
 
       def self.scrape_and_save
-        period = "TW"
+        period = "TM"
 
         url         = 'https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=' + period +'&r=COR.P1.WEBGUEST&f=$P1.ETR.SEARCH.S' + period
         info_url    = 'https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?r=COR.P1.WEBGUEST&f=$P1.ETR.APPDET.VIW&ApplicationId='
