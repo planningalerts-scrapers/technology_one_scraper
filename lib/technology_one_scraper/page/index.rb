@@ -9,7 +9,8 @@ module TechnologyOneScraper
       def self.scrape(page, webguest = "P1.WEBGUEST")
         table = page.at("table.grid")
         Table.extract_table(table).each do |row|
-          council_reference = row["Application Link"]
+          council_reference = row["Application Link"] ||
+                              row["ID"]
           params = {
             # The first two parameters appear to be required to get the
             # correct authentication to view the page without a login or session
@@ -18,14 +19,18 @@ module TechnologyOneScraper
             "ApplicationId" => council_reference
           }
           info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
-
+          date_received = row["Lodgement Date"] ||
+                          row["Lodged"]
+          address = row["Formatted Address"] ||
+                    row["Property Address"] ||
+                    row["Address"]
           yield(
             "council_reference" => council_reference,
-            "address" => (row["Formatted Address"] || row["Property Address"]),
+            "address" => address,
             "description" => row["Description"].squeeze(" "),
             "info_url" => (page.uri + info_url).to_s,
             "date_scraped" => Date.today.to_s,
-            "date_received" => Date.strptime(row["Lodgement Date"], "%d/%m/%Y").to_s
+            "date_received" => Date.strptime(date_received, "%d/%m/%Y").to_s
           )
         end
       end
