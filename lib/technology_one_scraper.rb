@@ -2,11 +2,6 @@
 
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
-require "technology_one_scraper/authority/cockburn"
-require "technology_one_scraper/authority/fremantle"
-require "technology_one_scraper/authority/kuringgai"
-require "technology_one_scraper/authority/lithgow"
-require "technology_one_scraper/authority/manningham"
 require "technology_one_scraper/authority/marrickville"
 require "technology_one_scraper/authority/noosa"
 require "technology_one_scraper/authority/port_adelaide"
@@ -28,15 +23,37 @@ module TechnologyOneScraper
     when :blacktown
       Authority::Blacktown.scrape_and_save
     when :cockburn
-      Authority::Cockburn.scrape_and_save
+      scrape_and_save_period(
+        "https://ecouncil.cockburn.wa.gov.au/eProperty",
+        "TM"
+      )
     when :fremantle
-      Authority::Fremantle.scrape_and_save
+      TechnologyOneScraper.scrape_period(
+        "https://eservices.fremantle.wa.gov.au/ePropertyPROD",
+        "L28"
+      ) do |record|
+        # TODO: Make the search ignore these rather than filtering them out here
+        # Selects planning applications only
+        if record["council_reference"].start_with?("DA", "LL", "VA", "WAPC", "ET", "PW")
+          TechnologyOneScraper.save(record)
+        end
+      end
     when :kuringgai
-      Authority::Kuringgai.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://eservices.kmc.nsw.gov.au/T1ePropertyProd",
+        "TM",
+        "KC_WEBGUEST"
+      )
     when :lithgow
-      Authority::Lithgow.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://eservices.lithgow.nsw.gov.au/ePropertyProd",
+        "L14"
+      )
     when :manningham
-      Authority::Manningham.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://eproclaim.manningham.vic.gov.au/eProperty",
+        "TM"
+      )
     when :marrickville
       Authority::Marrickville.scrape_and_save
     when :noosa
