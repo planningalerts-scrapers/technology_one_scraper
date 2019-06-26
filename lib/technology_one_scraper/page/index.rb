@@ -47,7 +47,7 @@ module TechnologyOneScraper
           :category_description
         when "Applicant Names"
           :applicant_names
-        when "Status", "Stage/Decision"
+        when "Status", "Stage/Decision", "Decision"
           :status
         when "Project Type"
           :project_type
