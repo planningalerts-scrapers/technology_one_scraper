@@ -5,14 +5,6 @@ require 'uri'
 module TechnologyOneScraper
   module Authority
     module Noosa
-      # TODO: Scrape more of what there is on the detail page
-      def self.scrape_detail_page(page)
-        {
-          address: page.at('td.headerColumn[contains("Address")] ~ td').inner_text,
-          description: page.at('td.headerColumn[contains("Description")] ~ td').inner_text
-        }
-      end
-
       def self.scrape_and_save
         period = "TM"
 
@@ -26,7 +18,7 @@ module TechnologyOneScraper
         while page
           Page::Index.scrape2(page) do |record_index|
             detail_page = agent_detail_page.get(record_index[:info_url])
-            record_detail = scrape_detail_page(detail_page)
+            record_detail = Page::Detail.scrape(detail_page)
             record = {
               'council_reference' => record_index[:council_reference],
               'address' => record_detail[:address],
