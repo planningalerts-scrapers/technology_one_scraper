@@ -107,7 +107,14 @@ module TechnologyOneScraper
 
     while page
       Page::Index.scrape(page, webguest) do |record|
-        yield record
+        yield(
+          "council_reference" => record[:council_reference],
+          "address" => record[:address],
+          "description" => record[:description],
+          "info_url" => record[:info_url],
+          "date_scraped" => Date.today.to_s,
+          "date_received" => record[:date_received]
+        )
       end
       page = Page::Index.next(page)
     end

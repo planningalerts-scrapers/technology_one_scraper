@@ -20,25 +20,11 @@ module TechnologyOneScraper
           }
           info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
           yield(
-            "council_reference" => normalised[:council_reference],
-            "address" => normalised[:address],
-            "description" => normalised[:description]&.squeeze(" "),
-            "info_url" => (page.uri + info_url).to_s,
-            "date_scraped" => Date.today.to_s,
-            "date_received" => Date.strptime(normalised[:date_received], "%d/%m/%Y").to_s
-          )
-        end
-      end
-
-      # Like .scrape but returns symbols and not date_scraped
-      def self.scrape2(page, webguest = "P1.WEBGUEST")
-        scrape(page, webguest) do |record|
-          yield(
-            council_reference: record["council_reference"],
-            address: record["address"],
-            description: record["description"],
-            info_url: record["info_url"],
-            date_received: record["date_received"]
+            council_reference: normalised[:council_reference],
+            address: normalised[:address],
+            description: normalised[:description]&.squeeze(" "),
+            info_url: (page.uri + info_url).to_s,
+            date_received: Date.strptime(normalised[:date_received], "%d/%m/%Y").to_s
           )
         end
       end

@@ -16,7 +16,7 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          Page::Index.scrape2(page) do |record_index|
+          Page::Index.scrape(page) do |record_index|
             detail_page = agent_detail_page.get(record_index[:info_url])
             record_detail = Page::Detail.scrape(detail_page)
             record = {
