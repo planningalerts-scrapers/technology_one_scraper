@@ -46,7 +46,7 @@ module TechnologyOneScraper
       end
 
       def self.scrape_and_save
-        period = 'TW'
+        period = 'TM'
 
         base_url = "https://eproperty.tamworth.nsw.gov.au/ePropertyProd/P1/eTrack"
         url = "#{base_url}/eTrackApplicationSearchResults.aspx?Field=S&Period=" + period + "&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.SL14"
