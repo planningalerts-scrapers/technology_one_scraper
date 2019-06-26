@@ -14,13 +14,13 @@ module TechnologyOneScraper
       end
 
       def self.scrape_index_page(page, info_url)
-        results = page.search("tr.normalRow, tr.alternateRow")
-        results.each do |result|
+        Page::Index.scrape(page) do |record|
           yield(
-            council_reference: result.search("td")[0].inner_text.to_s,
-            description: result.search("td")[2].inner_text.to_s.squeeze(' '),
-            info_url: info_url + URI::encode_www_form_component(result.search("td")[0].inner_text),
-            date_received: Date.parse(result.search("td")[1]).to_s
+            council_reference: record["council_reference"],
+            address: record["address"],
+            description: record["description"],
+            info_url: record["info_url"],
+            date_received: record["date_received"]
           )
         end
       end
