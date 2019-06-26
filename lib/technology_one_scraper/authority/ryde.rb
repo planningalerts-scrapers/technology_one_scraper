@@ -4,12 +4,6 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Ryde
-      def self.postback(form, target, argument)
-        form['__EVENTTARGET'] = target
-        form['__EVENTARGUMENT'] = argument
-        form.submit
-      end
-
       def self.scrape_and_save_index_page(page, info_url)
         results = page.search("tr.normalRow, tr.alternateRow")
         results.each do |result|
@@ -35,24 +29,10 @@ module TechnologyOneScraper
         agent = Mechanize.new
         page = agent.get(url)
 
-        if page.search("tr.pagerRow").empty?
-          totalPages = 1
-        else
-          target, argument = page.search("tr.pagerRow").search("td")[-1].at('a')['href'].scan(/'([^']*)'/).flatten
-          totalPages = page.search("tr.pagerRow").search("td")[-1].inner_text.to_i
-        end
-
-        (1..totalPages).each do |i|
-          puts "Scraping page " + i.to_s + " of " + totalPages.to_s
-
-          if i == 1
-            page = agent.get(url)
-          else
-            page = postback(page.form, target, 'Page$' + i.to_s)
-          end
-
+        while page
           scrape_and_save_index_page(page, info_url)
-        end
+          page = Page::Index.next(page)
+        end        
       end
     end
   end
