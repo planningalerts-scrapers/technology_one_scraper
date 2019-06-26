@@ -5,10 +5,6 @@ require 'uri'
 module TechnologyOneScraper
   module Authority
     module Noosa
-      def self.has_blank?(hash)
-        hash.values.any?{|v| v.nil? || v.length == 0}
-      end
-
       # TODO: Scrape more of what there is on the detail page
       def self.scrape_detail_page(page)
         {
@@ -50,12 +46,7 @@ module TechnologyOneScraper
               'date_scraped' => Date.today.to_s,
               'date_received' => record_index[:date_received]
             }
-            if has_blank?(record)
-              puts 'Something is blank, skipping record ' + record['council_reference']
-              puts record
-            else
-              TechnologyOneScraper.save(record)
-            end
+            TechnologyOneScraper.save(record)
           end
           page = Page::Index.next(page)
         end
