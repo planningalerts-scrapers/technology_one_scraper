@@ -9,12 +9,14 @@ module TechnologyOneScraper
           tds = tr.search("td")
           day, month, year = tds[3].inner_text.split("/").map{|s| s.to_i}
 
+          council_reference = tds[0].inner_text
           record = {
-            "council_reference" => tds[0].inner_text,
+            "council_reference" => council_reference,
             "date_received" => Date.new(year, month, day).to_s,
             "address" => tds[1].inner_text,
             "description" => tds[6].inner_text,
-            "date_scraped" => Date.today.to_s
+            "date_scraped" => Date.today.to_s,
+            "info_url" => info_url_base + CGI.escape(council_reference)
           }
 
           # The description of community facilities development can be unhelpful,
@@ -23,9 +25,7 @@ module TechnologyOneScraper
             record["description"].prepend("Community Facilities Development: ")
           end
 
-          record["info_url"] = info_url_base + CGI.escape(record["council_reference"])
-
-          TechnologyOneScraper.save(record)
+          yield record
         end
       end
 
@@ -42,7 +42,9 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          scrape_page(page, info_url_base)
+          scrape_page(page, info_url_base) do |record|
+            TechnologyOneScraper.save(record)
+          end
           page = Page::Index.next(page)
         end
       end
