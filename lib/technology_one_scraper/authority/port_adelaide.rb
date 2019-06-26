@@ -8,10 +8,10 @@ module TechnologyOneScraper
       def self.scrape_and_save
         webguest = "PAE.P1.WEBGUEST"
 
-        # Hmmm. not a consistent webguest.
         url = TechnologyOneScraper.url_period(
           "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty",
-          "L7"
+          "L7",
+          webguest
         )
 
         agent = Mechanize.new
