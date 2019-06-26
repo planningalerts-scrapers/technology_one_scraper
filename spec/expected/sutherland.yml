@@ -436,6 +436,47 @@
   info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA19%2F0463&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-25'
+- council_reference: DA19/0464
+  address: 52 Attunga Road YOWIE BAY NSW 2228
+  description: Demolition of existing carport and construction of a detached studio
+    and garage with new driveway
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA19%2F0464&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: DA19/0465
+  address: 17 Borambil Place OYSTER BAY NSW 2225
+  description: Alterations and additions to existing dwelling
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA19%2F0465&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: DA19/0466
+  address: 165 Taren Point Road CARINGBAH NSW 2229
+  description: Change of use and fit out of unit 2 existing industrial premises as
+    an artisan food and drink industry, including microbrewery and distillery, retail
+    area for the sale of goods manufactured on the premises, facilities for holding
+    tastings and installation of advertising signage
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA19%2F0466&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: DA19/0467
+  address: 47 Melrose Avenue SYLVANIA NSW 2224
+  description: Demolition of existing structures, construction of a dual-occupancy
+    and torrens title subdivision
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA19%2F0467&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'
+- council_reference: DA19/0468
+  address: 17 Banksia Avenue ENGADINE NSW 2233
+  description: Construction of a roofed deck
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA19%2F0468&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'
+- council_reference: DA19/0469
+  address: 9 Best Crescent KIRRAWEE NSW 2232
+  description: Construction of a new dwelling
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA19%2F0469&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'
 - council_reference: MA18/0455
   address: 16 Dunmore Place BARDEN RIDGE NSW 2234
   description: Section 4.55(1A) Modification of DA18/1107 - inclusion of a wet bar
@@ -452,8 +493,8 @@
   date_received: '2019-06-04'
 - council_reference: MA19/0163
   address: 306 Prince Charles Parade KURNELL NSW 2231
-  description: S4.55(1A) modification to DA18/0905 - deletion of condition 2 which
-    limits consent to a period of five years
+  description: S4.55(1A) Modification to DA18/0905 - deletion of condition 2 which
+    limits consent to a period of 5 years
   info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0163&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-05'
@@ -540,8 +581,8 @@
   date_received: '2019-06-12'
 - council_reference: MA19/0175
   address: 14 Fletcher Avenue MIRANDA NSW 2228
-  description: Section 4.55(1A) modification to DA10/1155 - modifications to internal
-    configuration and external windowes
+  description: Section 4.55(1A) Modification to DA10/1155 - modifications to internal
+    configuration and external windows
   info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0175&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-13'
@@ -633,3 +674,51 @@
   info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0187&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-21'
+- council_reference: MA19/0188
+  address: 78 Shorebird Parade GREENHILLS BEACH NSW 2230
+  description: S4.55(2) modification to DA17/1800 - relocate swimming pool, reduce
+    footprint of basement and include a turning bay for vehicles
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0188&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: MA19/0189
+  address: 3 Omaru Avenue MIRANDA NSW 2228
+  description: S4.55(1A) modification to DA17/1235 - delete swimming pools
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0189&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: MA19/0190
+  address: 147 Parraweena Road MIRANDA NSW 2228
+  description: S4.55(1A) modification of DA17/0623 - removal of two swimming pools
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0190&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: MA19/0191
+  address: 10 Mooki Street MIRANDA NSW 2228
+  description: S4.55 (2) Modification of DA18/1056 - Increase in size of adaptable
+    units resulting in reduction of front, side and rear setbacks and relocation of
+    lift entry.
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0191&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: MA19/0192
+  address: 31 Vista Street CARINGBAH SOUTH NSW 2229
+  description: S4.55(1) modification to DA19/0217 - delete condition1 i) relating
+    to construction certificate
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0192&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: MA19/0193
+  address: 382 Woolooware Road BURRANEER NSW 2230
+  description: S4.55(1A) modification to DA16/1071 - addition of clad wall to southern
+    elevation
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0193&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'
+- council_reference: MA19/0194
+  address: 78 Woodlands Road TAREN POINT NSW 2229
+  description: S4.55(2) modification to DA15/1091 - relocate and resdesign swimming
+    pool and increase deck with roof.
+  info_url: https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MA19%2F0194&f=%24P1.ETR.APPDET.VIW&r=SSC.P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'

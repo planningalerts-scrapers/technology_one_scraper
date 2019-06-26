@@ -6,7 +6,7 @@ module TechnologyOneScraper
     def self.extract_table(table)
       headers = header_elements(table).map { |th| th.inner_text.strip }
       body_rows(table).map do |tr|
-        row = tr.search("td").map { |td| td.inner_text.strip }
+        row = tr.search("> td").map { |td| td.inner_text.strip }
         # Just skip a row with a different number of columns
         next if row.length != headers.length
 
