@@ -2,7 +2,6 @@
 
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
-require "technology_one_scraper/authority/sutherland"
 require "technology_one_scraper/authority/tamworth"
 require "technology_one_scraper/authority/wagga"
 require "technology_one_scraper/authority/wyndham"
@@ -78,7 +77,11 @@ module TechnologyOneScraper
         "COR.P1.WEBGUEST"
       )
     when :sutherland
-      Authority::Sutherland.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty",
+        "TM",
+        "SSC.P1.WEBGUEST"
+      )
     when :tamworth
       Authority::Tamworth.scrape_and_save
     when :wagga
