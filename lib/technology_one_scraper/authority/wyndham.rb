@@ -4,13 +4,23 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Wyndham
+      # Returns html tree and the number of paginated links
       def self.get_content(page)
-        #Returns html tree and the number of paginated links
-        table_of_applications = page.search("table#ctl00_Content_cusResultsGrid_repWebGrid_ctl00_grdWebGridTabularView")
-        table_rows = table_of_applications.search('tr')
-        pager_row = table_of_applications.search('tr.pagerRow')
-        page_link_number = pager_row.search('td').last.text
-        return table_rows, page_link_number
+        return get_table_rows(page), get_page_link_number(page)
+      end
+
+      def self.get_table_of_applications(page)
+        page.search("table#ctl00_Content_cusResultsGrid_repWebGrid_ctl00_grdWebGridTabularView")
+      end
+
+      # Returns html tree
+      def self.get_table_rows(page)
+        get_table_of_applications(page).search('tr')
+      end
+
+      # Returns the number of paginated links
+      def self.get_page_link_number(page)
+        get_table_of_applications(page).search('tr.pagerRow').search('td').last.text
       end
 
       def self.save_table_data(table_rows, url)
