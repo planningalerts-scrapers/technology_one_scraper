@@ -15,7 +15,7 @@ module TechnologyOneScraper
 
       # Returns the number of paginated links
       def self.get_page_link_number(page)
-        get_table_of_applications(page).search('tr.pagerRow').search('td').last.text
+        get_table_of_applications(page).search('tr.pagerRow').search('td').last.text.to_i
       end
 
       def self.save_table_data(table_rows, url)
@@ -62,8 +62,7 @@ module TechnologyOneScraper
         page = agent.get(url)
         scrape_and_save_index_page(page, url)
 
-        page_link_number = get_page_link_number(page)
-        (2..page_link_number.to_i).each do |i|
+        (2..get_page_link_number(page)).each do |i|
           #We've already scraped the first page, so let's scrape the others using the aspnetForm
           #aspnetForm is some fantastic Microsoft idea... using JavaScript to fill in a form for pagination. This code completes the form.
           form_pagination_field = 'Page$i_here'.gsub('i_here', i.to_s) #eg, Page$2
