@@ -37,13 +37,7 @@ RSpec.describe TechnologyOneScraper do
       expect(results).to eq expected
     end
 
-    AUTHORITIES = %i[
-      blacktown cockburn fremantle kuringgai lithgow manningham
-      marrickville noosa port_adelaide ryde sutherland tamworth
-      wagga wyndham
-    ].freeze
-
-    AUTHORITIES.each do |authority|
+    TechnologyOneScraper::AUTHORITIES.keys.each do |authority|
       it authority do
         test_scrape_and_save(authority)
       end

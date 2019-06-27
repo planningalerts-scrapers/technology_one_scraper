@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=TW&f=$P1.ETR.SEARCH.STW&r=P1.WEBGUEST
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.7.6 Ruby/2.5.1p57 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - eservices.goulburn.nsw.gov.au
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '300'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Jun 2019 06:30:51 GMT
+      Server:
+      - Microsoft-IIS/8.5
+      Set-Cookie:
+      - AOPortal_eservices.goulburn.nsw.gov.au=true; path=/; secure; HttpOnly
+      - ASP.NET_SessionId=21jwaj55mi4xqa55okedxfii; path=/; HttpOnly; secure
+      - swap=nQUr1KtAsfeTyJzb8jBuCtR8idVKqDrm0XcXupcLLv0=; path=/; ; HttpOnly
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - "-1"
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '4820'
+      Keep-Alive:
+      - timeout=20, max=25
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Tue, 14 May 2019 14:00:00 GMT
+recorded_with: VCR 5.0.0

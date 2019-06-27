@@ -64,6 +64,29 @@ module TechnologyOneScraper
     wyndham: {
       url: "https://eproperty.wyndham.vic.gov.au/ePropertyPROD",
       period: "L28"
+    },
+    charles_sturt: {
+      url: "https://eproperty.charlessturt.sa.gov.au/eProperty",
+      period: "L28"
+    },
+    holdfast_bay: {
+      url: "https://chb-web.t1cloud.com/T1PRDefault/WebApps/eProperty",
+      period: "L28"
+    },
+    mitcham: {
+      url: "https://eproperty.mitchamcouncil.sa.gov.au/T1PRProd/WebApps/eProperty",
+      period: "L28"
+    },
+    goulburn: {
+      url: "https://eservices.goulburn.nsw.gov.au/eServicesProd",
+      period: "TW"
+    },
+    shellharbour: {
+      url: "https://eservices.shellharbour.nsw.gov.au/T1PRProd/WebApps/eProperty",
+      period: "L28",
+      webguest: "SCC.WEBGUEST",
+      # Looks like the site has an incomplete certificate chain
+      disable_ssl_certificate_check: true
     }
   }.freeze
 end
