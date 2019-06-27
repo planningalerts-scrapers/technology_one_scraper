@@ -15,19 +15,19 @@ module TechnologyOneScraper
     case authority
     when :blacktown
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eservices.blacktown.nsw.gov.au/T1PRProd/WebApps/eProperty",
-        "L28",
-        "BCC.P1.WEBGUEST"
+        url: "https://eservices.blacktown.nsw.gov.au/T1PRProd/WebApps/eProperty",
+        period: "L28",
+        webguest: "BCC.P1.WEBGUEST"
       )
     when :cockburn
       scrape_and_save_period(
-        "https://ecouncil.cockburn.wa.gov.au/eProperty",
-        "TM"
+        url: "https://ecouncil.cockburn.wa.gov.au/eProperty",
+        period: "TM"
       )
     when :fremantle
       TechnologyOneScraper.scrape_period(
-        "https://eservices.fremantle.wa.gov.au/ePropertyPROD",
-        "L28"
+        url: "https://eservices.fremantle.wa.gov.au/ePropertyPROD",
+        period: "L28"
       ) do |record|
         # TODO: Make the search ignore these rather than filtering them out here
         # Selects planning applications only
@@ -37,67 +37,67 @@ module TechnologyOneScraper
       end
     when :kuringgai
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eservices.kmc.nsw.gov.au/T1ePropertyProd",
-        "TM",
-        "KC_WEBGUEST"
+        url: "https://eservices.kmc.nsw.gov.au/T1ePropertyProd",
+        period: "TM",
+        webguest: "KC_WEBGUEST"
       )
     when :lithgow
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eservices.lithgow.nsw.gov.au/ePropertyProd",
-        "L14"
+        url: "https://eservices.lithgow.nsw.gov.au/ePropertyProd",
+        period: "L14"
       )
     when :manningham
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eproclaim.manningham.vic.gov.au/eProperty",
-        "TM"
+        url: "https://eproclaim.manningham.vic.gov.au/eProperty",
+        period: "TM"
       )
     when :marrickville
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eproperty.marrickville.nsw.gov.au/eServices",
-        "L14",
-        "MC.P1.WEBGUEST"
+        url: "https://eproperty.marrickville.nsw.gov.au/eServices",
+        period: "L14",
+        webguest: "MC.P1.WEBGUEST"
       )
     when :noosa
       TechnologyOneScraper.scrape_and_save_period(
-        "https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty",
-        "TM"
+        url: "https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty",
+        period: "TM"
       )
     when :port_adelaide
       TechnologyOneScraper.scrape_period(
-        "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty",
-        "L7",
-        "PAE.P1.WEBGUEST"
+        url: "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty",
+        period: "L7",
+        webguest: "PAE.P1.WEBGUEST"
       ) do |record|
         # selects planning applications only
         TechnologyOneScraper.save(record) if record["council_reference"].start_with?("040")
       end
     when :ryde
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty",
-        "TM",
-        "COR.P1.WEBGUEST"
+        url: "https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty",
+        period: "TM",
+        webguest: "COR.P1.WEBGUEST"
       )
     when :sutherland
       TechnologyOneScraper.scrape_and_save_period(
-        "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty",
-        "TM",
-        "SSC.P1.WEBGUEST"
+        url: "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty",
+        period: "TM",
+        webguest: "SSC.P1.WEBGUEST"
       )
     when :tamworth
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eproperty.tamworth.nsw.gov.au/ePropertyProd",
-        "TM"
+        url: "https://eproperty.tamworth.nsw.gov.au/ePropertyProd",
+        period: "TM"
       )
     when :wagga
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eservices.wagga.nsw.gov.au/T1PRWeb/eProperty",
-        "L14",
-        "WW.P1.WEBGUEST"
+        url: "https://eservices.wagga.nsw.gov.au/T1PRWeb/eProperty",
+        period: "L14",
+        webguest: "WW.P1.WEBGUEST"
       )
     when :wyndham
       TechnologyOneScraper.scrape_and_save_period(
-        "https://eproperty.wyndham.vic.gov.au/ePropertyPROD",
-        "L28"
+        url: "https://eproperty.wyndham.vic.gov.au/ePropertyPROD",
+        period: "L28"
       )
     else
       raise "Unexpected authority: #{authority}"
@@ -124,14 +124,12 @@ module TechnologyOneScraper
     "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
   end
 
-  def self.scrape_period(base_url, period, webguest = "P1.WEBGUEST")
-    url = TechnologyOneScraper.url_period(base_url, period, webguest)
-
+  def self.scrape_period(url:, period:, webguest: "P1.WEBGUEST")
     agent = Mechanize.new
     # TODO: Get rid of this extra agent
     agent_detail_page = Mechanize.new
 
-    page = agent.get(url)
+    page = agent.get(url_period(url, period, webguest))
 
     while page
       Page::Index.scrape(page, webguest) do |record|
@@ -159,8 +157,8 @@ module TechnologyOneScraper
     end
   end
 
-  def self.scrape_and_save_period(base_url, period, webguest = "P1.WEBGUEST")
-    scrape_period(base_url, period, webguest) do |record|
+  def self.scrape_and_save_period(params)
+    scrape_period(params) do |record|
       TechnologyOneScraper.save(record)
     end
   end
