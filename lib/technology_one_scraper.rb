@@ -2,7 +2,6 @@
 
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
-require "technology_one_scraper/authority/wagga"
 require "technology_one_scraper/authority/wyndham"
 require "technology_one_scraper/postback"
 require "technology_one_scraper/table"
@@ -87,7 +86,11 @@ module TechnologyOneScraper
         "TM"
       )
     when :wagga
-      Authority::Wagga.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://eservices.wagga.nsw.gov.au/T1PRWeb/eProperty",
+        "L14",
+        "WW.P1.WEBGUEST"
+      )
     when :wyndham
       Authority::Wyndham.scrape_and_save
     else
