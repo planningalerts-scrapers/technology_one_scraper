@@ -2,7 +2,6 @@
 
 require "technology_one_scraper/version"
 require "technology_one_scraper/authority/blacktown"
-require "technology_one_scraper/authority/wyndham"
 require "technology_one_scraper/postback"
 require "technology_one_scraper/table"
 require "technology_one_scraper/page/detail"
@@ -92,7 +91,10 @@ module TechnologyOneScraper
         "WW.P1.WEBGUEST"
       )
     when :wyndham
-      Authority::Wyndham.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://eproperty.wyndham.vic.gov.au/ePropertyPROD",
+        "L28"
+      )
     else
       raise "Unexpected authority: #{authority}"
     end
