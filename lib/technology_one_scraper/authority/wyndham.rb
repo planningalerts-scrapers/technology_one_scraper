@@ -21,18 +21,15 @@ module TechnologyOneScraper
           day, month, year = date_received_unformatted.split("/")
           date_received_formatted = "#{year}-#{month}-#{day}"
 
-          record = {
-            "info_url" => link_to_decision,
-            "council_reference" => council_reference,
-            "date_received" => date_received_formatted,
-            "description" => tr.search("td")[2].inner_text,
-            "address" => tr.search("td")[3].inner_text,
-            "status" => tr.search("td")[4].inner_text,
-            "decision" => tr.search("td")[5].inner_text,
-            "date_scraped" => Date.today.to_s
-          }
-
-          TechnologyOneScraper.save(record)
+          yield(
+            info_url: link_to_decision,
+            council_reference: council_reference,
+            date_received: date_received_formatted,
+            description: tr.search("td")[2].inner_text,
+            address: tr.search("td")[3].inner_text,
+            status: tr.search("td")[4].inner_text,
+            decision: tr.search("td")[5].inner_text
+          )
         end
       end
 
@@ -43,7 +40,19 @@ module TechnologyOneScraper
         page = agent.get(url)
 
         while page
-          scrape_and_save_index_page(page, url)
+          scrape_and_save_index_page(page, url) do |record|
+            TechnologyOneScraper.save(
+              "info_url" => record[:info_url],
+              "council_reference" => record[:council_reference],
+              "date_received" => record[:date_received],
+              "description" => record[:description],
+              "address" => record[:address],
+              # TODO: Remove status and decision
+              "status" => record[:status],
+              "decision" => record[:decision],
+              "date_scraped" => Date.today.to_s
+            )
+          end
           page = Page::Index.next(page)
         end
       end
