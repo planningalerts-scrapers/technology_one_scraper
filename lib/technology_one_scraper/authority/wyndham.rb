@@ -13,11 +13,6 @@ module TechnologyOneScraper
         get_table_of_applications(page).search('tr')
       end
 
-      # Returns the number of paginated links
-      def self.get_page_link_number(page)
-        get_table_of_applications(page).search('tr.pagerRow').search('td').last.text.to_i
-      end
-
       def self.save_table_data(table_rows, url)
         table_tr_number = table_rows.length
         table_rows.each_with_index do |tr, index|
@@ -58,20 +53,11 @@ module TechnologyOneScraper
         url = "https://eproperty.wyndham.vic.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=L28&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.SL28"
         agent = Mechanize.new
 
-        #The initial scrape, this returns the first table of data and the number of pages to enter in form
         page = agent.get(url)
-        scrape_and_save_index_page(page, url)
 
-        (2..get_page_link_number(page)).each do |i|
-          #We've already scraped the first page, so let's scrape the others using the aspnetForm
-          #aspnetForm is some fantastic Microsoft idea... using JavaScript to fill in a form for pagination. This code completes the form.
-          form_pagination_field = 'Page$i_here'.gsub('i_here', i.to_s) #eg, Page$2
-          form = page.form("aspnetForm")
-          form.add_field!('__EVENTARGUMENT', form_pagination_field)
-          form.add_field!('__EVENTTARGET', 'ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView')
-          page = agent.submit(form)
-
+        while page
           scrape_and_save_index_page(page, url)
+          page = Page::Index.next(page)
         end
       end
     end
