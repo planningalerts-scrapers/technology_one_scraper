@@ -38,10 +38,15 @@ module TechnologyOneScraper
     "#{base_url}/P1/eTrack/eTrackApplicationSearchResults.aspx?#{params.to_query}"
   end
 
-  def self.scrape_period(url:, period:, webguest: "P1.WEBGUEST")
+  def self.scrape_period(
+    url:, period:, webguest: "P1.WEBGUEST", disable_ssl_certificate_check: false
+  )
     agent = Mechanize.new
+    agent.verify_mode = OpenSSL::SSL::VERIFY_NONE if disable_ssl_certificate_check
+
     # TODO: Get rid of this extra agent
     agent_detail_page = Mechanize.new
+    agent_detail_page.verify_mode = OpenSSL::SSL::VERIFY_NONE if disable_ssl_certificate_check
 
     page = agent.get(url_period(url, period, webguest))
 
