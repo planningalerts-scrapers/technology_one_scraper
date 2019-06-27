@@ -26,9 +26,7 @@ module TechnologyOneScraper
             council_reference: council_reference,
             date_received: date_received_formatted,
             description: tr.search("td")[2].inner_text,
-            address: tr.search("td")[3].inner_text,
-            status: tr.search("td")[4].inner_text,
-            decision: tr.search("td")[5].inner_text
+            address: tr.search("td")[3].inner_text
           )
         end
       end
@@ -47,9 +45,6 @@ module TechnologyOneScraper
               "date_received" => record[:date_received],
               "description" => record[:description],
               "address" => record[:address],
-              # TODO: Remove status and decision
-              "status" => record[:status],
-              "decision" => record[:decision],
               "date_scraped" => Date.today.to_s
             )
           end
