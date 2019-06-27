@@ -8,15 +8,15 @@ module TechnologyOneScraper
         page.at("table.grid").search("tr.normalRow, tr.alternateRow").each do |tr|
           tds = tr.search("td")
           day, month, year = tds[1].inner_text.split("/").map{|s| s.to_i}
-          record = {
-            "council_reference" => tds[0].inner_text,
-            "date_received" => Date.new(year, month, day).to_s,
-            "description" => tds[2].inner_text,
-            "address" => tds[5].inner_text,
-            "date_scraped" => Date.today.to_s
-          }
-          record["info_url"] = info_url_base + CGI.escape(record["council_reference"])
-          TechnologyOneScraper.save(record)
+          council_reference = tds[0].inner_text
+
+          yield(
+            council_reference: council_reference,
+            date_received: Date.new(year, month, day).to_s,
+            description: tds[2].inner_text,
+            address: tds[5].inner_text,
+            info_url: info_url_base + CGI.escape(council_reference)
+          )
         end
       end
 
@@ -32,7 +32,16 @@ module TechnologyOneScraper
         current_page_no = 1
 
         while page
-          scrape_page(page, info_url_base)
+          scrape_page(page, info_url_base) do |record|
+            TechnologyOneScraper.save(
+              "council_reference" => record[:council_reference],
+              "date_received" => record[:date_received],
+              "description" => record[:description],
+              "address" => record[:address],
+              "date_scraped" => Date.today.to_s,
+              "info_url" => record[:info_url]
+            )
+          end
           page = Page::Index.next(page)
         end
       end
