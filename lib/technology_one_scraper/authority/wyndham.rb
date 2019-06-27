@@ -4,11 +4,6 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Wyndham
-      # Returns html tree and the number of paginated links
-      def self.get_content(page)
-        return get_table_rows(page), get_page_link_number(page)
-      end
-
       def self.get_table_of_applications(page)
         page.search("table#ctl00_Content_cusResultsGrid_repWebGrid_ctl00_grdWebGridTabularView")
       end
@@ -60,7 +55,8 @@ module TechnologyOneScraper
 
         #The initial scrape, this returns the first table of data and the number of pages to enter in form
         page = agent.get(url)
-        table_rows, page_link_number = get_content(page)
+        table_rows = get_table_rows(page)
+        page_link_number = get_page_link_number(page)
         save_table_data(table_rows, url)
 
         (2..page_link_number.to_i).each do |i|
@@ -72,7 +68,7 @@ module TechnologyOneScraper
           form.add_field!('__EVENTTARGET', 'ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView')
           page = agent.submit(form)
 
-          table_rows, _ignore = get_content(page)
+          table_rows = get_table_rows(page)
           save_table_data(table_rows, url)
         end
       end
