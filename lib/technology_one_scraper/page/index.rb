@@ -45,7 +45,7 @@ module TechnologyOneScraper
           :address
         when "Group Description"
           :group_description
-        when "Category Description", "Category"
+        when "Category Description", "Category", "Classification"
           :category_description
         when "Applicant Names", "Applicant"
           :applicant_names
@@ -65,6 +65,8 @@ module TechnologyOneScraper
           :determined_date
         when "Ward"
           :ward
+        when "Development Cost"
+          :development_cost
         else
           raise "Unknown name #{name} with value #{value}"
         end
