@@ -37,11 +37,13 @@ module TechnologyOneScraper
     def self.body_rows(table)
       # If it's actually got a body use that
       if table.at("tbody")
-        table.at("tbody").search("tr")
+        table.at("tbody").search("> tr")
       # Otherwise assume the first row is the header and
       # return everything else
       else
-        table.search("tr")[1..-1]
+        # Sometime people put table inside of tables, so we
+        # restrict our search to rows that are immediate descendents
+        table.search("> tr")[1..-1]
       end
     end
   end
