@@ -1,20 +1,24 @@
 # frozen_string_literal: true
 
 require "technology_one_scraper/version"
-require "technology_one_scraper/authority/blacktown"
 require "technology_one_scraper/postback"
 require "technology_one_scraper/table"
 require "technology_one_scraper/page/detail"
 require "technology_one_scraper/page/index"
 
 require "scraperwiki"
+require "mechanize"
 
 # Scrape the technology one system
 module TechnologyOneScraper
   def self.scrape_and_save(authority)
     case authority
     when :blacktown
-      Authority::Blacktown.scrape_and_save
+      TechnologyOneScraper.scrape_and_save_period(
+        "https://eservices.blacktown.nsw.gov.au/T1PRProd/WebApps/eProperty",
+        "L28",
+        "BCC.P1.WEBGUEST"
+      )
     when :cockburn
       scrape_and_save_period(
         "https://ecouncil.cockburn.wa.gov.au/eProperty",
