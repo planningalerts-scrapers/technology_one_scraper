@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "technology_one_scraper/version"
+require "technology_one_scraper/authorities"
 require "technology_one_scraper/postback"
 require "technology_one_scraper/table"
 require "technology_one_scraper/page/detail"
@@ -12,87 +13,9 @@ require "mechanize"
 # Scrape the technology one system
 module TechnologyOneScraper
   def self.scrape_and_save(authority)
-    case authority
-    when :blacktown
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eservices.blacktown.nsw.gov.au/T1PRProd/WebApps/eProperty",
-        period: "L28",
-        webguest: "BCC.P1.WEBGUEST"
-      )
-    when :cockburn
-      scrape_and_save_period(
-        url: "https://ecouncil.cockburn.wa.gov.au/eProperty",
-        period: "TM"
-      )
-    when :fremantle
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eservices.fremantle.wa.gov.au/ePropertyPROD",
-        period: "L28"
-      )
-    when :kuringgai
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eservices.kmc.nsw.gov.au/T1ePropertyProd",
-        period: "TM",
-        webguest: "KC_WEBGUEST"
-      )
-    when :lithgow
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eservices.lithgow.nsw.gov.au/ePropertyProd",
-        period: "L14"
-      )
-    when :manningham
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eproclaim.manningham.vic.gov.au/eProperty",
-        period: "TM"
-      )
-    when :marrickville
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eproperty.marrickville.nsw.gov.au/eServices",
-        period: "L14",
-        webguest: "MC.P1.WEBGUEST"
-      )
-    when :noosa
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty",
-        period: "TM"
-      )
-    when :port_adelaide
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty",
-        period: "L7",
-        webguest: "PAE.P1.WEBGUEST"
-      )
-    when :ryde
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty",
-        period: "TM",
-        webguest: "COR.P1.WEBGUEST"
-      )
-    when :sutherland
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty",
-        period: "TM",
-        webguest: "SSC.P1.WEBGUEST"
-      )
-    when :tamworth
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eproperty.tamworth.nsw.gov.au/ePropertyProd",
-        period: "TM"
-      )
-    when :wagga
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eservices.wagga.nsw.gov.au/T1PRWeb/eProperty",
-        period: "L14",
-        webguest: "WW.P1.WEBGUEST"
-      )
-    when :wyndham
-      TechnologyOneScraper.scrape_and_save_period(
-        url: "https://eproperty.wyndham.vic.gov.au/ePropertyPROD",
-        period: "L28"
-      )
-    else
-      raise "Unexpected authority: #{authority}"
-    end
+    raise "Unexpected authority: #{authority}" unless AUTHORITIES.key?(authority)
+
+    scrape_and_save_period(AUTHORITIES[authority])
   end
 
   def self.save(record)
