@@ -4,16 +4,8 @@ require 'mechanize'
 module TechnologyOneScraper
   module Authority
     module Wyndham
-      def self.get_table_of_applications(page)
-        page.search("table#ctl00_Content_cusResultsGrid_repWebGrid_ctl00_grdWebGridTabularView")
-      end
-
-      # Returns html tree
-      def self.get_table_rows(page)
-        get_table_of_applications(page).search('tr')
-      end
-
-      def self.save_table_data(table_rows, url)
+      def self.scrape_and_save_index_page(page, url)
+        table_rows = page.search("table#ctl00_Content_cusResultsGrid_repWebGrid_ctl00_grdWebGridTabularView").search('tr')
         table_tr_number = table_rows.length
         table_rows.each_with_index do |tr, index|
 
@@ -42,11 +34,6 @@ module TechnologyOneScraper
 
           TechnologyOneScraper.save(record)
         end
-      end
-
-      def self.scrape_and_save_index_page(page, url)
-        table_rows = get_table_rows(page)
-        save_table_data(table_rows, url)
       end
 
       def self.scrape_and_save
