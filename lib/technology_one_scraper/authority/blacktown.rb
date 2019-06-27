@@ -5,27 +5,11 @@ module TechnologyOneScraper
   module Authority
     module Blacktown
       def self.scrape_and_save
-        info_url = "https://www.blacktown.nsw.gov.au/Plan-build/Stage-1-find-out/Development-on-notification"
-        url = "https://services.blacktown.nsw.gov.au/webservices/scm/default.ashx?itemid=890&stylesheet=xslt/DAOnline.xslt"
-
-        agent = Mechanize.new
-        page = agent.get(url)
-
-        xml = Nokogiri::XML(page.body)
-        xml.xpath('//DevelopmentsOnNotifications/DevelopmentsOnNotification').each do |app|
-            description = app.xpath('Notes').inner_text.size > app.xpath('Activity').inner_text.size ? app.xpath('Notes').inner_text : app.xpath('Activity').inner_text
-
-            record = {
-              "council_reference" => app.xpath('ApplicationID').inner_text,
-              "address" => app.xpath('PrimaryAddress').inner_text,
-              "description" => description.gsub(/\s+/, ' '),
-              "info_url"    => info_url,
-              "date_scraped" => Date.today.to_s,
-              "date_received" => DateTime.parse(app.xpath('LodgementDate').inner_text).to_date.to_s
-            }
-
-            TechnologyOneScraper.save(record)
-        end
+        TechnologyOneScraper.scrape_and_save_period(
+          "https://eservices.blacktown.nsw.gov.au/T1PRProd/WebApps/eProperty",
+          "L28",
+          "BCC.P1.WEBGUEST"
+        )
       end
     end
   end
