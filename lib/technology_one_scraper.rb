@@ -25,16 +25,10 @@ module TechnologyOneScraper
         period: "TM"
       )
     when :fremantle
-      TechnologyOneScraper.scrape_period(
+      TechnologyOneScraper.scrape_and_save_period(
         url: "https://eservices.fremantle.wa.gov.au/ePropertyPROD",
         period: "L28"
-      ) do |record|
-        # TODO: Make the search ignore these rather than filtering them out here
-        # Selects planning applications only
-        if record["council_reference"].start_with?("DA", "LL", "VA", "WAPC", "ET", "PW")
-          TechnologyOneScraper.save(record)
-        end
-      end
+      )
     when :kuringgai
       TechnologyOneScraper.scrape_and_save_period(
         url: "https://eservices.kmc.nsw.gov.au/T1ePropertyProd",
@@ -63,14 +57,11 @@ module TechnologyOneScraper
         period: "TM"
       )
     when :port_adelaide
-      TechnologyOneScraper.scrape_period(
+      TechnologyOneScraper.scrape_and_save_period(
         url: "https://ecouncil.portenf.sa.gov.au/T1PRWebPROD/eProperty",
         period: "L7",
         webguest: "PAE.P1.WEBGUEST"
-      ) do |record|
-        # selects planning applications only
-        TechnologyOneScraper.save(record) if record["council_reference"].start_with?("040")
-      end
+      )
     when :ryde
       TechnologyOneScraper.scrape_and_save_period(
         url: "https://eservices.ryde.nsw.gov.au/T1PRProd/WebApps/eProperty",
