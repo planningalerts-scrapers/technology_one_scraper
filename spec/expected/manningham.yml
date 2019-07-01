@@ -1,12 +1,4 @@
 ---
-- council_reference: PLA19/0051
-  address: 331 Old Warrandyte Road RINGWOOD NORTH VIC 3134
-  description: Amendment to Planning Permit PL17/027819 (issued for Buildings and
-    works for construction of one, two-storey dwelling and associated vegetation removal
-    and impacts) by earthworks to the rear of the site
-  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLA19%2F0051&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-06-03'
 - council_reference: PLA19/0054
   address: 12 Red Hill Terrace DONCASTER EAST VIC 3109
   description: Amendment to Planning Permit PL08/019982 (issued for a Forty-six (46)
@@ -15,7 +7,8 @@
     removal of easements and the construction of dwellings in accordance with the
     endorsed plans and subject to the following conditions) by alterations to the
     development for 10 dwellings at Lots 18 and 19 (Nos. 12 and 14) including a reduction
-    to the setback to the southern boundary and alterations to levels
+    to the setback to the southern boundary, deletion of a visitor car space and alterations
+    to levels
   info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLA19%2F0054&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-04'
@@ -147,12 +140,6 @@
   info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0265&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-07'
-- council_reference: PLN19/0270
-  address: 138-142 Jumping Creek Road WONGA PARK VIC 3115
-  description: Buildings and works for the construction of a shed and vegetation removal
-  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0270&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-06-01'
 - council_reference: PLN19/0271
   address: 1 Correa Court DONCASTER EAST VIC 3109
   description: Two (2) Lot Subdivision
@@ -187,7 +174,7 @@
   date_received: '2019-06-06'
 - council_reference: PLN19/0277
   address: 741 Elgar Road DONCASTER VIC 3108
-  description: Two (2) Lot Subdivision
+  description: Four (4) Lot Subdivision
   info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0277&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-07'
@@ -284,7 +271,8 @@
   date_received: '2019-06-13'
 - council_reference: PLN19/0290
   address: 39 Ada Street DONCASTER VIC 3108
-  description: Removal of restrictive covenant requiring use of brick for development.
+  description: Removal of restrictive covenant (C252454) from the land (requiring
+    brick or brick veneer construction)
   info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0290&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-18'
@@ -352,6 +340,18 @@
   info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0301&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-21'
+- council_reference: PLN19/0302
+  address: 20 Canara Street DONCASTER EAST VIC 3109
+  description: Construction of two, two-storey dwellings
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0302&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-24'
+- council_reference: PLN19/0303
+  address: 16 Greendale Road DONCASTER EAST VIC 3109
+  description: Construction of two, two-storey dwellings
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0303&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-20'
 - council_reference: PLN19/0304
   address: 1-2 Gardenview Court TEMPLESTOWE VIC 3106
   description: 4 lot subdivision and certification and removal of easement (SPEAR
@@ -359,6 +359,43 @@
   info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0304&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-20'
+- council_reference: PLN19/0305
+  address: 600 Doncaster Road DONCASTER VIC 3108
+  description: One hundred and twenty (120) Lot Subdivision
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0305&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-21'
+- council_reference: PLN19/0306
+  address: 22 Homestead Road WONGA PARK VIC 3115
+  description: Alterations and additions to the existing dwelling by the addition
+    of a carport
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0306&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-27'
+- council_reference: PLN19/0310
+  address: 2 Zerbe Avenue DONCASTER EAST VIC 3109
+  description: 5 lot subdivision (SPEAR S 142980T)
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0310&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'
+- council_reference: PLN19/0312
+  address: 8 Pambara Court DONVALE VIC 3111
+  description: Construction of a freestanding, colorbond garage with gable roof.
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0312&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'
+- council_reference: PLN19/0315
+  address: 2 Aranga Crescent DONVALE VIC 3111
+  description: 2 Lot subdivision
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0315&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-28'
+- council_reference: PLN19/0316
+  address: 17 Glenview Road DONCASTER EAST VIC 3109
+  description: 2 lot subdivision (SPEAR S142897P)
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PLN19%2F0316&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-28'
 - council_reference: PVN19/0060
   address: 12/1020 Doncaster Road DONCASTER EAST VIC 3109
   description: Construction and put up for display a business identification sign
@@ -401,3 +438,27 @@
   info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PVN19%2F0068&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
   date_received: '2019-06-19'
+- council_reference: PVN19/0069
+  address: 10 Meredith Avenue TEMPLESTOWE VIC 3106
+  description: Two Lot Subdivision
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PVN19%2F0069&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-21'
+- council_reference: PVN19/0070
+  address: 14 Hawk Street DONCASTER EAST VIC 3109
+  description: 2 (Two) Lot Subdivision
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PVN19%2F0070&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-25'
+- council_reference: PVN19/0071
+  address: 78 Tristania Street DONCASTER EAST VIC 3109
+  description: Two Lot Subdivision
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PVN19%2F0071&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'
+- council_reference: PVN19/0072
+  address: 2/27 Tullamore Avenue DONCASTER VIC 3108
+  description: Construction of a steel veranda.
+  info_url: https://eproclaim.manningham.vic.gov.au/eProperty/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=PVN19%2F0072&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_scraped: '2019-05-15'
+  date_received: '2019-06-26'

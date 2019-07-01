@@ -26,7 +26,7 @@ module TechnologyOneScraper
     },
     manningham: {
       url: "https://eproclaim.manningham.vic.gov.au/eProperty",
-      period: "TM"
+      period: "L28"
     },
     marrickville: {
       url: "https://eproperty.marrickville.nsw.gov.au/eServices",
