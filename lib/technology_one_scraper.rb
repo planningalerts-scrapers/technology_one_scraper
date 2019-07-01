@@ -12,10 +12,16 @@ require "mechanize"
 
 # Scrape the technology one system
 module TechnologyOneScraper
-  def self.scrape_and_save(authority)
+  def self.scrape(authority)
     raise "Unexpected authority: #{authority}" unless AUTHORITIES.key?(authority)
 
     scrape_period(AUTHORITIES[authority]) do |record|
+      yield record
+    end
+  end
+
+  def self.scrape_and_save(authority)
+    scrape(authority) do |record|
       TechnologyOneScraper.save(record)
     end
   end
