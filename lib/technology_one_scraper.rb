@@ -15,7 +15,9 @@ module TechnologyOneScraper
   def self.scrape_and_save(authority)
     raise "Unexpected authority: #{authority}" unless AUTHORITIES.key?(authority)
 
-    scrape_and_save_period(AUTHORITIES[authority])
+    scrape_period(AUTHORITIES[authority]) do |record|
+      TechnologyOneScraper.save(record)
+    end
   end
 
   def self.save(record)
@@ -73,12 +75,6 @@ module TechnologyOneScraper
         )
       end
       page = Page::Index.next(page)
-    end
-  end
-
-  def self.scrape_and_save_period(params)
-    scrape_period(params) do |record|
-      TechnologyOneScraper.save(record)
     end
   end
 end
