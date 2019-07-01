@@ -65,7 +65,7 @@ module TechnologyOneScraper
           :determined_date
         when "Ward"
           :ward
-        when "Development Cost"
+        when "Development Cost", "Estimated Cost"
           :development_cost
         else
           raise "Unknown name #{name} with value #{value}"
