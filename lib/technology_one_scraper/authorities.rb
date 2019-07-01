@@ -54,7 +54,7 @@ module TechnologyOneScraper
     },
     tamworth: {
       url: "https://eproperty.tamworth.nsw.gov.au/ePropertyProd",
-      period: "TM"
+      period: "L28"
     },
     wagga: {
       url: "https://eservices.wagga.nsw.gov.au/T1PRWeb/eProperty",
