@@ -79,7 +79,12 @@ module TechnologyOneScraper
     },
     goulburn: {
       url: "https://eservices.goulburn.nsw.gov.au/eServicesProd",
-      period: "TW"
+      period: "TW",
+      # Goulburn is blocking requests from outside Australia. You can verify this
+      # yourself by scraping via a VPN and switch between different countries.
+      # morph.io is hosted in the US. So, to get around this we send our
+      # traffic to an australian proxy
+      australian_proxy: true
     },
     shellharbour: {
       url: "https://eservices.shellharbour.nsw.gov.au/T1PRProd/WebApps/eProperty",
