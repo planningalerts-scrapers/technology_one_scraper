@@ -1,56 +1,26 @@
 ---
-- council_reference: CC/0353/1819
-  address: 42 Mary Street GOULBURN NSW 2580
-  description: 60m2 Detached dwelling with attached garage(42m2)
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CC%2F0353%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+- council_reference: CC/0001/1920
+  address: 307 Highland Way MARULAN NSW 2579
+  description: Construct a American Barn 17.5m x 10.5m
+  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CC%2F0001%2F1920&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
-  date_received: '2019-06-24'
-- council_reference: CC/0354/1819
-  address: 10 Bell Lane MUMMEL NSW 2580
-  description: Back/Rear deck area pergola and swim spa- Retrospective deck and pergola
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CC%2F0354%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_received: '2019-07-01'
+- council_reference: CC/0002/1920
+  address: 35 Theatre Drive GOULBURN NSW 2580
+  description: New Dwelling & Shed
+  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CC%2F0002%2F1920&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
-  date_received: '2019-06-25'
-- council_reference: CC/0355/1819
-  address: 99 May Street GOULBURN NSW 2580
-  description: 27 Lot Residential Subdivision
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CC%2F0355%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_received: '2019-07-01'
+- council_reference: DA/0001/1920
+  address: 307 Highland Way MARULAN NSW 2579
+  description: Construct a American Barn 17.5m x 10.5m
+  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA%2F0001%2F1920&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
-  date_received: '2019-06-25'
-- council_reference: CDC/0084/1819
-  address: 5 Rifle Range Road GOULBURN NSW 2580
-  description: New construction swimming pool and fence
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=CDC%2F0084%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
+  date_received: '2019-07-01'
+- council_reference: MODDA/0001/1920
+  address: 102 Mulwaree Street TARAGO NSW 2580
+  description: Wall in bed 1 & study /tv room is now one room & window on the side
+    are small. The first floor height is now 2550
+  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MODDA%2F0001%2F1920&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
   date_scraped: '2019-05-15'
-  date_received: '2019-06-24'
-- council_reference: DA/0379/1819
-  address: 42 Mary Street GOULBURN NSW 2580
-  description: 60m2 Detached dwelling with attached garage(42m2)
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA%2F0379%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-06-24'
-- council_reference: DA/0380/1819
-  address: 10 Bell Lane MUMMEL NSW 2580
-  description: Back/Rear deck area pergola and swim spa- Retrospective deck and pergola
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA%2F0380%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-06-25'
-- council_reference: DA/0381/1819
-  address: 5 Thomas Place GOULBURN NSW 2580
-  description: New Double Storey Dwelling with Basement Garage
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=DA%2F0381%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-06-26'
-- council_reference: MODCC/0008/1819
-  address: 71 Hilltop Close TARAGO NSW 2580
-  description: new shed with temporary living facilities
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MODCC%2F0008%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-06-24'
-- council_reference: MODCC/0009/1819
-  address: 5b Little Close RUN O WATERS NSW 2580
-  description: "Erection of Single Storey Dwelling with 5 Bedrooms & Attached Garage
-    ( Private CC - BCA Certifiers)\r\nUpdated Doors & Windows - Shed"
-  info_url: https://eservices.goulburn.nsw.gov.au/eServicesProd/P1/eTrack/eTrackApplicationDetails.aspx?ApplicationId=MODCC%2F0009%2F1819&f=%24P1.ETR.APPDET.VIW&r=P1.WEBGUEST
-  date_scraped: '2019-05-15'
-  date_received: '2019-06-26'
+  date_received: '2019-07-01'
