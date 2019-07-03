@@ -97,6 +97,10 @@ module TechnologyOneScraper
       webguest: "SCC.WEBGUEST",
       # Looks like the site has an incomplete certificate chain
       disable_ssl_certificate_check: true
+    },
+    mornington_peninsula: {
+      url: "https://epeninsula.mornpen.vic.gov.au/P1PRPROD",
+      period: "L28"
     }
   }.freeze
 end
