@@ -100,7 +100,9 @@ module TechnologyOneScraper
     },
     mornington_peninsula: {
       url: "https://epeninsula.mornpen.vic.gov.au/P1PRPROD",
-      period: "L28"
+      period: "L28",
+      # Mornington peninsula is blocking requests from outside Australia
+      australian_proxy: true
     }
   }.freeze
 end
