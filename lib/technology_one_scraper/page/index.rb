@@ -7,27 +7,59 @@ module TechnologyOneScraper
     # A list of results of a search
     module Index
       def self.scrape(page, webguest = "P1.WEBGUEST")
-        table = page.at("table.grid")
-        raise "Couldn't find table" if table.nil?
+        # If there are multiple tables we have results laid out differently
+        if page.search("table.grid").count > 1
+          results = page.search("table.grid").map do |table|
+            result = {}
+            table.search("tr").each do |tr|
+              key = tr.search("td")[0].inner_text.strip
+              value = tr.search("td")[1].inner_text.strip
+              result[key] = value
+            end
+            result
+          end
+          results.each do |row|
+            normalised = row.map { |k, v| [normalise_name(k, v), v] }.to_h
 
-        Table.extract_table(table).each do |row|
-          normalised = row.map { |k, v| [normalise_name(k, v), v] }.to_h
+            params = {
+              # The first two parameters appear to be required to get the
+              # correct authentication to view the page without a login or session
+              "r" => webguest,
+              "f" => "$P1.ETR.APPDET.VIW",
+              "ApplicationId" => normalised[:council_reference]
+            }
+            info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
+            yield(
+              council_reference: normalised[:council_reference],
+              address: normalised[:address],
+              description: normalised[:description]&.squeeze(" "),
+              info_url: (page.uri + info_url).to_s,
+              date_received: Date.strptime(normalised[:date_received], "%d/%m/%Y").to_s
+            )
+          end
+        else
+          table = page.at("table.grid")
+          raise "Couldn't find table" if table.nil?
 
-          params = {
-            # The first two parameters appear to be required to get the
-            # correct authentication to view the page without a login or session
-            "r" => webguest,
-            "f" => "$P1.ETR.APPDET.VIW",
-            "ApplicationId" => normalised[:council_reference]
-          }
-          info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
-          yield(
-            council_reference: normalised[:council_reference],
-            address: normalised[:address],
-            description: normalised[:description]&.squeeze(" "),
-            info_url: (page.uri + info_url).to_s,
-            date_received: Date.strptime(normalised[:date_received], "%d/%m/%Y").to_s
-          )
+          Table.extract_table(table).each do |row|
+            normalised = row.map { |k, v| [normalise_name(k, v), v] }.to_h
+
+            params = {
+              # The first two parameters appear to be required to get the
+              # correct authentication to view the page without a login or session
+              "r" => webguest,
+              "f" => "$P1.ETR.APPDET.VIW",
+              "ApplicationId" => normalised[:council_reference]
+            }
+            info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
+            yield(
+              council_reference: normalised[:council_reference],
+              address: normalised[:address],
+              description: normalised[:description]&.squeeze(" "),
+              info_url: (page.uri + info_url).to_s,
+              date_received: Date.strptime(normalised[:date_received], "%d/%m/%Y").to_s
+            )
+          end
         end
       end
 
@@ -41,15 +73,15 @@ module TechnologyOneScraper
           :date_received
         when "Description"
           :description
-        when "Formatted Address", "Property Address", "Address"
+        when "Formatted Address", "Property Address", "Address", "Site Address"
           :address
         when "Group Description"
           :group_description
         when "Category Description", "Category", "Classification"
           :category_description
-        when "Applicant Names", "Applicant"
+        when "Applicant Names", "Applicant", "Applicant Name(s)"
           :applicant_names
-        when "Status", "Stage/Decision", "Decision", "Current Stage or Decision"
+        when "Status", "Stage/Decision", "Decision", "Current Stage or Decision", "Stage"
           :status
         when "Application Type"
           :application_type

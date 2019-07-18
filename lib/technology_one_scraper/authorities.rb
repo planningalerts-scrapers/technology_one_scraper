@@ -2,6 +2,10 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    stirling: {
+      url: "https://onlineservices.stirling.wa.gov.au/eProperty",
+      period: "L28"
+    },
     qprc: {
       url: "https://services.qprc.nsw.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28",
