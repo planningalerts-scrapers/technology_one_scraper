@@ -2,6 +2,13 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    hume: {
+      url: "https://ehume.hume.vic.gov.au/T1PRProd/WebApps/eProperty",
+      period: "L28",
+      webguest: "P1.HCC.WEBGUEST",
+      # Site has an incomplete certificate chain. See https://www.ssllabs.com/ssltest/analyze.html?d=ehume.hume.vic.gov.au&latest
+      disable_ssl_certificate_check: true
+    },
     blacktown: {
       url: "https://eservices.blacktown.nsw.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28",
