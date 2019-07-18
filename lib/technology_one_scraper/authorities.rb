@@ -2,6 +2,10 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    mid_western: {
+      url: "https://eservices.midwestern.nsw.gov.au/epropertyprod",
+      period: "L28"
+    },
     hume: {
       url: "https://ehume.hume.vic.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28",
