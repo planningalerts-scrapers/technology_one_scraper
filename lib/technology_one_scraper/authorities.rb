@@ -2,6 +2,11 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    corangamite: {
+      url: "https://eservices.corangamite.vic.gov.au/T1PRprod/WebApps/eProperty",
+      period: "L28",
+      webguest: "CSC.WEBGUEST"
+    },
     stirling: {
       url: "https://onlineservices.stirling.wa.gov.au/eProperty",
       period: "L28"

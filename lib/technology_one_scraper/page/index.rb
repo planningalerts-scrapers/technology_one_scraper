@@ -49,7 +49,7 @@ module TechnologyOneScraper
       # transform them to a standard name that we use here
       def self.normalise_name(name, value)
         case name
-        when "Application Link", "ID", "Application Number", "Application ID"
+        when "Application Link", "ID", "Application Number", "Application ID", "Application"
           :council_reference
         when "Lodgement Date", "Lodged", "Submitted Date", "Date Received"
           :date_received
