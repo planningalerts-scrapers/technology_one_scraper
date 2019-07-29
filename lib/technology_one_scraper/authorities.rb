@@ -2,6 +2,10 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    eurobodalla: {
+      url: "https://eservices.esc.nsw.gov.au/T1PRProd/WebApps/eProperty",
+      period: "L28"
+    },
     lockyer_valley: {
       url: "https://online.lvrc.qld.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28",
