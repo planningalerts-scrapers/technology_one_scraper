@@ -65,7 +65,7 @@ module TechnologyOneScraper
           :applicant_names
         when "Status", "Stage/Decision", "Decision", "Current Stage or Decision", "Stage"
           :status
-        when "Application Type"
+        when "Application Type", "Application Group"
           :application_type
         when "Project Type"
           :project_type

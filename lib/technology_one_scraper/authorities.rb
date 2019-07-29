@@ -2,6 +2,11 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    lockyer_valley: {
+      url: "https://online.lvrc.qld.gov.au/T1PRProd/WebApps/eProperty",
+      period: "L28",
+      webguest: "LV.WEBGUEST"
+    },
     corangamite: {
       url: "https://eservices.corangamite.vic.gov.au/T1PRprod/WebApps/eProperty",
       period: "L28",
