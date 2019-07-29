@@ -2,6 +2,10 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    wangaratta: {
+      url: "https://eservices.wangaratta.vic.gov.au/T1PRProd/WebApps/eProperty",
+      period: "L28"
+    },
     southern_downs: {
       url: "https://onlineservices.sdrc.qld.gov.au/eProperty",
       period: "L28"

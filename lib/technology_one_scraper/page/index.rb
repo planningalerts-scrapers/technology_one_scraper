@@ -50,11 +50,12 @@ module TechnologyOneScraper
       # transform them to a standard name that we use here
       def self.normalise_name(name, value)
         case name
-        when "Application Link", "ID", "Application Number", "Application ID", "Application"
+        when "Application Link", "ID", "Application Number", "Application ID",
+             "Application", "Permit No."
           :council_reference
         when "Lodgement Date", "Lodged", "Submitted Date", "Date Received"
           :date_received
-        when "Description"
+        when "Description", "Proposal"
           :description
         when "Formatted Address", "Property Address", "Address", "Site Address"
           :address
@@ -62,7 +63,7 @@ module TechnologyOneScraper
           :group_description
         when "Category Description", "Category", "Classification"
           :category_description
-        when "Applicant Names", "Applicant", "Applicant Name(s)"
+        when "Applicant Names", "Applicant", "Applicant Name(s)", "Applicant Details"
           :applicant_names
         when "Status", "Stage/Decision", "Decision", "Current Stage or Decision", "Stage"
           :status
