@@ -27,7 +27,9 @@ module TechnologyOneScraper
     lockyer_valley: {
       url: "https://online.lvrc.qld.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28",
-      webguest: "LV.WEBGUEST"
+      webguest: "LV.WEBGUEST",
+      # They are blocking requests from outside Australia
+      australian_proxy: true
     },
     corangamite: {
       url: "https://eservices.corangamite.vic.gov.au/T1PRprod/WebApps/eProperty",
