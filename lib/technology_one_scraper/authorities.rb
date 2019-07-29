@@ -2,6 +2,11 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    parkes: {
+      url: "https://my.parkes.nsw.gov.au/T1PRProd/WebApps/eProperty",
+      period: "L28",
+      webguest: "PSC.P1.WEBGUEST"
+    },
     wangaratta: {
       url: "https://eservices.wangaratta.vic.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28"
