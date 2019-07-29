@@ -2,6 +2,10 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    southern_downs: {
+      url: "https://onlineservices.sdrc.qld.gov.au/eProperty",
+      period: "L28"
+    },
     campaspe: {
       url: "https://eservices.campaspe.vic.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28",

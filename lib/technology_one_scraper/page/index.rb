@@ -36,7 +36,8 @@ module TechnologyOneScraper
           }
           info_url = "eTrackApplicationDetails.aspx?#{params.to_query}"
           yield(
-            council_reference: normalised[:council_reference],
+            # For some reason we're getting doubling up of backslash. Hack around this.
+            council_reference: normalised[:council_reference].gsub("\\\\", "\\"),
             address: normalised[:address],
             description: normalised[:description]&.squeeze(" "),
             info_url: (page.uri + info_url).to_s,
