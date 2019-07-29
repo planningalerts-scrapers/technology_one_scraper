@@ -156,6 +156,9 @@ module TechnologyOneScraper
     mornington_peninsula: {
       url: "https://epeninsula.mornpen.vic.gov.au/P1PRPROD",
       period: "L28",
+      # It looks like part of their certificate has expired (but I can't check
+      # using ssllabs because they're blocking US traffic. Sigh.)
+      disable_ssl_certificate_check: true,
       # Mornington peninsula is blocking requests from outside Australia
       australian_proxy: true
     }
