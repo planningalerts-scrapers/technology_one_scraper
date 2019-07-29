@@ -1,0 +1,461 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://eservices.campaspe.vic.gov.au/T1PRProd/WebApps/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=L28&f=$P1.ETR.SEARCH.SL28&r=SOC.WEBGUEST
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.7.6 Ruby/2.5.1p57 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - eservices.campaspe.vic.gov.au
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '300'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.2
+      Date:
+      - Sun, 28 Jul 2019 14:50:00 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '21070'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Set-Cookie:
+      - ASP.NET_SessionId=q15j5b55wzbge1452jyf44ee; path=/; HttpOnly
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+    body:
+      encoding: UTF-8
+      string: "\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
+        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head><link
+        rel=\"icon\" type=\"image/png\" href=\"../../images/favicon.ico\" sizes=\"32x32\"
+        /><title>\r\n\tCampaspe Shire Council - Submitted Last 28 Days\r\n</title><link
+        href=\"../../App_Themes/SOC_DefaultTheme/Default.css\" type=\"text/css\" rel=\"stylesheet\"
+        /><link href=\"../../App_Themes/SOC_DefaultTheme/fontawesome.css\" type=\"text/css\"
+        rel=\"stylesheet\" /><link href=\"../../App_Themes/SOC_DefaultTheme/jquery-ui.css\"
+        type=\"text/css\" rel=\"stylesheet\" /><link href=\"../../App_Themes/SOC_DefaultTheme/nen0axo.css\"
+        type=\"text/css\" rel=\"stylesheet\" /></head>\r\n<body>\r\n\r\n<script type=\"text/javascript\"
+        src=\"../../Scripts/jquery-1.8.3.min.js\"></script> \r\n\r\n<script>\r\n$(document).ready(function()
+        {\r\n\r\n\tif ($(\"#cssTaskpaneRelatedLinks\").height() == 0) {\r\n    \t\t$(\"#cssTaskpaneRelatedLinks\").css(\"background-color\",
+        \"rgba(0,0,0,0)\");\r\n\t}\r\n});\r\n</script>\r\n\r\n    <form name=\"aspnetForm\"
+        method=\"post\" action=\"eTrackApplicationSearchResults.aspx?Field=S&amp;Period=L28&amp;f=%24P1.ETR.SEARCH.SL28&amp;r=SOC.WEBGUEST\"
+        id=\"aspnetForm\">\r\n<div>\r\n<input type=\"hidden\" name=\"__VIEWSTATE\"
+        id=\"__VIEWSTATE\" value=\"/wEPDwUKMTE5MDgzMDk0Nw9kFgJmD2QWAgIBD2QWBAIED2QWBAIBD2QWAmYPZBYEAgEPZBYCZg9kFgJmDw8WEB4EVGV4dAUJRWRpdCBNb2RlHgtDb21tYW5kTmFtZQUEVGFzax4PQ29tbWFuZEFyZ3VtZW50BRpQMUVQUkN1c3RvbWlzYXRpb25FZGl0TW9kZR4JQWNjZXNzS2V5ZR4QQ2F1c2VzVmFsaWRhdGlvbmgeCFRhYkluZGV4AQAAHgdUb29sVGlwZR4PVmFsaWRhdGlvbkdyb3VwZWRkAgIPZBYCZg9kFgJmDw8WEB8ABQ1SZWZyZXNoIENhY2hlHwEFBFRhc2sfAgUeUDFFUFJDdXN0b21pc2F0aW9uUmVmcmVzaENhY2hlHwNlHwRoHwUBAAAfBmUfB2VkZAIDDw8WAh4HVmlzaWJsZWhkFgICAg8PZA8PFCsAARYGHgROYW1lBQpsc0Z1bmN0aW9uHgxEZWZhdWx0VmFsdWUFElAxLkVUUi5TRUFSQ0guU0wyOB4OUGFyYW1ldGVyVmFsdWVkFCsBAQIDZGQCBw9kFgYCAQ8PFgIfAAXQBFJlY29yZHMgYXJlIHNvcnRlZCBieSBsb2RnZW1lbnQgZGF0ZSBhcyBkZWZhdWx0LCBob3dldmVyIGRhdGEgY2FuIGJlIHNvcnRlZCBiYXNlZCBvbiBhbnkgb2YgdGhlIGJlbG93IGNvbHVtbnMtIFNpbXBseSBjbGljayBvbiB0aGUgcmVsZXZhbnQgY29sdW1uIGhlYWRpbmcgdG8gdG9nZ2xlIGFzY2VuZGluZyBvciBkZXNjZW5kaW5nIHNvcnQgb3JkZXIuIDwvYnI+PC9icj4NCg0KPGI+UGxhbm5pbmcgUHJpb3JpdHk8L2I+PC9icj4NClBsYW5uaW5nIEFwcGxpY2F0aW9ucyBhcmUgcHJpb3JpdGlzZWQgYmFzZWQgb24gdGhlaXIgY29tcGxleGl0eS48L2I+PC9icj4NCjxiPlAxPC9iPiBBcHBsaWNhdGlvbnMgLSAxMCBEYXlzIChWaWNTbWFydCwgbm8gcmVmZXJyYWxzLCBleGVtcHQgZnJvbSBub3RpY2UpPC9icj4NCjxiPlAyPC9iPiBBcHBsaWNhdGlvbnMgLSAxMSAtIDQ1IERheXMgKHJlZmVycmVkLCBhZHZlcnRpc2VkLCBubyBvYmplY3Rpb25zKTwvYnI+DQo8Yj5QMzwvYj4gQXBwbGljYXRpb25zIC0gNDYgLSA2MCBEYXlzIChyZWZlcnJlZCwgYWR2ZXJ0aXNlZCwgcmVjZWl2ZWQgb2JqZWN0aW9ucywgY29uc3VsdGF0aW9uKTwvYnI+PC9icj5kZAIDD2QWBAICDw8WAh8ABQxTZWFyY2ggRGF0ZXNkZAIDDw8WAh8ABRcyLzA3LzIwMTkgdG8gMjkvMDcvMjAxOWRkAgUPDxYEHghHcmlkVHlwZQUMRVRSQUNLU0VBUkNIHhBHcmlkQ3JpdGVyaWFMaXN0MuwEAAEAAAD/////AQAAAAAAAAAMAgAAAFBUMS5QMS5XZWIuT2JqZWN0QWRhcHRlcnMsIFZlcnNpb249MTAuNC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAQBAAAAnAFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1QxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWEsIFQxLlAxLldlYi5PYmplY3RBZGFwdGVycywgVmVyc2lvbj0xMC40LjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAACdUMS5QMS5XZWIuT2JqZWN0QWRhcHRlcnMuR3JpZENyaXRlcmlhW10CAAAACAgJAwAAAAEAAAABAAAABwMAAAAAAQAAAAQAAAAEJVQxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWECAAAACQQAAAANAwUEAAAAJVQxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWEFAAAAB21zVmFsdWUIbXNWYWx1ZTIObXNPcGVyYXRvckNvZGUKbXNDb2x1bW5JZA5tc1Byb3BlcnR5TmFtZQEBAQEBAgAAAAYFAAAAFTIvMDcvMjAxOSAxMjowMDowMCBBTQYGAAAAFjI5LzA3LzIwMTkgMTE6NTk6NTkgUE0GBwAAAAJEQgYIAAAADUxvZGdlbWVudERhdGUJCAAAAAtkFgJmD2QWBAIBD2QWAgIBDw8WAh8ABQlHcmlkIFR5cGVkZAIDDw8WAh8IaGQWAgIBDw8WAh8ABRxObyBpbmZvcm1hdGlvbiBpcyBhdmFpbGFibGUuZGQYAwVDY3RsMDAkQ29udGVudCRjdXNSZXN1bHRzR3JpZCRyZXBXZWJHcmlkJGN0bDAwJGdyZFdlYkdyaWRUYWJ1bGFyVmlldw88KwAKAQgCAmQFQGN0bDAwJENvbnRlbnQkY3VzUmVzdWx0c0dyaWQkcmVwV2ViR3JpZCRjdGwwMCRkdHZXZWJHcmlkTGlzdFZpZXcPFCsAB2RkZGRkFgACFmQFHGN0bDAwJENvbnRlbnQkbGJsU2VhcmNoRGF0ZXMPaGT8xaAArdmklhLLAHuI2jd+PA1Vlg==\"
+        />\r\n</div>\r\n\r\n<div>\r\n\r\n\t<input type=\"hidden\" name=\"__VIEWSTATEGENERATOR\"
+        id=\"__VIEWSTATEGENERATOR\" value=\"794B1E1F\" />\r\n\t<input type=\"hidden\"
+        name=\"__EVENTVALIDATION\" id=\"__EVENTVALIDATION\" value=\"/wEWGgLQ3Z/YBAK359HKDwL38+S0BQLD0Z//CAKDjpzeCALurtn5CAKO0+W9AQK4mvLWDwL/iqOnDwKei6OnDwK1jaOnDwLci6OnDwL7i6OnDwKajKOnDwKhiqOnDwLIiKOnDwK5jLfiDgLgirfiDgL/irfiDgKei7fiDgK1jbfiDgLci7fiDgL7i7fiDgKa4Pf0BAK/g8WMCQKjmJfRCllVFjgAxCiUVfrHrAi3NPQIUeX0\"
+        />\r\n</div>\r\n        <div id=\"loading\">               \r\n        </div>\r\n
+        \       <div id=\"cssBounds\">\r\n\r\n            <div id=\"cssBanner\" >\r\n
+        \                   <!-- Login -->\r\n                    <div class=\"speciallink\">\r\n
+        \                       \r\n                            <span class=\"Login\">\r\n
+        \                               <a id=\"ctl00_ctlLogin_cmdLogin\" accesskey=\"L\"
+        title=\"Access Key: L\" href=\"javascript:__doPostBack('ctl00$ctlLogin$cmdLogin','')\">Login</a>
+        \                               \r\n                             </span>\r\n
+        \                           \r\n                     </div>\r\n                    <!--
+        End Login -->            \r\n                <div id=\"cssBannerLogo\">\r\n
+        \                   <a href=\"https://eservices.campaspe.vic.gov.au/T1PRProd/WebApps/eProperty/P1/GuestHome.aspx?r=SOC.WEBGUEST&f=$P1.EPR.GUESTHME.VIW\"
+        id=\"ctl00_cmdHomeNav\">\r\n                        <img src=\"../../App_Themes/Default/Images/Empty.gif\"
+        id=\"ctl00_imageHomeNav\" border=\"0\" class=\"homeNav\" />\r\n                    </a>\r\n
+        \               </div>\r\n            </div>\r\n            <div class=\"clear\"></div>\r\n
+        \           <div id=\"cssContentArea\">\r\n                <div id=\"cssTaskpane\"
+        \ class = \"cssNoPrint\">\r\n                    \r\n                    <div>\r\n
+        \                       \r\n                                <div class=\"menuPanel\">\r\n
+        \                           \r\n                                <div class=\"menuHeader\">\r\n
+        \                                   <span id=\"ctl00_Taskpane_rprMenuList_ctl01_lblMenuGroupHeader\">Online
+        Payments</span>\r\n                                </div>\r\n                                <ul
+        class=\"menuGroupList\">\r\n\t<li><a href=\"../ePay/AnimalPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.ANIMALS.ENQ\">Animal
+        Payment</a></li><li><a href=\"../ePay/ApplicationPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.APPS.ENQ\">Application
+        Payment</a></li><li><a href=\"../ePay/DebtorPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.DEBTORS.ENQ\">Debtor
+        Payment</a></li><li><a href=\"../ePay/InfringementPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.INFRINGE.ENQ\">Infringement
+        Payment</a></li><li><a href=\"../ePay/RatesPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.RATES.ENQ\">Rates
+        Payment</a></li><li><a href=\"../ePay/SpecialRatesPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.SPECRATE.ENQ\">Special
+        Rates and Charges Payment</a></li><li><a href=\"../ShoppingCart/ShoppingCart.aspx?r=SOC.WEBGUEST&amp;f=%24P1.PAY.CART.VIW\">Shopping
+        Cart</a></li>\r\n</ul>\r\n                                <br />\r\n                            \r\n
+        \                               <div class=\"menuHeader\">\r\n                                    <span
+        id=\"ctl00_Taskpane_rprMenuList_ctl02_lblMenuGroupHeader\">Online Requests</span>\r\n
+        \                               </div>\r\n                                <ul
+        class=\"menuGroupList\">\r\n\t<li><a href=\"../eRequest/CategorySelection.aspx?r=SOC.WEBGUEST&amp;f=%24P1.ECR.SELCAT.VIW\">Request
+        a Service</a></li><li><a href=\"../eRequest/TrackRequest.aspx?r=SOC.WEBGUEST&amp;f=%24P1.ECR.TRACK.ENQ\">Track
+        a Request</a></li>\r\n</ul>\r\n                                <br />\r\n
+        \                           \r\n                                <div class=\"menuHeader\">\r\n
+        \                                   <span id=\"ctl00_Taskpane_rprMenuList_ctl03_lblMenuGroupHeader\">Planning
+        Applications</span>\r\n                                </div>\r\n                                <ul
+        class=\"menuGroupList\">\r\n\t<li><a href=\"../PublicNotices/PublicNoticeSearch.aspx?r=SOC.WEBGUEST&amp;f=%24P1.ESB.PUBNOT.ENQ\">Public
+        Notice Enquiry</a></li><li><a href=\"../PublicNotices/AllPublicNotices.aspx?r=SOC.WEBGUEST&amp;f=P1.ESB.PUBNOTAL.ENQ\">Applications
+        Currently Advertised</a></li><li><a href=\"eTrackApplicationSearch.aspx?r=SOC.WEBGUEST&amp;f=P1.ETR.SEARCH.ENQ\">Planning
+        Register Search</a></li>\r\n</ul>\r\n                                <br />\r\n
+        \                           \r\n                                </div>\r\n
+        \                           \r\n                        \r\n                    </div>\r\n
+        \                           \r\n                </div>\r\n                \r\n
+        \               <div id=\"cssTaskpaneRelatedLinks\"  class= \"cssNoPrint\">\r\n
+        \                   \r\n                        <div id=\"ctl00_RightTaskPane_tspRelatedLinks\"
+        class=\"taskPanel\">\r\n<div class=\"taskHeader\">Related Links</div>\r\n<ul>\r\n<li><a
+        href=\"eTrackApplicationSearchResults.aspx?Field=S&amp;Period=TW&amp;r=SOC.WEBGUEST&amp;f=P1.ETR.SEARCH.STW\">Submitted
+        This Week</a></li>\r\n<li><a href=\"eTrackApplicationSearchResults.aspx?Field=S&amp;Period=LM&amp;r=SOC.WEBGUEST&amp;f=P1.ETR.SEARCH.SLM\">Submitted
+        Last Month</a></li>\r\n</ul>\r\n<div class=\"taskFooter\">&nbsp;</div>\r\n</div>\r\n\r\n
+        \                       \r\n                    \r\n                    \r\n
+        \                   <div id=\"cssHelpAndAdmin\">\r\n                        \r\n
+        \   \r\n    \r\n\r\n                    </div>\r\n                </div>\r\n
+        \                               \r\n                <div id=\"cssContent\">\r\n
+        \               <div class=\"cssContentWorkspace\">\r\n                    <a
+        id=\"cssContentTop\"></a>\r\n                    \r\n                        <h1
+        id=\"ctl00_Header_h1PageTitle\">Submitted Last 28 Days</h1>\r\n                    \r\n
+        \                   \r\n                    \r\n                              \r\n
+        \                   \r\n    \r\n    <span id=\"ctl00_Content_cusETrackApplicationSearchResults\"
+        style=\"display:inline-block;width:100%;\">Records are sorted by lodgement
+        date as default, however data can be sorted based on any of the below columns-
+        Simply click on the relevant column heading to toggle ascending or descending
+        sort order. </br></br>\r\n\r\n<b>Planning Priority</b></br>\r\nPlanning Applications
+        are prioritised based on their complexity.</b></br>\r\n<b>P1</b> Applications
+        - 10 Days (VicSmart, no referrals, exempt from notice)</br>\r\n<b>P2</b> Applications
+        - 11 - 45 Days (referred, advertised, no objections)</br>\r\n<b>P3</b> Applications
+        - 46 - 60 Days (referred, advertised, received objections, consultation)</br></br></span>\r\n
+        \   <br />\r\n    \r\n    <span id=\"ctl00_Content_lblSearchDates\" class=\"block\"><span
+        id=\"ctl00_Content_lblFieldNameP1ETRSearchDates\" class=\"fieldLabel\">Search
+        Dates</span><span id=\"ctl00_Content_lblFieldValueP1ETRSearchDates\" class=\"fieldLabel\">2/07/2019
+        to 29/07/2019</span></span>\r\n    \r\n    <div id=\"ctl00_Content_cusResultsGrid_pnlCustomisationGrid\">\r\n\t\r\n
+        \   \r\n    \r\n    \r\n            <div id=\"ctl00_Content_cusResultsGrid_repWebGrid_ctl00_pnlSectionHeading\">\r\n\t\t\r\n
+        \               <span id=\"ctl00_Content_cusResultsGrid_repWebGrid_ctl00_lblSectionHeading\"
+        class=\"sectionHeading\">Application Search Results</span>\r\n                                <br
+        />\r\n                <img id=\"ctl00_Content_cusResultsGrid_repWebGrid_ctl00_imgSectionSeparator\"
+        class=\"sectionSeparator\" src=\"../../App_Themes/SOC_DefaultTheme/Images/Empty.gif\"
+        alt=\"\" style=\"border-width:0px;height:0px;width:50%;\" />\r\n            \r\n\t</div>\r\n
+        \r\n            \r\n\r\n            <div>\r\n\t\t<table class=\"grid\" cellspacing=\"0\"
+        cellpadding=\"3\" border=\"0\" id=\"ctl00_Content_cusResultsGrid_repWebGrid_ctl00_grdWebGridTabularView\"
+        style=\"width:100%;border-collapse:collapse;\">\r\n\t\t\t<tr class=\"headerRow\">\r\n\t\t\t\t<th
+        scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$RamId')\">Application
+        Number</a></th><th scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$LodgementDate')\">Lodgement
+        Date</a></th><th scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$Description')\">Description</a></th><th
+        scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$FormattedAddress')\">Property
+        Address</a></th><th scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$Decision')\">Status</a></th><th
+        scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$Text10')\">Priority</a></th>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl02$ctl01','')\">PLN172/2019</a></td><td>2/07/2019</td><td>Buildings
+        and Works (Verandah) in the Industrial 1 Zone and Design and Development Overlay
+        Schedule 11 and Reduction in Car Parking Requirements pursuant to Clause 52.06</td><td>55
+        Cornelia Creek Road ECHUCA VIC 3564</td><td>Referral Sent</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"alternateRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl03$ctl01','')\">PLN175/2019</a></td><td>2/07/2019</td><td>Use
+        and development of the land for a dwelling in the Farming Zone Schedule 1</td><td>Mockler
+        Road ECHUCA WEST VIC 3564</td><td>Further Info Required</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl04$ctl01','')\">PLN173/2019</a></td><td>4/07/2019</td><td>Boundary
+        Realignment  in the Farming Zone Schedule 1</td><td>3303 Midland Highway STANHOPE
+        VIC 3623</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr class=\"alternateRow\">\r\n\t\t\t\t<td><a
+        href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl05$ctl01','')\">PLN174/2019</a></td><td>4/07/2019</td><td>Buildings
+        and works (external alterations) in the Commercial 1 Zone and Design and Development
+        Overlay Schedule 4 and Heritage Overlay Schedule 1 and removal of one tree</td><td>6-8
+        Percy Street ECHUCA VIC 3564</td><td>Acknowledged</td><td>P1</td>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl06$ctl01','')\">PLN178/2019</a></td><td>8/07/2019</td><td>Buildings
+        and Works (Outbuilding) in the Rural Living Zone 1 and Bushfire Management
+        Overlay</td><td>37 Jones Road RUSHWORTH VIC 3612</td><td>Referral Sent</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"alternateRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl07$ctl01','')\">PLN177/2019</a></td><td>9/07/2019</td><td>Demolition
+        in the Heritage Overlay Schedule 37 and Buildings and Works (toilet block)
+        in the Commercial 1 Zone and Heritage Overlay Schedule 37</td><td>579-587
+        High Street ECHUCA VIC 3564</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl08$ctl01','')\">PLN159/2019</a></td><td>12/07/2019</td><td>Buildings
+        and Works (Shade Sail) in the Land Subject to Inundation Overlay</td><td>39-53
+        Lake Road KYABRAM VIC 3620</td><td>Permit Issued</td><td>P1</td>\r\n\t\t\t</tr><tr
+        class=\"alternateRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl09$ctl01','')\">PLN120/2019</a></td><td>12/07/2019</td><td>
+        Subdivision of the Land into Four (4) Lots in the Commercial 1 Zone and Land
+        Subject to Inundation Overlay</td><td>486-488 High Street ECHUCA VIC 3564</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl10$ctl01','')\">PLN152/2019</a></td><td>15/07/2019</td><td>Use
+        and Development of a Dwelling and Outbuilding in the Farming Zone, Schedule
+        1</td><td>668 Highett Road TERRICK TERRICK EAST VIC 3566</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"alternateRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl11$ctl01','')\">PLN182/2019</a></td><td>16/07/2019</td><td>Removal
+        of Two Trees, Demolition a Fence and Construction of a Fence in the Heritage
+        Overlay, Schedule 3</td><td>359 High Street ECHUCA VIC 3564</td><td>Acknowledged</td><td>P1</td>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl12$ctl01','')\">PLN184/2019</a></td><td>16/07/2019</td><td>Agreement
+        AK998081U ended from Lots 2 &amp; 3 on PS717709E</td><td>59 Mckenzie Road
+        ECHUCA VIC 3564</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr class=\"alternateRow\">\r\n\t\t\t\t<td><a
+        href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl13$ctl01','')\">PLN185/2019</a></td><td>17/07/2019</td><td>Buildings
+        and works (building extension) in the Industrial 1 Zone</td><td>Fact 1/5B
+        Reliance Court ECHUCA VIC 3564</td><td>Acknowledged</td><td>P1</td>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl14$ctl01','')\">PLN037/2019</a></td><td>17/07/2019</td><td>Buildings
+        and Works (outbuilding) in the Rural Activity Zone</td><td>60 Murray Drive
+        WHARPARILLA VIC 3564</td><td>Acknowledged</td><td>P1</td>\r\n\t\t\t</tr><tr
+        class=\"alternateRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl15$ctl01','')\">PLN179/2019</a></td><td>17/07/2019</td><td>Native
+        vegetation removal pursuant to Clause 52.17</td><td>113 Frenchmans Road WARANGA
+        SHORES VIC 3612</td><td>Assessment</td><td>P1</td>\r\n\t\t\t</tr><tr class=\"normalRow\">\r\n\t\t\t\t<td><a
+        href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl16$ctl01','')\">Pln323/2017.A</a></td><td>18/07/2019</td><td>Use
+        of the land for trade supplies in the Industrial 1 Zone</td><td>13 Free Trader
+        Court ECHUCA VIC 3564</td><td>Acknowledged</td><td>P1</td>\r\n\t\t\t</tr><tr
+        class=\"pagerRow\">\r\n\t\t\t\t<td colspan=\"6\"><table border=\"0\">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td><span>1</span></td><td><a
+        href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Page$2')\">2</a></td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table></td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n
+        \           \r\n            <br />\r\n            \r\n            \r\n            \r\n
+        \       \r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n    \r\n    <div class=\"actionButtonsLeft\">\r\n
+        \       <input type=\"submit\" name=\"ctl00$Content$btnPrevious\" value=\"Previous\"
+        id=\"ctl00_Content_btnPrevious\" accesskey=\"P\" title=\"Access Key: P\" class=\"LeftArrowButton\"
+        />\r\n    </div>\r\n\r\n\r\n                    <div class=\"clear\"></div>\r\n
+        \                   <br />\r\n                    <br />\r\n                    <br
+        />\r\n                </div>\r\n                </div>\r\n            </div>\r\n
+        \           <p></p>\r\n            <p class=\"invisible\"></p>\r\n            <div
+        id=\"cssBottomBar\" class=\"cssNoPrint\">\r\n                <div id=\"cssBottomBarLegal\">
+        \                \r\n                    <a id=\"ctl00_hplCustomFooterLink1\"
+        accesskey=\"V\" title=\"Access Key: V\" href=\"https://www.campaspe.vic.gov.au/council/laws-and-legislation/Privacy-statement/\"
+        target=\"_self\">Privacy</a>\r\n                    <img id=\"ctl00_imgFooterSeparator1\"
+        class=\"verticalBar\" src=\"../../App_Themes/SOC_DefaultTheme/Images/VerticalBarBlack.gif\"
+        alt=\"\" style=\"height:10px;width:1px;border-width:0px;\" />\r\n                    <a
+        id=\"ctl00_hplCustomFooterLink2\" accesskey=\"T\" title=\"Access Key: T\"
+        href=\"https://www.campaspe.vic.gov.au/\" target=\"_self\">Home</a>\r\n                    <img
+        id=\"ctl00_imgFooterSeparator2\" class=\"verticalBar\" src=\"../../App_Themes/SOC_DefaultTheme/Images/VerticalBarBlack.gif\"
+        alt=\"\" style=\"height:10px;width:1px;border-width:0px;\" />\r\n                    <a
+        id=\"ctl00_hplCustomFooterLink3\" accesskey=\"U\" title=\"Access Key: U\"
+        href=\"https://www.campaspe.vic.gov.au/council/have-your-say/contact-us/\"
+        target=\"_self\">Contact Us</a>                       \r\n                    <span
+        id=\"ctl00_MobileLink\">\r\n                        <img id=\"ctl00_Image1\"
+        class=\"verticalBar\" src=\"../../App_Themes/SOC_DefaultTheme/Images/VerticalBarBlack.gif\"
+        alt=\"\" style=\"height:10px;width:1px;border-width:0px;\" />\r\n                        <a
+        id=\"ctl00_hplMobileView\" href=\"javascript:__doPostBack('ctl00$hplMobileView','')\">Mobile
+        View</a>                       \r\n                    </span>\r\n                </div>\r\n
+        \               <div id=\"cssBottomBarCopyright\">&copy; Campaspe Shire Council
+        2019</div>\r\n            </div>\r\n            \r\n        </div>\r\n    \r\n\r\n<script
+        type=\"text/javascript\">\r\n//<![CDATA[\r\n$(document).ready(function ()
+        {if ($('#ctl00_valErrors').is(':visible') == true) {$('#__SCROLLPOSITIONX').val('0');$('#__SCROLLPOSITIONY').val('0');}});//]]>\r\n</script>\r\n</form>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Tue, 14 May 2019 14:00:00 GMT
+- request:
+    method: post
+    uri: https://eservices.campaspe.vic.gov.au/T1PRProd/WebApps/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=L28&f=$P1.ETR.SEARCH.SL28&r=SOC.WEBGUEST
+    body:
+      encoding: UTF-8
+      string: __VIEWSTATE=%2FwEPDwUKMTE5MDgzMDk0Nw9kFgJmD2QWAgIBD2QWBAIED2QWBAIBD2QWAmYPZBYEAgEPZBYCZg9kFgJmDw8WEB4EVGV4dAUJRWRpdCBNb2RlHgtDb21tYW5kTmFtZQUEVGFzax4PQ29tbWFuZEFyZ3VtZW50BRpQMUVQUkN1c3RvbWlzYXRpb25FZGl0TW9kZR4JQWNjZXNzS2V5ZR4QQ2F1c2VzVmFsaWRhdGlvbmgeCFRhYkluZGV4AQAAHgdUb29sVGlwZR4PVmFsaWRhdGlvbkdyb3VwZWRkAgIPZBYCZg9kFgJmDw8WEB8ABQ1SZWZyZXNoIENhY2hlHwEFBFRhc2sfAgUeUDFFUFJDdXN0b21pc2F0aW9uUmVmcmVzaENhY2hlHwNlHwRoHwUBAAAfBmUfB2VkZAIDDw8WAh4HVmlzaWJsZWhkFgICAg8PZA8PFCsAARYGHgROYW1lBQpsc0Z1bmN0aW9uHgxEZWZhdWx0VmFsdWUFElAxLkVUUi5TRUFSQ0guU0wyOB4OUGFyYW1ldGVyVmFsdWVkFCsBAQIDZGQCBw9kFgYCAQ8PFgIfAAXQBFJlY29yZHMgYXJlIHNvcnRlZCBieSBsb2RnZW1lbnQgZGF0ZSBhcyBkZWZhdWx0LCBob3dldmVyIGRhdGEgY2FuIGJlIHNvcnRlZCBiYXNlZCBvbiBhbnkgb2YgdGhlIGJlbG93IGNvbHVtbnMtIFNpbXBseSBjbGljayBvbiB0aGUgcmVsZXZhbnQgY29sdW1uIGhlYWRpbmcgdG8gdG9nZ2xlIGFzY2VuZGluZyBvciBkZXNjZW5kaW5nIHNvcnQgb3JkZXIuIDwvYnI%2BPC9icj4NCg0KPGI%2BUGxhbm5pbmcgUHJpb3JpdHk8L2I%2BPC9icj4NClBsYW5uaW5nIEFwcGxpY2F0aW9ucyBhcmUgcHJpb3JpdGlzZWQgYmFzZWQgb24gdGhlaXIgY29tcGxleGl0eS48L2I%2BPC9icj4NCjxiPlAxPC9iPiBBcHBsaWNhdGlvbnMgLSAxMCBEYXlzIChWaWNTbWFydCwgbm8gcmVmZXJyYWxzLCBleGVtcHQgZnJvbSBub3RpY2UpPC9icj4NCjxiPlAyPC9iPiBBcHBsaWNhdGlvbnMgLSAxMSAtIDQ1IERheXMgKHJlZmVycmVkLCBhZHZlcnRpc2VkLCBubyBvYmplY3Rpb25zKTwvYnI%2BDQo8Yj5QMzwvYj4gQXBwbGljYXRpb25zIC0gNDYgLSA2MCBEYXlzIChyZWZlcnJlZCwgYWR2ZXJ0aXNlZCwgcmVjZWl2ZWQgb2JqZWN0aW9ucywgY29uc3VsdGF0aW9uKTwvYnI%2BPC9icj5kZAIDD2QWBAICDw8WAh8ABQxTZWFyY2ggRGF0ZXNkZAIDDw8WAh8ABRcyLzA3LzIwMTkgdG8gMjkvMDcvMjAxOWRkAgUPDxYEHghHcmlkVHlwZQUMRVRSQUNLU0VBUkNIHhBHcmlkQ3JpdGVyaWFMaXN0MuwEAAEAAAD%2F%2F%2F%2F%2FAQAAAAAAAAAMAgAAAFBUMS5QMS5XZWIuT2JqZWN0QWRhcHRlcnMsIFZlcnNpb249MTAuNC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAQBAAAAnAFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1QxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWEsIFQxLlAxLldlYi5PYmplY3RBZGFwdGVycywgVmVyc2lvbj0xMC40LjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAACdUMS5QMS5XZWIuT2JqZWN0QWRhcHRlcnMuR3JpZENyaXRlcmlhW10CAAAACAgJAwAAAAEAAAABAAAABwMAAAAAAQAAAAQAAAAEJVQxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWECAAAACQQAAAANAwUEAAAAJVQxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWEFAAAAB21zVmFsdWUIbXNWYWx1ZTIObXNPcGVyYXRvckNvZGUKbXNDb2x1bW5JZA5tc1Byb3BlcnR5TmFtZQEBAQEBAgAAAAYFAAAAFTIvMDcvMjAxOSAxMjowMDowMCBBTQYGAAAAFjI5LzA3LzIwMTkgMTE6NTk6NTkgUE0GBwAAAAJEQgYIAAAADUxvZGdlbWVudERhdGUJCAAAAAtkFgJmD2QWBAIBD2QWAgIBDw8WAh8ABQlHcmlkIFR5cGVkZAIDDw8WAh8IaGQWAgIBDw8WAh8ABRxObyBpbmZvcm1hdGlvbiBpcyBhdmFpbGFibGUuZGQYAwVDY3RsMDAkQ29udGVudCRjdXNSZXN1bHRzR3JpZCRyZXBXZWJHcmlkJGN0bDAwJGdyZFdlYkdyaWRUYWJ1bGFyVmlldw88KwAKAQgCAmQFQGN0bDAwJENvbnRlbnQkY3VzUmVzdWx0c0dyaWQkcmVwV2ViR3JpZCRjdGwwMCRkdHZXZWJHcmlkTGlzdFZpZXcPFCsAB2RkZGRkFgACFmQFHGN0bDAwJENvbnRlbnQkbGJsU2VhcmNoRGF0ZXMPaGT8xaAArdmklhLLAHuI2jd%2BPA1Vlg%3D%3D&__VIEWSTATEGENERATOR=794B1E1F&__EVENTVALIDATION=%2FwEWGgLQ3Z%2FYBAK359HKDwL38%2BS0BQLD0Z%2F%2FCAKDjpzeCALurtn5CAKO0%2BW9AQK4mvLWDwL%2FiqOnDwKei6OnDwK1jaOnDwLci6OnDwL7i6OnDwKajKOnDwKhiqOnDwLIiKOnDwK5jLfiDgLgirfiDgL%2FirfiDgKei7fiDgK1jbfiDgLci7fiDgL7i7fiDgKa4Pf0BAK%2Fg8WMCQKjmJfRCllVFjgAxCiUVfrHrAi3NPQIUeX0&__EVENTTARGET=ctl00%24Content%24cusResultsGrid%24repWebGrid%24ctl00%24grdWebGridTabularView&__EVENTARGUMENT=Page%242
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.7.6 Ruby/2.5.1p57 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Cookie:
+      - ASP.NET_SessionId=q15j5b55wzbge1452jyf44ee
+      Host:
+      - eservices.campaspe.vic.gov.au
+      Referer:
+      - https://eservices.campaspe.vic.gov.au/T1PRProd/WebApps/eProperty/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=L28&f=%24P1.ETR.SEARCH.SL28&r=SOC.WEBGUEST
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '3230'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '300'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.2
+      Date:
+      - Sun, 28 Jul 2019 14:50:02 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '17901'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+    body:
+      encoding: UTF-8
+      string: "\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"
+        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head><link
+        rel=\"icon\" type=\"image/png\" href=\"../../images/favicon.ico\" sizes=\"32x32\"
+        /><title>\r\n\tCampaspe Shire Council - Submitted Last 28 Days\r\n</title><link
+        href=\"../../App_Themes/SOC_DefaultTheme/Default.css\" type=\"text/css\" rel=\"stylesheet\"
+        /><link href=\"../../App_Themes/SOC_DefaultTheme/fontawesome.css\" type=\"text/css\"
+        rel=\"stylesheet\" /><link href=\"../../App_Themes/SOC_DefaultTheme/jquery-ui.css\"
+        type=\"text/css\" rel=\"stylesheet\" /><link href=\"../../App_Themes/SOC_DefaultTheme/nen0axo.css\"
+        type=\"text/css\" rel=\"stylesheet\" /></head>\r\n<body>\r\n\r\n<script type=\"text/javascript\"
+        src=\"../../Scripts/jquery-1.8.3.min.js\"></script> \r\n\r\n<script>\r\n$(document).ready(function()
+        {\r\n\r\n\tif ($(\"#cssTaskpaneRelatedLinks\").height() == 0) {\r\n    \t\t$(\"#cssTaskpaneRelatedLinks\").css(\"background-color\",
+        \"rgba(0,0,0,0)\");\r\n\t}\r\n});\r\n</script>\r\n\r\n    <form name=\"aspnetForm\"
+        method=\"post\" action=\"eTrackApplicationSearchResults.aspx?Field=S&amp;Period=L28&amp;f=%24P1.ETR.SEARCH.SL28&amp;r=SOC.WEBGUEST\"
+        id=\"aspnetForm\">\r\n<div>\r\n<input type=\"hidden\" name=\"__VIEWSTATE\"
+        id=\"__VIEWSTATE\" value=\"/wEPDwUKMTE5MDgzMDk0Nw9kFgJmD2QWAgIBD2QWBAIED2QWAgIDDw8WAh4HVmlzaWJsZWhkFgICAg8PZA8PFCsAARYGHgROYW1lBQpsc0Z1bmN0aW9uHgxEZWZhdWx0VmFsdWUFElAxLkVUUi5TRUFSQ0guU0wyOB4OUGFyYW1ldGVyVmFsdWVkFCsBAQIDZGQCBw9kFgYCAQ8PFgIeBFRleHQF0ARSZWNvcmRzIGFyZSBzb3J0ZWQgYnkgbG9kZ2VtZW50IGRhdGUgYXMgZGVmYXVsdCwgaG93ZXZlciBkYXRhIGNhbiBiZSBzb3J0ZWQgYmFzZWQgb24gYW55IG9mIHRoZSBiZWxvdyBjb2x1bW5zLSBTaW1wbHkgY2xpY2sgb24gdGhlIHJlbGV2YW50IGNvbHVtbiBoZWFkaW5nIHRvIHRvZ2dsZSBhc2NlbmRpbmcgb3IgZGVzY2VuZGluZyBzb3J0IG9yZGVyLiA8L2JyPjwvYnI+DQoNCjxiPlBsYW5uaW5nIFByaW9yaXR5PC9iPjwvYnI+DQpQbGFubmluZyBBcHBsaWNhdGlvbnMgYXJlIHByaW9yaXRpc2VkIGJhc2VkIG9uIHRoZWlyIGNvbXBsZXhpdHkuPC9iPjwvYnI+DQo8Yj5QMTwvYj4gQXBwbGljYXRpb25zIC0gMTAgRGF5cyAoVmljU21hcnQsIG5vIHJlZmVycmFscywgZXhlbXB0IGZyb20gbm90aWNlKTwvYnI+DQo8Yj5QMjwvYj4gQXBwbGljYXRpb25zIC0gMTEgLSA0NSBEYXlzIChyZWZlcnJlZCwgYWR2ZXJ0aXNlZCwgbm8gb2JqZWN0aW9ucyk8L2JyPg0KPGI+UDM8L2I+IEFwcGxpY2F0aW9ucyAtIDQ2IC0gNjAgRGF5cyAocmVmZXJyZWQsIGFkdmVydGlzZWQsIHJlY2VpdmVkIG9iamVjdGlvbnMsIGNvbnN1bHRhdGlvbik8L2JyPjwvYnI+ZGQCAw8PFgIeCEVkaXRNb2RlaGQWBAICDw8WAh8EBQxTZWFyY2ggRGF0ZXNkZAIDDw8WAh8EBRcyLzA3LzIwMTkgdG8gMjkvMDcvMjAxOWRkAgUPDxYGHghHcmlkVHlwZQUMRVRSQUNLU0VBUkNIHhBHcmlkQ3JpdGVyaWFMaXN0MuwEAAEAAAD/////AQAAAAAAAAAMAgAAAFBUMS5QMS5XZWIuT2JqZWN0QWRhcHRlcnMsIFZlcnNpb249MTAuNC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAQBAAAAnAFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1QxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWEsIFQxLlAxLldlYi5PYmplY3RBZGFwdGVycywgVmVyc2lvbj0xMC40LjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAACdUMS5QMS5XZWIuT2JqZWN0QWRhcHRlcnMuR3JpZENyaXRlcmlhW10CAAAACAgJAwAAAAEAAAABAAAABwMAAAAAAQAAAAQAAAAEJVQxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWECAAAACQQAAAANAwUEAAAAJVQxLlAxLldlYi5PYmplY3RBZGFwdGVycy5HcmlkQ3JpdGVyaWEFAAAAB21zVmFsdWUIbXNWYWx1ZTIObXNPcGVyYXRvckNvZGUKbXNDb2x1bW5JZA5tc1Byb3BlcnR5TmFtZQEBAQEBAgAAAAYFAAAAFTIvMDcvMjAxOSAxMjowMDowMCBBTQYGAAAAFjI5LzA3LzIwMTkgMTE6NTk6NTkgUE0GBwAAAAJEQgYIAAAADUxvZGdlbWVudERhdGUJCAAAAAseCVBhZ2VJbmRleAIBZBYCZg9kFgQCAQ9kFgICAQ8PFgIfBAUJR3JpZCBUeXBlZGQCAw8PFgIfAGhkFgICAQ8PFgIfBAUcTm8gaW5mb3JtYXRpb24gaXMgYXZhaWxhYmxlLmRkGAMFQ2N0bDAwJENvbnRlbnQkY3VzUmVzdWx0c0dyaWQkcmVwV2ViR3JpZCRjdGwwMCRncmRXZWJHcmlkVGFidWxhclZpZXcPPCsACgICAgEIAgJkBUBjdGwwMCRDb250ZW50JGN1c1Jlc3VsdHNHcmlkJHJlcFdlYkdyaWQkY3RsMDAkZHR2V2ViR3JpZExpc3RWaWV3DxQrAAdkZGRkZBYAAhZkBRxjdGwwMCRDb250ZW50JGxibFNlYXJjaERhdGVzD2hkX4WplUS/Bt9MI+BAXmIvoeGA2QA=\"
+        />\r\n</div>\r\n\r\n<div>\r\n\r\n\t<input type=\"hidden\" name=\"__VIEWSTATEGENERATOR\"
+        id=\"__VIEWSTATEGENERATOR\" value=\"794B1E1F\" />\r\n\t<input type=\"hidden\"
+        name=\"__EVENTVALIDATION\" id=\"__EVENTVALIDATION\" value=\"/wEWEgL82bLhCgK359HKDwL38+S0BQLD0Z//CAKDjpzeCALurtn5CAKO0+W9AQK4mvLWDwL/iqOnDwKei6OnDwK1jaOnDwLci6OnDwL7i6OnDwKajKOnDwKhiqOnDwKa4IP0BAK/g8WMCQKjmJfRCmdGdwNNmWV94UmgS97aJGV1Wi+X\"
+        />\r\n</div>\r\n        <div id=\"loading\">               \r\n        </div>\r\n
+        \       <div id=\"cssBounds\">\r\n\r\n            <div id=\"cssBanner\" >\r\n
+        \                   <!-- Login -->\r\n                    <div class=\"speciallink\">\r\n
+        \                       \r\n                            <span class=\"Login\">\r\n
+        \                               <a id=\"ctl00_ctlLogin_cmdLogin\" accesskey=\"L\"
+        title=\"Access Key: L\" href=\"javascript:__doPostBack('ctl00$ctlLogin$cmdLogin','')\">Login</a>
+        \                               \r\n                             </span>\r\n
+        \                           \r\n                     </div>\r\n                    <!--
+        End Login -->            \r\n                <div id=\"cssBannerLogo\">\r\n
+        \                   <a href=\"https://eservices.campaspe.vic.gov.au/T1PRProd/WebApps/eProperty/P1/GuestHome.aspx?r=SOC.WEBGUEST&f=$P1.EPR.GUESTHME.VIW\"
+        id=\"ctl00_cmdHomeNav\">\r\n                        <img src=\"../../App_Themes/Default/Images/Empty.gif\"
+        id=\"ctl00_imageHomeNav\" border=\"0\" class=\"homeNav\" />\r\n                    </a>\r\n
+        \               </div>\r\n            </div>\r\n            <div class=\"clear\"></div>\r\n
+        \           <div id=\"cssContentArea\">\r\n                <div id=\"cssTaskpane\"
+        \ class = \"cssNoPrint\">\r\n                    \r\n                    <div>\r\n
+        \                       \r\n                                <div class=\"menuPanel\">\r\n
+        \                           \r\n                                <div class=\"menuHeader\">\r\n
+        \                                   <span id=\"ctl00_Taskpane_rprMenuList_ctl01_lblMenuGroupHeader\">Online
+        Payments</span>\r\n                                </div>\r\n                                <ul
+        class=\"menuGroupList\">\r\n\t<li><a href=\"../ePay/AnimalPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.ANIMALS.ENQ\">Animal
+        Payment</a></li><li><a href=\"../ePay/ApplicationPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.APPS.ENQ\">Application
+        Payment</a></li><li><a href=\"../ePay/DebtorPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.DEBTORS.ENQ\">Debtor
+        Payment</a></li><li><a href=\"../ePay/InfringementPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.INFRINGE.ENQ\">Infringement
+        Payment</a></li><li><a href=\"../ePay/RatesPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.RATES.ENQ\">Rates
+        Payment</a></li><li><a href=\"../ePay/SpecialRatesPayment.aspx?r=SOC.WEBGUEST&amp;f=%24P1.EPY.SPECRATE.ENQ\">Special
+        Rates and Charges Payment</a></li><li><a href=\"../ShoppingCart/ShoppingCart.aspx?r=SOC.WEBGUEST&amp;f=%24P1.PAY.CART.VIW\">Shopping
+        Cart</a></li>\r\n</ul>\r\n                                <br />\r\n                            \r\n
+        \                               <div class=\"menuHeader\">\r\n                                    <span
+        id=\"ctl00_Taskpane_rprMenuList_ctl02_lblMenuGroupHeader\">Online Requests</span>\r\n
+        \                               </div>\r\n                                <ul
+        class=\"menuGroupList\">\r\n\t<li><a href=\"../eRequest/CategorySelection.aspx?r=SOC.WEBGUEST&amp;f=%24P1.ECR.SELCAT.VIW\">Request
+        a Service</a></li><li><a href=\"../eRequest/TrackRequest.aspx?r=SOC.WEBGUEST&amp;f=%24P1.ECR.TRACK.ENQ\">Track
+        a Request</a></li>\r\n</ul>\r\n                                <br />\r\n
+        \                           \r\n                                <div class=\"menuHeader\">\r\n
+        \                                   <span id=\"ctl00_Taskpane_rprMenuList_ctl03_lblMenuGroupHeader\">Planning
+        Applications</span>\r\n                                </div>\r\n                                <ul
+        class=\"menuGroupList\">\r\n\t<li><a href=\"../PublicNotices/PublicNoticeSearch.aspx?r=SOC.WEBGUEST&amp;f=%24P1.ESB.PUBNOT.ENQ\">Public
+        Notice Enquiry</a></li><li><a href=\"../PublicNotices/AllPublicNotices.aspx?r=SOC.WEBGUEST&amp;f=P1.ESB.PUBNOTAL.ENQ\">Applications
+        Currently Advertised</a></li><li><a href=\"eTrackApplicationSearch.aspx?r=SOC.WEBGUEST&amp;f=P1.ETR.SEARCH.ENQ\">Planning
+        Register Search</a></li>\r\n</ul>\r\n                                <br />\r\n
+        \                           \r\n                                </div>\r\n
+        \                           \r\n                        \r\n                    </div>\r\n
+        \                           \r\n                </div>\r\n                \r\n
+        \               <div id=\"cssTaskpaneRelatedLinks\"  class= \"cssNoPrint\">\r\n
+        \                   \r\n                        <div id=\"ctl00_RightTaskPane_tspRelatedLinks\"
+        class=\"taskPanel\">\r\n<div class=\"taskHeader\">Related Links</div>\r\n<ul>\r\n<li><a
+        href=\"eTrackApplicationSearchResults.aspx?Field=S&amp;Period=TW&amp;r=SOC.WEBGUEST&amp;f=P1.ETR.SEARCH.STW\">Submitted
+        This Week</a></li>\r\n<li><a href=\"eTrackApplicationSearchResults.aspx?Field=S&amp;Period=LM&amp;r=SOC.WEBGUEST&amp;f=P1.ETR.SEARCH.SLM\">Submitted
+        Last Month</a></li>\r\n</ul>\r\n<div class=\"taskFooter\">&nbsp;</div>\r\n</div>\r\n\r\n
+        \                       \r\n                    \r\n                    \r\n
+        \                   <div id=\"cssHelpAndAdmin\">\r\n                        \r\n
+        \   \r\n    \r\n\r\n                    </div>\r\n                </div>\r\n
+        \                               \r\n                <div id=\"cssContent\">\r\n
+        \               <div class=\"cssContentWorkspace\">\r\n                    <a
+        id=\"cssContentTop\"></a>\r\n                    \r\n                        <h1
+        id=\"ctl00_Header_h1PageTitle\">Submitted Last 28 Days</h1>\r\n                    \r\n
+        \                   \r\n                    \r\n                              \r\n
+        \                   \r\n    \r\n    <span id=\"ctl00_Content_cusETrackApplicationSearchResults\"
+        style=\"display:inline-block;width:100%;\">Records are sorted by lodgement
+        date as default, however data can be sorted based on any of the below columns-
+        Simply click on the relevant column heading to toggle ascending or descending
+        sort order. </br></br>\r\n\r\n<b>Planning Priority</b></br>\r\nPlanning Applications
+        are prioritised based on their complexity.</b></br>\r\n<b>P1</b> Applications
+        - 10 Days (VicSmart, no referrals, exempt from notice)</br>\r\n<b>P2</b> Applications
+        - 11 - 45 Days (referred, advertised, no objections)</br>\r\n<b>P3</b> Applications
+        - 46 - 60 Days (referred, advertised, received objections, consultation)</br></br></span>\r\n
+        \   <br />\r\n    \r\n    <span id=\"ctl00_Content_lblSearchDates\" class=\"block\"><span
+        id=\"ctl00_Content_lblFieldNameP1ETRSearchDates\" class=\"fieldLabel\">Search
+        Dates</span><span id=\"ctl00_Content_lblFieldValueP1ETRSearchDates\" class=\"fieldLabel\">2/07/2019
+        to 29/07/2019</span></span>\r\n    \r\n    <div id=\"ctl00_Content_cusResultsGrid_pnlCustomisationGrid\">\r\n\t\r\n
+        \   \r\n    \r\n    \r\n            <div id=\"ctl00_Content_cusResultsGrid_repWebGrid_ctl00_pnlSectionHeading\">\r\n\t\t\r\n
+        \               <span id=\"ctl00_Content_cusResultsGrid_repWebGrid_ctl00_lblSectionHeading\"
+        class=\"sectionHeading\">Application Search Results</span>\r\n                                <br
+        />\r\n                <img id=\"ctl00_Content_cusResultsGrid_repWebGrid_ctl00_imgSectionSeparator\"
+        class=\"sectionSeparator\" src=\"../../App_Themes/SOC_DefaultTheme/Images/Empty.gif\"
+        alt=\"\" style=\"border-width:0px;height:0px;width:50%;\" />\r\n            \r\n\t</div>\r\n
+        \r\n            \r\n\r\n            <div>\r\n\t\t<table class=\"grid\" cellspacing=\"0\"
+        cellpadding=\"3\" border=\"0\" id=\"ctl00_Content_cusResultsGrid_repWebGrid_ctl00_grdWebGridTabularView\"
+        style=\"width:100%;border-collapse:collapse;\">\r\n\t\t\t<tr class=\"headerRow\">\r\n\t\t\t\t<th
+        scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$RamId')\">Application
+        Number</a></th><th scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$LodgementDate')\">Lodgement
+        Date</a></th><th scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$Description')\">Description</a></th><th
+        scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$FormattedAddress')\">Property
+        Address</a></th><th scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$Decision')\">Status</a></th><th
+        scope=\"col\"><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Sort$Text10')\">Priority</a></th>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl02$ctl01','')\">Pln138/2017.A</a></td><td>19/07/2019</td><td>Boundary
+        realignment of the land into three (3) lots in the Farming Zone Schedule 2.
+        Environmental Significance Overlay Schedule 1, Land Subject to Inundation
+        Overlay and Floodway Overlay (Amend Condition 2 by removing condition 2b)</td><td>9178
+        Murray Valley Highway ECHUCA VILLAGE VIC 3564</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"alternateRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl03$ctl01','')\">PLN065/2019</a></td><td>19/07/2019</td><td>Boundary
+        realignment in the Farming Zone Schedule 1, Bushfire Management Overlay, Environmental
+        Significance Overlay and the Land Subject to Inundation Overlay</td><td>336
+        National Channel Road TORRUMBARRY VIC 3562</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"normalRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl04$ctl01','')\">PLN190/2019</a></td><td>19/07/2019</td><td>Buildings
+        and works (shed and dwelling extension) Farming Zone Schedule 2</td><td>82
+        Kirkhams Lane KYVALLEY VIC 3621</td><td>Assessment</td><td>P1</td>\r\n\t\t\t</tr><tr
+        class=\"alternateRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl05$ctl01','')\">PLN194/2019</a></td><td>24/07/2019</td><td>Demolition
+        of outbuildings and buildings and works (extension to an existing dwelling,
+        swimming pool) in the Heritage Overlay Schedule 65</td><td>61 Hare Street
+        ECHUCA VIC 3564</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr class=\"normalRow\">\r\n\t\t\t\t<td><a
+        href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl06$ctl01','')\">PLN188/2019</a></td><td>24/07/2019</td><td>Buildings
+        and works (Replacement Toilet &amp; Shower Block) in the Farming Zone Schedule
+        1 and Floodway Overlay</td><td>Greens Lake Road COROP VIC 3559</td><td>Acknowledged</td><td>P2</td>\r\n\t\t\t</tr><tr
+        class=\"alternateRow\">\r\n\t\t\t\t<td><a href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl07$ctl01','')\">PLN176/2019</a></td><td>26/07/2019</td><td>Construct
+        a shed ancillary to dwelling.</td><td>23 Ogilvie Avenue ECHUCA VIC 3564</td><td>Compliant
+        Application</td><td>P1</td>\r\n\t\t\t</tr><tr class=\"normalRow\">\r\n\t\t\t\t<td><a
+        href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView$ctl08$ctl01','')\">PLN198/2019</a></td><td>26/07/2019</td><td>Installation
+        of fibreglass swimming pool and child proof barrier Farming zone Schedule
+        2 Restructure Overlay</td><td>104 Hicks Road ECHUCA VILLAGE VIC 3564</td><td>Section
+        47 Info. Requested</td><td>P2</td>\r\n\t\t\t</tr><tr class=\"pagerRow\">\r\n\t\t\t\t<td
+        colspan=\"6\"><table border=\"0\">\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td><a
+        href=\"javascript:__doPostBack('ctl00$Content$cusResultsGrid$repWebGrid$ctl00$grdWebGridTabularView','Page$1')\">1</a></td><td><span>2</span></td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</table></td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n
+        \           \r\n            <br />\r\n            \r\n            \r\n            \r\n
+        \       \r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n    \r\n    <div class=\"actionButtonsLeft\">\r\n
+        \       <input type=\"submit\" name=\"ctl00$Content$btnPrevious\" value=\"Previous\"
+        id=\"ctl00_Content_btnPrevious\" accesskey=\"P\" title=\"Access Key: P\" class=\"LeftArrowButton\"
+        />\r\n    </div>\r\n\r\n\r\n                    <div class=\"clear\"></div>\r\n
+        \                   <br />\r\n                    <br />\r\n                    <br
+        />\r\n                </div>\r\n                </div>\r\n            </div>\r\n
+        \           <p></p>\r\n            <p class=\"invisible\"></p>\r\n            <div
+        id=\"cssBottomBar\" class=\"cssNoPrint\">\r\n                <div id=\"cssBottomBarLegal\">
+        \                \r\n                    <a id=\"ctl00_hplCustomFooterLink1\"
+        accesskey=\"V\" title=\"Access Key: V\" href=\"https://www.campaspe.vic.gov.au/council/laws-and-legislation/Privacy-statement/\"
+        target=\"_self\">Privacy</a>\r\n                    <img id=\"ctl00_imgFooterSeparator1\"
+        class=\"verticalBar\" src=\"../../App_Themes/SOC_DefaultTheme/Images/VerticalBarBlack.gif\"
+        alt=\"\" style=\"height:10px;width:1px;border-width:0px;\" />\r\n                    <a
+        id=\"ctl00_hplCustomFooterLink2\" accesskey=\"T\" title=\"Access Key: T\"
+        href=\"https://www.campaspe.vic.gov.au/\" target=\"_self\">Home</a>\r\n                    <img
+        id=\"ctl00_imgFooterSeparator2\" class=\"verticalBar\" src=\"../../App_Themes/SOC_DefaultTheme/Images/VerticalBarBlack.gif\"
+        alt=\"\" style=\"height:10px;width:1px;border-width:0px;\" />\r\n                    <a
+        id=\"ctl00_hplCustomFooterLink3\" accesskey=\"U\" title=\"Access Key: U\"
+        href=\"https://www.campaspe.vic.gov.au/council/have-your-say/contact-us/\"
+        target=\"_self\">Contact Us</a>                       \r\n                    <span
+        id=\"ctl00_MobileLink\">\r\n                        <img id=\"ctl00_Image1\"
+        class=\"verticalBar\" src=\"../../App_Themes/SOC_DefaultTheme/Images/VerticalBarBlack.gif\"
+        alt=\"\" style=\"height:10px;width:1px;border-width:0px;\" />\r\n                        <a
+        id=\"ctl00_hplMobileView\" href=\"javascript:__doPostBack('ctl00$hplMobileView','')\">Mobile
+        View</a>                       \r\n                    </span>\r\n                </div>\r\n
+        \               <div id=\"cssBottomBarCopyright\">&copy; Campaspe Shire Council
+        2019</div>\r\n            </div>\r\n            \r\n        </div>\r\n    \r\n\r\n<script
+        type=\"text/javascript\">\r\n//<![CDATA[\r\n$(document).ready(function ()
+        {if ($('#ctl00_valErrors').is(':visible') == true) {$('#__SCROLLPOSITIONX').val('0');$('#__SCROLLPOSITIONY').val('0');}});//]]>\r\n</script>\r\n</form>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Tue, 14 May 2019 14:00:00 GMT
+recorded_with: VCR 5.0.0

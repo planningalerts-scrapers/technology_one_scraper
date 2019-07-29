@@ -81,6 +81,8 @@ module TechnologyOneScraper
           :ward
         when "Development Cost", "Estimated Cost"
           :development_cost
+        when "Priority"
+          :priority
         else
           raise "Unknown name #{name} with value #{value}"
         end

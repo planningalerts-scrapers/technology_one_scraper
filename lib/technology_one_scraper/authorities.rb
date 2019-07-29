@@ -2,6 +2,11 @@
 
 module TechnologyOneScraper
   AUTHORITIES = {
+    campaspe: {
+      url: "https://eservices.campaspe.vic.gov.au/T1PRProd/WebApps/eProperty",
+      period: "L28",
+      webguest: "SOC.WEBGUEST"
+    },
     eurobodalla: {
       url: "https://eservices.esc.nsw.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28"
