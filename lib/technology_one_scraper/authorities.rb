@@ -161,6 +161,10 @@ module TechnologyOneScraper
       disable_ssl_certificate_check: true,
       # Mornington peninsula is blocking requests from outside Australia
       australian_proxy: true
+    },
+    newcastle: {
+      url: "https://cn-web.t1cloud.com/T1PRDefault/WebApps/eProperty/",
+      period: "L28"
     }
   }.freeze
 end
