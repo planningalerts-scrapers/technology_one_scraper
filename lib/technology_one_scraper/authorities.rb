@@ -81,11 +81,6 @@ module TechnologyOneScraper
       url: "https://eproclaim.manningham.vic.gov.au/eProperty",
       period: "L28"
     },
-    marrickville: {
-      url: "https://eproperty.marrickville.nsw.gov.au/eServices",
-      period: "L14",
-      webguest: "MC.P1.WEBGUEST"
-    },
     noosa: {
       url: "https://noo-web.t1cloud.com/T1PRDefault/WebApps/eProperty",
       period: "TM"
