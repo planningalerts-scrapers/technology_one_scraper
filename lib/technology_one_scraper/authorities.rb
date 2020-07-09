@@ -65,7 +65,7 @@ module TechnologyOneScraper
       period: "TM"
     },
     fremantle: {
-      url: "https://eservices.fremantle.wa.gov.au/ePropertyPROD",
+      url: "https://eservices.fremantle.wa.gov.au/T1PRProd/WebApps/eProperty",
       period: "L28"
     },
     kuringgai: {
