@@ -16,7 +16,7 @@ module TechnologyOneScraper
       period: "L28"
     },
     campaspe: {
-      url: "https://eservices.campaspe.vic.gov.au/T1PRProd/WebApps/eProperty",
+      url: "https://campaspe-web.t1cloud.com/T1PRDefault/WebApps/eProperty",
       period: "L28",
       webguest: "SOC.WEBGUEST"
     },
