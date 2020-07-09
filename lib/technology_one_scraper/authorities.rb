@@ -143,11 +143,9 @@ module TechnologyOneScraper
       australian_proxy: true
     },
     shellharbour: {
-      url: "https://eservices.shellharbour.nsw.gov.au/T1PRProd/WebApps/eProperty",
+      url: "https://shbr-web.t1cloud.com/T1PRDefault/WebApps/eProperty",
       period: "L28",
-      webguest: "SCC.WEBGUEST",
-      # Looks like the site has an incomplete certificate chain
-      disable_ssl_certificate_check: true
+      webguest: "SCC.WEBGUEST"
     },
     mornington_peninsula: {
       url: "https://epeninsula.mornpen.vic.gov.au/P1PRPROD",
