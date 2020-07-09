@@ -98,7 +98,9 @@ module TechnologyOneScraper
     sutherland: {
       url: "https://propertydevelopment.ssc.nsw.gov.au/T1PRPROD/WebApps/eproperty",
       period: "TM",
-      webguest: "SSC.P1.WEBGUEST"
+      webguest: "SSC.P1.WEBGUEST",
+      # ssslabs shows an incomplete certificate. Ugh.
+      disable_ssl_certificate_check: true
     },
     tamworth: {
       url: "https://eproperty.tamworth.nsw.gov.au/ePropertyProd",
